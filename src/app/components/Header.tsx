@@ -1,24 +1,126 @@
-import Link from "next/link";
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { FaBars, FaTimes, FaShieldAlt } from 'react-icons/fa';
+import { Button } from './ui/Button';
+
+
+interface NavLinkProps {
+  href: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+  mobile?: boolean;
+}
+
+// Subcomponente para evitar repetição de estilos nos links
+function NavLink({ href, children, onClick, mobile = false }: NavLinkProps) {
+  if (mobile) {
+    return (
+      <a
+        href={href}
+        onClick={onClick}
+        className="flex items-center justify-between p-4 bg-black/20 border border-amber-950/40 hover:border-amber-500/20 rounded-xl text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-amber-500 transition-all group"
+      >
+        <span>{children}</span>
+        <span className="text-xs text-amber-900 group-hover:text-amber-500 transition-colors">➔</span>
+      </a>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      className="text-xs font-semibold uppercase tracking-wider text-gray-400 hover:text-white px-4 py-2 rounded-lg hover:bg-amber-950/30 transition-all duration-200"
+    >
+      {children}
+    </a>
+  );
+}
 
 export default function Header() {
-    return (
-        <header className="fixed top-0 h-16 min-w-full flex items-center justify-center">
-            <nav>
-                <ul className="flex gap-8">
-                    <li>
-                        <Link href="#">Sobre mim</Link>
-                    </li>
-                    <li>
-                        <Link href="#">Habilidades Técnicas</Link>
-                    </li>
-                    <li>
-                        <Link href="#">Projetos</Link>
-                    </li>
-                    <li>
-                        <Link href="#">Contato</Link>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    )
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const navLinks = [
+    { name: 'Arsenal', href: '#projects' },
+    { name: 'Conquistas', href: '#projects' },
+    { name: 'Convocar', href: '#contact' }
+  ];
+
+  return (
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-[#110D0A]/90 backdrop-blur-md border-b border-amber-950/40 py-4 shadow-lg shadow-black/40' 
+        : 'bg-transparent py-6'
+    }`}>
+      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
+        
+        {/* LOGO / IDENTIDADE NÓRDICA */}
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div className="p-2 bg-amber-500/10 rounded-xl border border-amber-500/20 text-amber-500 group-hover:bg-amber-500 group-hover:text-[#110D0A] transition-all duration-300">
+            <FaShieldAlt className="text-lg" />
+          </div>
+          <span className="text-sm font-black tracking-widest uppercase text-white font-mono group-hover:text-amber-500 transition-colors">
+            AG.DEV
+          </span>
+        </a>
+
+        {/* NAVEGAÇÃO DESKTOP (Estilo Madeira de Fundo) */}
+        <nav className="hidden md:flex items-center gap-1 bg-[#1A1410] border border-amber-950/60 p-1 rounded-xl backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.02)]">
+          {navLinks.map((link, idx) => (
+            <NavLink key={idx} href={link.href}>
+              {link.name}
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* BOTÃO DE CONTATO DESKTOP (Reaproveitando o componente Button) */}
+        <div className="hidden md:block">
+          <Button href="#contact" variant="primary" className="!py-2 !px-4 text-xs uppercase tracking-wider">
+            Contratar Machado
+          </Button>
+        </div>
+
+        {/* BOTÃO DO MENU MOBILE */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden p-2 bg-[#1A1410] border border-amber-950/60 text-amber-500 hover:text-amber-400 rounded-xl transition-all"
+          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+        >
+          {isOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
+        </button>
+
+      </div>
+
+      {/* MENU DROPDOWN MOBILE */}
+      <div className={`fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#110D0A] z-40 md:hidden flex flex-col justify-between p-6 border-t border-amber-950/40 transform transition-transform duration-300 ease-in-out ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}>
+        <nav className="flex flex-col gap-3">
+          {navLinks.map((link, idx) => (
+            <NavLink key={idx} href={link.href} onClick={toggleMenu} mobile>
+              {link.name}
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* BOTÃO INFERIOR NO MOBILE */}
+        <div className="pt-6 border-t border-amber-950/40">
+          <Button href="#contact" variant="primary" onClick={toggleMenu} className="w-full !py-4 text-sm uppercase tracking-wider">
+            Contratar Machado
+          </Button>
+        </div>
+      </div>
+    </header>
+  );
 }
