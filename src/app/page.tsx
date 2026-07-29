@@ -7,13 +7,13 @@ import Header from "./components/Header";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen pb-20 gap-16">
+    <div className="font-sans grid grid-rows-[90px_1fr_auto] items-center justify-items-center min-h-screen">
       <Header/>
-      <main className="flex flex-col gap-[32px] row-start-2 items-center">
+      <main className="flex flex-col row-start-2 w-full">
         <BentoGrid/>
         <Projects/>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+      <footer className="row-start-3 w-full">
         <Footer/>
       </footer>
     </div>

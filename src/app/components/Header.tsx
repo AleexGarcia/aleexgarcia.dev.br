@@ -52,7 +52,7 @@ export default function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = [
-    { name: 'Arsenal', href: '#projects' },
+    { name: 'Arsenal', href: '#arsenal' },
     { name: 'Conquistas', href: '#projects' },
     { name: 'Convocar', href: '#contact' }
   ];
