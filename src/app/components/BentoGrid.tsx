@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaAws } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaAws, FaCrow } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiNestjs, SiDocker, SiJest, SiTailwindcss, SiPrisma, SiPostgresql, SiRedis, SiGithubactions, SiMongodb } from 'react-icons/si';
 import { containerVariants, cardVariants } from './contants/gridVariants';
 import { motion } from 'framer-motion';
@@ -14,6 +14,7 @@ import { SocialLink } from './ui/SocialLink';
 import { TrophyItem } from './ui/TrophyItem';
 import Counter from './ui/Counter';
 import { github, linkedin } from './contants/contacts';
+import { GiCrowDive } from 'react-icons/gi';
 
 export default function BentoGrid() {
   return (
@@ -51,7 +52,7 @@ export default function BentoGrid() {
             </div>
             <div className="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
               <Button href="#projects" variant="primary">Ver Arsenal</Button>
-              <Button href="#contact" variant="secondary">Chamar no Machado</Button>
+              <Button className='flex gap-2 items-center' href="#contact" variant="secondary">Enviar um Corvo <FaCrow className='text-xl' /></Button>
             </div>
           </Card>
         </motion.div>
@@ -152,7 +153,7 @@ export default function BentoGrid() {
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Banquete no Git</span>
             <div className="py-2">
               <span className="text-4xl font-black text-amber-500 font-mono block group-hover:scale-110 transition-transform duration-300">
-                <Counter target={890} suffix='L'/>
+                <Counter target={890} suffix='L' />
               </span>
               <span className="text-xs text-gray-400 font-medium mt-1 block">Hidromel & Café</span>
             </div>

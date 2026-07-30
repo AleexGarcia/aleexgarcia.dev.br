@@ -3,39 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes, FaShieldAlt } from 'react-icons/fa';
 import { Button } from './ui/Button';
+import { NavLink } from './ui/NavLink';
+import { GiBatteredAxe, GiCrossedAxes } from 'react-icons/gi';
 
 
-interface NavLinkProps {
-  href: string;
-  children: React.ReactNode;
-  onClick?: () => void;
-  mobile?: boolean;
-}
-
-// Subcomponente para evitar repetição de estilos nos links
-function NavLink({ href, children, onClick, mobile = false }: NavLinkProps) {
-  if (mobile) {
-    return (
-      <a
-        href={href}
-        onClick={onClick}
-        className="flex items-center justify-between p-4 bg-black/20 border border-amber-950/40 hover:border-amber-500/20 rounded-xl text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-amber-500 transition-all group"
-      >
-        <span>{children}</span>
-        <span className="text-xs text-amber-900 group-hover:text-amber-500 transition-colors">➔</span>
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href={href}
-      className="text-xs font-semibold uppercase tracking-wider text-gray-400 hover:text-white px-4 py-2 rounded-lg hover:bg-amber-950/30 transition-all duration-200"
-    >
-      {children}
-    </a>
-  );
-}
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,10 +39,11 @@ export default function Header() {
         {/* LOGO / IDENTIDADE NÓRDICA */}
         <a href="#" className="flex items-center gap-2.5 group">
           <div className="p-2 bg-amber-500/10 rounded-xl border border-amber-500/20 text-amber-500 group-hover:bg-amber-500 group-hover:text-[#110D0A] transition-all duration-300">
-            <FaShieldAlt className="text-lg" />
+            <GiCrossedAxes className="text-lg" />
+  
           </div>
           <span className="text-sm font-black tracking-widest uppercase text-white font-mono group-hover:text-amber-500 transition-colors">
-            AG.DEV
+            AleexGarcia
           </span>
         </a>
 
@@ -86,8 +58,9 @@ export default function Header() {
 
         {/* BOTÃO DE CONTATO DESKTOP (Reaproveitando o componente Button) */}
         <div className="hidden md:block">
-          <Button href="#contact" variant="primary" className="!py-2 !px-4 text-xs uppercase tracking-wider">
+          <Button  href="#contact" variant="primary" className="group !py-2 !px-4 text-xs uppercase tracking-wider flex items-center gap-1.5">
             Contratar Machado
+            <GiBatteredAxe className="text-xl transition-all duration-300 -rotate-45 group-hover:rotate-20 group-hover:translate-x-1 group-hover:scale-110" />
           </Button>
         </div>
 
