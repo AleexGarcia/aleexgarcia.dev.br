@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaAws, FaCrow } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiNestjs, SiDocker, SiJest, SiTailwindcss, SiPrisma, SiPostgresql, SiRedis, SiGithubactions, SiMongodb } from 'react-icons/si';
-import { containerVariants, cardVariants } from './contants/gridVariants';
+import { containerVariants, cardVariants } from '../_contants/gridVariants';
 import { motion } from 'framer-motion';
 
 // Importações dos subcomponentes
@@ -13,8 +13,7 @@ import { Button } from './ui/Button';
 import { SocialLink } from './ui/SocialLink';
 import { TrophyItem } from './ui/TrophyItem';
 import Counter from './ui/Counter';
-import { github, linkedin } from './contants/contacts';
-import { GiCrowDive } from 'react-icons/gi';
+import { github, linkedin } from '../_contants/contacts';
 
 export default function BentoGrid() {
   return (
@@ -128,7 +127,7 @@ export default function BentoGrid() {
               <span className="text-xs text-gray-400 font-medium mt-1 block">Barba Preenchida</span>
             </div>
             <div className="border-t border-amber-950/60 pt-2 text-[11px] text-gray-500 italic">
-              "Erros 404 serão saqueados"
+              {"Erros 404 serão saqueados"}
             </div>
           </Card>
         </motion.div>

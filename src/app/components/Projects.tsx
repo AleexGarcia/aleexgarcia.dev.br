@@ -1,7 +1,7 @@
 'use client'
 import { motion, Variants } from "framer-motion";
 import { Badge } from "./ui/Badge";
-import { projectsData } from "./contants/projectsData";
+import { projectsData } from "../_contants/projectsData";
 import ProjectCard from "./ui/ProjectCard";
 
 const containerVariants: Variants = {

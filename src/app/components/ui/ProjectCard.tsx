@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { Card } from './Card'; 
 import { Badge } from './Badge'; 
 import ProjectPlaceholder from './ProjectPlaceHolder';
-import { Project } from '../contants/projectsData';
+import { Project } from '../../_contants/projectsData';
 
 // Variantes de animação para a lista e comportamento de cascata (Stagger)
 

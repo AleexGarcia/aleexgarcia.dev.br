@@ -48,7 +48,7 @@ export default function NotFound() {
 
                 {/* Frase em Itálico (Mantendo o padrão dos seus cards) */}
                 <div className="border-y border-amber-950/60 py-3 my-2 text-xs text-amber-700 font-medium tracking-wider italic uppercase">
-                    "Nenhum link quebrado escapa ao meu machado"
+                    {"Nenhum link quebrado escapa ao meu machado"}
                 </div>
 
                 <div className="mt-4">
