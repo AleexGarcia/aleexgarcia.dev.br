@@ -66,7 +66,7 @@ export default function BentoGrid() {
             <div className="flex flex-col gap-2.5">
               <SocialLink href={`https://github.com/${github}`} icon={FaGithub} label="GitHub" actionText="Acessar ↗" hoverColor="group-hover:text-white" />
               <SocialLink href={`https://www.linkedin.com/in/${linkedin}`} icon={FaLinkedin} label="LinkedIn" actionText="Conectar ↗" />
-              <SocialLink href="/assets/curriculo.pdf" icon={FaFilePdf} label="Baixar Pergaminho (CV)" actionText="PDF ↴" hoverColor="group-hover:text-red-400" download />
+              <SocialLink href="/assets/Alexandre_Garcia_Curriculo.pdf" icon={FaFilePdf} label="Baixar Pergaminho (CV)" actionText="PDF ↴" hoverColor="group-hover:text-red-400" download />
             </div>
           </Card>
         </motion.div>
