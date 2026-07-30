@@ -2,28 +2,47 @@
 
 import { useEffect, useState } from "react";
 
-export default function InfiniteCounter() {
-  const [percent, setPercent] = useState(50);
+interface CounterProps {
+  target: number;      
+  suffix?: string;     
+  startFrom?: number;  
+}
+
+export default function Counter({ target, suffix = "", startFrom = 0 }: CounterProps) {
+  const [value, setValue] = useState(startFrom);
 
   useEffect(() => {
-    if (percent >= 100) {
+    if (value >= target) {
+      // Quando chega no alvo, espera 5 segundos e reinicia
       const timeout = setTimeout(() => {
-        setPercent(50);
+        setValue(startFrom);
       }, 5000);
 
       return () => clearTimeout(timeout);
     }
 
+    // Calcula a velocidade do intervalo baseado no tamanho do número 
+    // para números grandes não demorarem uma eternidade
+    const increment = Math.max(1, Math.floor(target / 100));
+    const speed = target > 1000 ? 10 : 50;
+
     const interval = setInterval(() => {
-      setPercent((prev) => prev + 1);
-    }, 50);
+      setValue((prev) => {
+        if (prev + increment >= target) {
+          clearInterval(interval);
+          return target;
+        }
+        return prev + increment;
+      });
+    }, speed);
 
     return () => clearInterval(interval);
-  }, [percent]);
+  }, [value, target, startFrom]);
 
   return (
     <span className="font-mono text-amber-500">
-      {String(percent).padStart(2, '0')}%
+      {value.toLocaleString('pt-BR')}
+      {suffix}
     </span>
   );
 }

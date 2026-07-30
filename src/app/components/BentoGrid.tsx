@@ -122,12 +122,56 @@ export default function BentoGrid() {
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Métricas Nórdicas</span>
             <div className="py-2">
               <span className="text-4xl font-black text-amber-500 font-mono block group-hover:scale-110 transition-transform duration-300">
-                <Counter />
+                <Counter target={100} startFrom={50} suffix='%' />
               </span>
               <span className="text-xs text-gray-400 font-medium mt-1 block">Barba Preenchida</span>
             </div>
             <div className="border-t border-amber-950/60 pt-2 text-[11px] text-gray-500 italic">
               "Erros 404 serão saqueados"
+            </div>
+          </Card>
+        </motion.div>
+
+        <motion.div className="md:col-span-1" variants={cardVariants}>
+          <Card className="text-center p-5 justify-between h-full group">
+            <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Pilhagem de Erros</span>
+            <div className="py-2">
+              <span className="text-4xl font-black text-amber-500 font-mono block group-hover:scale-110 transition-transform duration-300">
+                <Counter target={4721} /> {/* Passe um alvo pro contador se necessário */}
+              </span>
+              <span className="text-xs text-gray-400 font-medium mt-1 block">Bugs Decapitados</span>
+            </div>
+            <div className="border-t border-amber-950/60 pt-2 text-[11px] text-gray-500 italic">
+              "Nenhum stack overflow sobreviveu"
+            </div>
+          </Card>
+        </motion.div>
+
+        <motion.div className="md:col-span-1" variants={cardVariants}>
+          <Card className="text-center p-5 justify-between h-full group">
+            <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Banquete no Git</span>
+            <div className="py-2">
+              <span className="text-4xl font-black text-amber-500 font-mono block group-hover:scale-110 transition-transform duration-300">
+                <Counter target={890} suffix='L'/>
+              </span>
+              <span className="text-xs text-gray-400 font-medium mt-1 block">Hidromel & Café</span>
+            </div>
+            <div className="border-t border-amber-950/60 pt-2 text-[11px] text-gray-500 italic">
+              "Deploys em sexta-feira exigem coragem"
+            </div>
+          </Card>
+        </motion.div>
+        <motion.div className="" variants={cardVariants}>
+          <Card className="text-center p-5 justify-between h-full group">
+            <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Sacrifício aos Deuses</span>
+            <div className="py-2">
+              <span className="text-4xl font-black text-amber-500 font-mono block group-hover:scale-110 transition-transform duration-300">
+                <Counter target={3} />
+              </span>
+              <span className="text-xs text-gray-400 font-medium mt-1 block">Teclados em Valhalla</span>
+            </div>
+            <div className="border-t border-amber-950/60 pt-2 text-[11px] text-gray-500 italic">
+              "Guerreiros mortos em combate contra o CSS"
             </div>
           </Card>
         </motion.div>
