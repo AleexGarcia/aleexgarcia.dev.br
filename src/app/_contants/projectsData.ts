@@ -31,8 +31,8 @@ export const projectsData: Project[] = [
     tagline: "Single Page Application ultra veloz com Bento Grid",
     description: "Construção de uma identidade de marca pessoal única e satírica. Este site serve como prova de conceito para otimização extrema de performance web e renderização. Desenvolvido com Next.js App Router e Tailwind CSS, alcançando notas próximas a 100% no Google Lighthouse através do uso de imagens WebP e estruturas modulares de alta conversão.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "UI/UX", "Lighthouse SEO"],
-    githubLink: "https://github.com",
-    deployLink: "https://meuportfolio.dev",
+    githubLink: "https://github.com/AleexGarcia/portfolio-pessoal",
+    deployLink: "https://aleexgarcia.netlify.app/",
     isApiOnly: false
   }
 ];
