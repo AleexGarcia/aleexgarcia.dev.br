@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { Card } from './Card'; 
-import { Badge } from './Badge'; 
 import ProjectPlaceholder from './ProjectPlaceHolder';
 import { Project } from '../../_contants/projectsData';
 

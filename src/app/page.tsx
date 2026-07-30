@@ -1,4 +1,3 @@
-import Link from "next/link";
 import BentoGrid from "./components/BentoGrid";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";

@@ -127,7 +127,7 @@ export default function BentoGrid() {
               <span className="text-xs text-gray-400 font-medium mt-1 block">Barba Preenchida</span>
             </div>
             <div className="border-t border-amber-950/60 pt-2 text-[11px] text-gray-500 italic">
-              {"Erros 404 serão saqueados"}
+              Erros 404 serão saqueados
             </div>
           </Card>
         </motion.div>
@@ -142,7 +142,7 @@ export default function BentoGrid() {
               <span className="text-xs text-gray-400 font-medium mt-1 block">Bugs Decapitados</span>
             </div>
             <div className="border-t border-amber-950/60 pt-2 text-[11px] text-gray-500 italic">
-              "Nenhum stack overflow sobreviveu"
+              Nenhum stack overflow sobreviveu
             </div>
           </Card>
         </motion.div>
@@ -157,7 +157,7 @@ export default function BentoGrid() {
               <span className="text-xs text-gray-400 font-medium mt-1 block">Hidromel & Café</span>
             </div>
             <div className="border-t border-amber-950/60 pt-2 text-[11px] text-gray-500 italic">
-              "Deploys em sexta-feira exigem coragem"
+              Deploys em sexta-feira exigem coragem
             </div>
           </Card>
         </motion.div>
@@ -171,7 +171,7 @@ export default function BentoGrid() {
               <span className="text-xs text-gray-400 font-medium mt-1 block">Teclados em Valhalla</span>
             </div>
             <div className="border-t border-amber-950/60 pt-2 text-[11px] text-gray-500 italic">
-              "Guerreiros mortos em combate contra o CSS"
+              Guerreiros mortos em combate contra o CSS
             </div>
           </Card>
         </motion.div>

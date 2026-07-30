@@ -1,4 +1,4 @@
-import { motion, Variants } from 'framer-motion'; // 👈 Importe o tipo Variants
+import { Variants } from 'framer-motion'; // 👈 Importe o tipo Variants
 
 // Aplique o tipo ': Variants' aqui
 const containerVariants: Variants = {
