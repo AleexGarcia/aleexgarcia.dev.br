@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 
 interface TrophyItemProps {
   // Mantém a flexibilidade para componentes de ícones ou uma string com a URL da imagem
@@ -21,12 +22,7 @@ export function TrophyItem({ icon: IconOrSrc, title, subtitle, status, variant =
   return (
     <div className="flex items-start gap-3.5 p-3 bg-black/10 border border-amber-950/40 rounded-xl hover:scale-102 transition-transform">
       {isImage ? (
-        // Se for imagem, renderiza a tag <img>
-        <img
-          src={IconOrSrc}
-          alt={title}
-          className="w-12 h-12 object-contain"
-        />
+        <Image src={IconOrSrc} alt={title} className="w-12 h-12 object-contain" width={48} height={48}/>
       ) : (
         <div className={`p-2 rounded-lg border mt-0.5 flex items-center justify-center w-12 h-12 ${styles[variant].bg}`}>
           <IconOrSrc className="text-4xl" />
