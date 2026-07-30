@@ -24,7 +24,7 @@ export default function Counter({ target, suffix = "", startFrom = 0 }: CounterP
     // Calcula a velocidade do intervalo baseado no tamanho do número 
     // para números grandes não demorarem uma eternidade
     const increment = Math.max(1, Math.floor(target / 100));
-    const speed = target > 1000 ? 10 : 50;
+    const speed = target > 1000 ? 10 : target > 99 ? 50 : 250;
 
     const interval = setInterval(() => {
       setValue((prev) => {
