@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaAws, FaCrow } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaCrow } from 'react-icons/fa';
 
-import { useBentoAnimations } from '../hooks/useBentoAnimations'; // Importando o hook que criaremos abaixo
+import { useBentoAnimations } from '../hooks/useBentoAnimations';
 import { Card } from './ui/Card';
 import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
@@ -13,7 +13,7 @@ import Counter from './ui/Counter';
 import { github, linkedin } from '../_contants/contacts';
 import HeroCardViking from './ui/HeroCardViking';
 import { TECH_ARSENAL } from '../_contants/techs';
-import { GiAnvil, GiAnvilImpact } from 'react-icons/gi';
+import { GiAnvil } from 'react-icons/gi';
 
 export default function BentoGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
