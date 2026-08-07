@@ -20,18 +20,16 @@ const baseUrl = process.env.CONTEXT === 'production'
     : 'http://localhost:3000';
 
 export const metadata: Metadata = {
-  // Define a URL base para resolver caminhos relativos automaticamente
   metadataBase: new URL(baseUrl),
   
   title: {
     default: "AleexGarcia | Desenvolvedor Full-Stack",
-    template: "%s | AleexGarcia" // Permite páginas internas mudarem o título dinamicamente (ex: "Projetos | AleexGarcia")
+    template: "%s | AleexGarcia" 
   },
-  description: "Portfólio profissional de AleexGarcia, Desenvolvedor Full-Stack especializado em React, Next.js, TypeScript e Node.js. Conheça meus projetos e soluções web.",
+  description: "Dev Full-Stack especialista em Next.js e NestJS. Código limpo, deploy implacável e soluções robustas. Conheça meus projetos!",
   keywords: ["Desenvolvedor Full-Stack", "React", "Next.js", "TypeScript", "Node.js", "Web Development", "Portfólio"],
   authors: [{ name: "AleexGarcia", url: baseUrl }],
   
-  // Controle estrito de indexação dos robôs do Google
   robots: {
     index: true,
     follow: true,
@@ -52,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Portfólio - AleexGarcia",
     images: [
       {
-        url: "/assets/og.png", 
+        url: "/assets/og.webp", 
         width: 1200,
         height: 630,
         alt: "Portfólio de AleexGarcia - Desenvolvedor Full-Stack",
@@ -67,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AleexGarcia | Desenvolvedor Full-Stack",
     description: "Ship it like a Viking! Projetos web modernos com alta performance e foco em resultados.",
-    images: ["/assets/og.png"], 
+    images: ["/assets/og.webp"], 
   },
 };
 
