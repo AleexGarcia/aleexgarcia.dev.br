@@ -43,7 +43,7 @@ export default function Header() {
   
           </div>
           <span className="text-sm font-black tracking-widest uppercase text-white font-mono group-hover:text-amber-500 transition-colors">
-            AleexGarcia
+            AleexGarcia.dev
           </span>
         </a>
 
