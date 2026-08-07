@@ -1,6 +1,11 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Registra o plugin caso ainda não tenha sido registrado globalmente
+gsap.registerPlugin(ScrollTrigger);
 
 interface CounterProps {
   target: number;      
@@ -10,37 +15,40 @@ interface CounterProps {
 
 export default function Counter({ target, suffix = "", startFrom = 0 }: CounterProps) {
   const [value, setValue] = useState(startFrom);
+  const elementRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    if (value >= target) {
-      // Quando chega no alvo, espera 5 segundos e reinicia
-      const timeout = setTimeout(() => {
-        setValue(startFrom);
-      }, 5000);
+    const element = elementRef.current;
+    if (!element) return;
 
-      return () => clearTimeout(timeout);
-    }
+    // Criamos um objeto genérico para o GSAP animar a propriedade interna
+    const obj = { count: startFrom };
 
-    // Calcula a velocidade do intervalo baseado no tamanho do número 
-    // para números grandes não demorarem uma eternidade
-    const increment = Math.max(1, Math.floor(target / 100));
-    const speed = target > 1000 ? 10 : target > 99 ? 50 : 250;
+    const animation = gsap.to(obj, {
+      count: target,
+      duration: 4, // Tempo da animação em segundos (suave e independente do tamanho do número)
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 90%", // Dispara quando o número está quase entrando na tela
+        toggleActions: "play none none none",
+        once: true, // Roda apenas uma vez ao scrollar
+      },
+      onUpdate: () => {
+        // Atualiza o estado com o número arredondado durante a animação
+        setValue(Math.floor(obj.count));
+      }
+    });
 
-    const interval = setInterval(() => {
-      setValue((prev) => {
-        if (prev + increment >= target) {
-          clearInterval(interval);
-          return target;
-        }
-        return prev + increment;
-      });
-    }, speed);
-
-    return () => clearInterval(interval);
-  }, [value, target, startFrom]);
+    // Limpeza ao desmontar o componente
+    return () => {
+      animation.scrollTrigger?.kill();
+      animation.kill();
+    };
+  }, [target, startFrom]);
 
   return (
-    <span className="font-mono text-amber-500">
+    <span ref={elementRef} className="font-mono text-amber-500">
       {value.toLocaleString('pt-BR')}
       {suffix}
     </span>

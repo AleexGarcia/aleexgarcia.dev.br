@@ -12,36 +12,60 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
+const baseUrl = process.env.CONTEXT === 'production'
+  ? (process.env.URL || 'https://aleexgarcia.dev.br')
+  : process.env.DEPLOY_PRIME_URL 
+    ? process.env.DEPLOY_PRIME_URL 
+    : 'http://localhost:3000';
+
 export const metadata: Metadata = {
-  title: "AleexGarcia | Desenvolvedor Full-Stack",
-  description: "Portfólio profissional de AleexGarcia, Desenvolvedor Full-Stack especializado em React, Next.js, TypeScript e Node.js. Conheça meus projetos e soluções web.",
+  metadataBase: new URL(baseUrl),
+  
+  title: {
+    default: "AleexGarcia | Desenvolvedor Full-Stack",
+    template: "%s | AleexGarcia" 
+  },
+  description: "Dev Full-Stack especialista em Next.js e NestJS. Código limpo, deploy implacável e soluções robustas. Conheça meus projetos!",
   keywords: ["Desenvolvedor Full-Stack", "React", "Next.js", "TypeScript", "Node.js", "Web Development", "Portfólio"],
-  authors: [{ name: "AleexGarcia", url: "https://aleexgarcia.netlify.app/" }],
+  authors: [{ name: "AleexGarcia", url: baseUrl }],
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  // Open Graph (WhatsApp, Facebook, LinkedIn)
   openGraph: {
     title: "AleexGarcia | Desenvolvedor Full-Stack",
-    description: "Conheça os projetos e a trajetória de AleexGarcia, Desenvolvedor Full-Stack focado em criar aplicações web modernas e escaláveis.",
-    url: "https://aleexgarcia.netlify.app/",
+    description: "Código limpo, deploy implacável. Conheça os projetos e a trajetória de um Desenvolvedor Full-Stack focado em aplicações modernas.",
+    url: "./", // Usa a metadataBase automaticamente
     siteName: "Portfólio - AleexGarcia",
     images: [
       {
-        url: "https://aleexgarcia.netlify.app/og-image.png",
+        url: "/assets/og.webp", 
         width: 1200,
         height: 630,
-        alt: "Portfólio de AleexGarcia",
+        alt: "Portfólio de AleexGarcia - Desenvolvedor Full-Stack",
       },
     ],
     locale: "pt_BR",
     type: "website",
   },
+
+  // X / Twitter
   twitter: {
     card: "summary_large_image",
     title: "AleexGarcia | Desenvolvedor Full-Stack",
-    description: "Portfólio profissional de AleexGarcia. Projetos web modernos com alta performance.",
-    images: ["https://aleexgarcia.netlify.app/og-image.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
+    description: "Ship it like a Viking! Projetos web modernos com alta performance e foco em resultados.",
+    images: ["/assets/og.webp"], 
   },
 };
 

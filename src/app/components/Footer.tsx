@@ -3,6 +3,7 @@ import React from 'react';
 import { FaWhatsapp, FaEnvelope, FaArrowUp } from 'react-icons/fa';
 import { Badge } from './ui/Badge'; // Reaproveitando sua tag rústica consistente
 import { email, phone } from '../_contants/contacts';
+import { GiCrossedAxes } from 'react-icons/gi';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -20,7 +21,7 @@ export default function Footer() {
 
           <div className="max-w-xl mx-auto space-y-4">
             <div className="flex justify-center">
-              <Badge variant="amber">O Chamado das Armas</Badge>
+              <Badge icon={GiCrossedAxes} variant="amber">O Chamado das Armas</Badge>
             </div>
             <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               Pronto para convocar reforços?
