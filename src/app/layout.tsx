@@ -12,11 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Descobre se está em produção, preview ou localhost
-const baseUrl = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
-  ? 'https://aleexgarcia.dev.br'
-  : process.env.NEXT_PUBLIC_VERCEL_URL
-    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+
+const baseUrl = process.env.CONTEXT === 'production'
+  ? (process.env.URL || 'https://aleexgarcia.dev.br')
+  : process.env.DEPLOY_PRIME_URL 
+    ? process.env.DEPLOY_PRIME_URL 
     : 'http://localhost:3000';
 
 export const metadata: Metadata = {
