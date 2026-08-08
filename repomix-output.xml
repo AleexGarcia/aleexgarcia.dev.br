@@ -44,7 +44,11 @@ public/
   assets/
     Alexandre_Garcia_Curriculo.pdf
     aws-certified-cloud-practitioner.png
+    Axes-no-bg.png
+    dev-no-bg.png
     dev.png
+    og.webp
+    shield-no-bg.png
   file.svg
   globe.svg
   next.svg
@@ -52,26 +56,31 @@ public/
   window.svg
 src/
   app/
-    _contants/
+    _constants/
       contacts.ts
       gridVariants.ts
       projectsData.ts
+      techs.ts
     components/
       ui/
         Badge.tsx
         Button.tsx
         Card.tsx
         Counter.tsx
+        HeroCardViking.tsx
         NavLink.tsx
         ProjectCard.tsx
         ProjectPlaceHolder.tsx
         ScrollReveal.tsx
         SocialLink.tsx
+        TerminalMockup.tsx
         TrophyItem.tsx
       BentoGrid.tsx
       Footer.tsx
       Header.tsx
       Projects.tsx
+    hooks/
+      useBentoAnimations.ts
     favicon.ico
     globals.css
     layout.tsx
@@ -84,88 +93,261 @@ package.json
 postcss.config.mjs
 README.md
 tsconfig.json
-UPDATE.MD
 </directory_structure>
 
 <files>
 This section contains the contents of the repository's files.
 
-<file path="UPDATE.MD">
-# 🪓 O Dev Viking — Plano de Expansão Cyber-Nórdico (GSAP & Three.js)
+<file path="src/app/_constants/contacts.ts">
+const email = 'alexandre_augusto_garcia@hotmail.com';
+const phone = '55064981709943';
+const linkedin = 'aleexgarcia';
+const github = 'aleexgarcia';
 
-Este documento estabelece o planejamento estratégico para a integração das tecnologias **GSAP** e **Three.js** no portfólio. O objetivo é injetar uma estética futurista, inovadora e de alto impacto visual (sátira cyber-viking), sem comprometer a excelente performance e mantendo a nota do Google Lighthouse acima dos 90 pontos.
 
----
+export { email, phone, linkedin, github }
+</file>
 
-## 🗺️ Visão Geral da Arquitetura de Animação
+<file path="src/app/_constants/gridVariants.ts">
+import { Variants } from 'framer-motion'; // 👈 Importe o tipo Variants
 
-Para garantir a máxima otimização, o projeto adotará um **Design Híbrido**:
-1. **GSAP (GreenSock):** Responsável por 100% da orquestração da interface (UI), linhas de tempo, revelação de textos, contadores e gatilhos baseados em rolagem (*ScrollTrigger*).
-2. **Three.js (WebGL):** Utilizado de forma cirúrgica e isolada para renderizar elementos tridimensionais abstratos de baixo peso (partículas e wireframes), carregados de forma assíncrona.
+// Aplique o tipo ': Variants' aqui
+const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
 
----
+// Aplique o tipo ': Variants' aqui também
+const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.4,
+            ease: "easeOut" // 👈 Agora o TypeScript aceita perfeitamente!
+        }
+    },
+};
 
-## 🛠️ Cronograma de Implementação Passo a Passo
+export { containerVariants, cardVariants }
+</file>
 
-### 🌌 Passo 1: Inicialização Global & Carregamento Assíncrono
-*Foco: Proteger o First Contentful Paint (FCP) e garantir nota máxima no Lighthouse.*
+<file path="src/app/_constants/projectsData.ts">
+// data/projectsData.ts
+export interface Project {
+  title: string;
+  tagline: string;
+  description: string;
+  technologies: string[];
+  githubLink?: string;
+  deployLink?: string;
+  isApiOnly: boolean;
+  imageUrl?: string;
+  terminalOutput?: string[];
+  terminalCommand?: string;
+}
 
-*   **Ações no Core (`src/app/layout.tsx` e `globals.css`):**
-    *   Registrar globalmente os plugins essenciais do GSAP (`ScrollTrigger`, `CustomEase`).
-    *   Configurar o contêiner do `<canvas>` global via CSS com propriedades de aceleração de hardware e `pointer-events: none` por padrão.
-*   **Ordem de Chamadas:**
-    1. Ouvir o evento `DOMContentLoaded` para disparar as primeiras microinterações de interface.
-    2. Criar um mecanismo de *Lazy Loading* (importação dinâmica do Next.js) para injetar o core do Three.js apenas após o HTML estrutural estar 100% interativo.
+export const projectsData: Project[] = [
+  {
+    title: "🛡️ Gerenciador de Tarefas Avançado",
+    tagline: "API robusta e resiliente focada em performance",
+    description: "Desenvolvimento de uma API REST de alta performance com arquitetura limpa, implementando validações de dados rigorosas e seguras com Zod. A persistência foi estruturada utilizando TypeORM, garantindo segurança em operações complexas e uma cobertura sólida de testes unitários e de integração com Jest.",
+    technologies: ["Node.js", "NestJS", "TypeScript", "Zod", "TypeORM", "Jest"],
+    githubLink: "https://github.com/AleexGarcia/ANMAR25_DSUP_TASKLY",
+    isApiOnly: true,
+    terminalCommand: "curl -X GET http://localhost:3000/api/v1/tasks -H 'Authorization: Bearer jwt_token'",
+    terminalOutput: [
+      "HTTP/1.1 200 OK",
+      "Content-Type: application/json",
+      `
+      {
+    "page": 1,
+    "total": 0,
+    "tasks": []
+}
+      `
+    ]
+  },
+  {
+    title: "☁️ Compass Events",
+    tagline: "Ecossistema Serverless escalável em produção",
+    description: "Arquitetura e deploy de um sistema completo de gerenciamento de eventos baseado com computação em nuvem. Utilizando uma abordagem 100% Serverless, a infraestrutura foi inteiramente codificada com AWS CDK. O fluxo lida com picos massivos de requisições através de AWS Lambda, DynamoDB para persistência NoSQL rápida, S3 para arquivos e autenticação JWT de ponta a ponta.",
+    technologies: ["AWS CDK", "Lambda", "DynamoDB", "Amazon S3", "JWT", "TypeScript"],
+    githubLink: "https://github.com/AleexGarcia/ANMAR25_D03_COMPASSEVENT",
+    isApiOnly: true,
+    terminalCommand: "curl -X POST https://api.compassevents.com/events -d '{\"name\":\"Code Summit 2026\"}'",
+    terminalOutput: [
+      "HTTP/1.1 201 Created",
+      "x-amzn-RequestId: 4aa5b8c9-1234-5678-abcd-ef0123456789",
+      ` {
+        "message": "Event successfully provisioned in DynamoDB via AWS Lambda.,",
+        "eventId": "evt_987654321,",
+        "status": "ACTIVE",
+      }`
+    ]
+  },
+  {
+    title: "🪓 O Dev Viking (Este Portfólio)",
+    tagline: "Single Page Application ultra veloz com Bento Grid",
+    description: "Construção de uma identidade de marca pessoal única e satírica. Este site serve como prova de conceito para otimização extrema de performance web e renderização. Desenvolvido com Next.js App Router e Tailwind CSS, alcançando notas próximas a 100% no Google Lighthouse através do uso de imagens WebP e estruturas modulares de alta conversão.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "UI/UX", "Lighthouse SEO"],
+    githubLink: "https://github.com/AleexGarcia/portfolio-pessoal",
+    deployLink: "https://aleexgarcia.netlify.app/",
+    isApiOnly: false
+  }
+];
+</file>
 
-### 🛡️ Passo 2: O Despertar da Bento Grid (Seção Hero)
-*Foco: Substituir animações CSS simples por uma entrada triunfal de impacto tridimensional.*
+<file path="src/app/_constants/techs.ts">
+import { FaAws } from "react-icons/fa";
+import { SiTypescript, SiNextdotjs, SiNestjs, SiDocker, SiJest, SiTailwindcss, SiPrisma, SiPostgresql, SiMongodb, SiRedis, SiGithubactions } from "react-icons/si";
 
-*   **Ações no Componente (`src/app/components/BentoGrid.tsx`):**
-    *   Substituir a imagem estática do Dev Viking por um componente de Canvas do Three.js que renderiza uma malha de **Partículas Neon** ou um machado digital em **Wireframe 3D**.
-*   **Ordem de Chamadas:**
-    1. `GSAP Timeline`: Revelar o `Header` descendo suavemente e engatilhar os cards da Bento Grid em um efeito cascata (*stagger*), aplicando uma rotação sutil e dinâmica no eixo X.
-    2. `Three.js Render Loop`: Iniciar o ciclo de animação das partículas tridimensionais na GPU.
-    3. `Mouse Move Listener`: Intercepta a posição `X` e `Y` do cursor do usuário para inclinar levemente a câmera do Three.js, fazendo o objeto 3D reagir ao mouse.
+export const TECH_ARSENAL = [
+  { name: 'TypeScript', icon: SiTypescript, color: 'hover:border-blue-500/40 hover:text-blue-400' },
+  { name: 'Next.js', icon: SiNextdotjs, color: 'hover:border-white/30 hover:text-white' },
+  { name: 'NestJS', icon: SiNestjs, color: 'hover:border-red-600/40 hover:text-red-500' },
+  { name: 'AWS', icon: FaAws, color: 'hover:border-amber-500/40 hover:text-amber-500' },
+  { name: 'Docker', icon: SiDocker, color: 'hover:border-sky-500/40 hover:text-sky-400' },
+  { name: 'Jest', icon: SiJest, color: 'hover:border-red-700/40 hover:text-red-500' },
+  { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'hover:border-cyan-500/40 hover:text-cyan-400' },
+  { name: 'Prisma ORM', icon: SiPrisma, color: 'hover:border-teal-500/40 hover:text-teal-400' },
+  { name: 'Postgre SQL', icon: SiPostgresql, color: 'hover:border-blue-600/40 hover:text-blue-500' },
+  { name: 'MongoDB', icon: SiMongodb, color: 'hover:border-blue-600/40 hover:text-blue-500' },
+  { name: 'Redis', icon: SiRedis, color: 'hover:border-red-500/40 hover:text-red-400' },
+  { name: 'CI/CD', icon: SiGithubactions, color: 'hover:border-white/30 hover:text-white' },
+];
+</file>
 
-### 📊 Passo 3: Interatividade Rúnica & Métricas Dinâmicas
-*Foco: Substituir loops manuais de JavaScript por transições fluidas nativas da placa de vídeo.*
+<file path="src/app/components/ui/TerminalMockup.tsx">
+'use client';
 
-*   **Ações nos Componentes Auxiliares (Cards de Habilidades e Métricas):**
-    *   Substituir a lógica do componente de contagem por interpolação direta do GSAP.
-    *   Adicionar efeitos magnéticos nos blocos de tecnologias (TypeScript, NestJS, AWS, etc.).
-*   **Ordem de Chamadas:**
-    1. `GSAP ScrollTrigger (Métricas)`: Quando os cards de métricas entrarem na viewport, o GSAP anima os números (ex: Bugs Decapitados) de 0 ao valor final usando uma curva suave de desaceleração (*easeOut*).
-    2. `GSAP Hover Effect (Tech Stack)`: Ao passar o mouse sobre as tecnologias, disparar um efeito de escala rápida concomitante a um leve deslocamento magnético que segue o cursor.
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
 
-### 🪓 Passo 4: A Esteira de Invasão (Seção de Projetos)
-*Foco: Criar uma experiência narrativa linear e imersiva durante a rolagem.*
+// Registra os plugins necessários
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-*   **Ações na Seção (`src/app/components/Projects.tsx`):**
-    *   Modificar a rolagem vertical para criar uma trava temporária de tela (*pinning*), transformando o scroll em avanço horizontal ou revelação em camadas.
-*   **Ordem de Chamadas:**
-    1. `GSAP ScrollTrigger (Pin)`: Prender a tela do usuário ao entrar na seção de projetos.
-    2. `GSAP Clip-Path Timeline`: Conforme o usuário continua scrollando, revelar os cards de projetos usando cortes de máscara diagonais agressivos (simulando cortes de machado).
-    3. `Three.js Shader Effect`: Utilizar um único canvas ao fundo dos cards que deforma a imagem ou o terminal simulado com distorções líquidas e interferências estáticas ao passar o mouse.
+interface TerminalMockupProps {
+  command?: string;
+  outputLines?: string[];
+}
 
-### 🌊 Passo 5: A Forja Final e Coleta de Lixo (Footer)
-*Foco: Elevar a conversão de contato e limpar a memória do navegador.*
+export default function TerminalMockup({ 
+  command = "curl -X GET /api/v1/status", 
+  outputLines = [
+    '{"status": "online", "database": "connected"}',
+    '{"latency": "14ms", "uptime": "100%"}',
+    "Valhalla server connection established successfully."
+  ]
+}: TerminalMockupProps) {
+  const terminalRef = useRef<HTMLDivElement>(null);
+  const commandRef = useRef<HTMLSpanElement>(null);
+  const outputsRef = useRef<HTMLDivElement>(null);
 
-*   **Ações no Encerramento (`src/app/components/Footer.tsx`):**
-    *   Adicionar um pulso de energia reativo na caixa de CTA (Chamado das Armas).
-*   **Ordem de Chamadas:**
-    1. `GSAP ScrollTrigger (Footer Glow)`: Intensificar gradativamente as variáveis CSS de iluminação neon nas bordas da caixa de contato conforme o rodapé se aproxima do final.
-    2. `GSAP Hover (CTA)`: Escalar o botão do WhatsApp dinamicamente e propagar anéis de ondas de choque visuais em sua órbita.
-    3. `Three.js Garbage Collector`: Disparar um evento de destruição de geometrias, materiais e interrupção do laço de renderização (`cancelAnimationFrame`) sempre que a seção 3D estiver fora da tela, devolvendo 100% de performance à CPU do usuário.
+  useEffect(() => {
+    const triggerElement = terminalRef.current;
+    const commandText = commandRef.current;
+    const outputs = outputsRef.current;
 
----
+    if (!triggerElement || !commandText || !outputs) return;
 
-## 📈 Critérios de Sucesso & Performance
+    // Timeline para orquestrar a digitação e depois a resposta do servidor
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerElement,
+        start: "top 80%", // Dispara quando o terminal entra 80% na tela
+        toggleActions: "play none none none",
+        once: true,
+      }
+    });
 
-| Métrica | Meta | Abordagem Técnica |
-| :--- | :--- | :--- |
-| **Lighthouse Performance** | > 90 | Assets 3D comprimidos com Draco, texturas em KTX2 e Three.js em Lazy Loading. |
-| **Frame Rate (FPS)** | 60fps | Animações restritas a propriedades de hardware (`transform`, `opacity`) via GSAP. |
-| **SEO & Acessibilidade** | 100% | Todo o conteúdo de texto permanece em HTML semântico indexável, sem textos embutidos no Canvas 3D. |
+    // 1. Efeito de Digitação do Comando
+    tl.to(commandText, {
+      duration: 2,
+      text: {
+        value: command,
+        delimiter: ""
+      },
+      ease: "none",
+    });
+
+    // 2. Aparição em cascata (stagger) das linhas de resposta do terminal
+    tl.fromTo(
+      outputs.children,
+      { opacity: 0, y: 5 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        stagger: 0.2,
+        ease: "power1.out",
+      },
+      "+=0.3" // Pequeno delay simulando o tempo de resposta da API
+    );
+
+    return () => {
+      if (tl.scrollTrigger) tl.scrollTrigger.kill();
+      tl.kill();
+    };
+  }, [command]);
+
+  return (
+    <div 
+      ref={terminalRef} 
+      className="w-full h-full min-h-[220px] bg-[#0c0907] rounded-lg border border-amber-950/50 shadow-2xl font-mono text-xs text-zinc-400 overflow-hidden flex flex-col select-none"
+    >
+      {/* Barra superior do Terminal Mac/Linux */}
+      <div className="bg-[#140f0c] px-4 py-3 flex items-center justify-between border-b border-amber-950/30">
+        <div className="flex space-x-2">
+          <div className="w-3 h-3 rounded-full bg-[#3a1d13] opacity-60" />
+          <div className="w-3 h-3 rounded-full bg-[#5c2e16] opacity-60" />
+          <div className="w-3 h-3 rounded-full bg-[#8c471a] opacity-60" />
+        </div>
+        <div className="text-[10px] text-zinc-600 font-sans tracking-wider uppercase font-semibold">
+          bash 🖥️
+        </div>
+      </div>
+
+      {/* Área de Prompt */}
+      <div className="p-4 flex-1 space-y-2 overflow-y-auto custom-scrollbar">
+        {/* Linha do Comando */}
+        <div className="flex items-start flex-wrap gap-x-2">
+          <span className="text-amber-600 font-bold whitespace-nowrap">
+            alexandre@viking-terminal:~#
+          </span>
+          {/* O Span onde o TextPlugin vai injetar o texto */}
+          <span ref={commandRef} className="text-zinc-200 font-semibold tracking-wide"></span>
+          {/* Cursor piscante */}
+          <span className="animate-pulse font-bold text-amber-500 -ml-1">|</span>
+        </div>
+
+        {/* Linhas de Output (Geradas dinamicamente após a digitação) */}
+        <div ref={outputsRef} className="space-y-1 mt-2 font-light">
+          {outputLines.map((line, idx) => (
+            <div 
+              key={idx} 
+              className={`text-[11px] leading-relaxed break-all ${
+                line.includes('successfully') || line.includes('online') 
+                  ? 'text-emerald-600/90 font-medium' 
+                  : 'text-zinc-500'
+              }`}
+            >
+              {line}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 </file>
 
 <file path="public/file.svg">
@@ -188,38 +370,6 @@ Para garantir a máxima otimização, o projeto adotará um **Design Híbrido**:
 <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
 </file>
 
-<file path="src/app/_contants/contacts.ts">
-const email = 'alexandre_augusto_garcia@hotmail.com';
-const phone = '55064981709943';
-const linkedin = 'aleexgarcia';
-const github = 'aleexgarcia';
-
-
-export { email, phone, linkedin, github }
-</file>
-
-<file path="src/app/components/ui/Badge.tsx">
-import React from 'react';
-
-interface BadgeProps {
-  children: React.ReactNode;
-  variant?: 'amber' | 'emerald';
-}
-
-export function Badge({ children, variant = 'amber' }: BadgeProps) {
-  const styles = {
-    amber: 'text-amber-500 bg-amber-500/10 border-amber-500/10',
-    emerald: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
-  };
-
-  return (
-    <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border ${styles[variant]}`}>
-      {children}
-    </span>
-  );
-}
-</file>
-
 <file path="src/app/components/ui/Button.tsx">
 import React from 'react';
 
@@ -239,6 +389,169 @@ export function Button({ children, variant = 'primary', className = '', ...props
     <a className={`${baseStyle} ${styles[variant]} ${className}`} {...props}>
       {children}
     </a>
+  );
+}
+</file>
+
+<file path="src/app/components/ui/HeroCardViking.tsx">
+"use client";
+
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
+
+export default function HeroCardViking() {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const shieldRef = useRef<HTMLDivElement>(null);
+  const devRef = useRef<HTMLDivElement>(null);
+  
+  // Refs individuais para cada machado para podermos rotacionar e cruzar eles no golpe
+  const axeLeftRef = useRef<HTMLImageElement>(null);
+  const axeRightRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    // 1. Efeito Parallax Dinâmico (Apenas no Personagem)
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenterX = rect.left + rect.width / 2;
+      const cardCenterY = rect.top + rect.height / 2;
+      const mouseX = e.clientX - cardCenterX;
+      const mouseY = e.clientY - cardCenterY;
+
+      gsap.to(devRef.current, {
+        x: mouseX * 0.06,
+        y: mouseY * 0.06,
+        duration: 0.5,
+        ease: "power2.out",
+        overwrite: "auto"
+      });
+    };
+
+    // 2. GATILHO DE IMPACTO (Quando o mouse entra no Card)
+    const handleMouseEnter = () => {
+      // Machado Esquerdo: Desce, inclina para a direita (golpe) e aumenta
+      gsap.to(axeLeftRef.current, {
+        y: 25,
+        rotate: 15,
+        scale: 1.25,
+        duration: 0.4,
+        ease: "elastic.out(1, 0.5)",
+        overwrite: "auto"
+      });
+
+      // Machado Direito: Desce, inclina para a esquerda (golpe) e aumenta
+      // Mantendo o scale-x-[-1] nativo via GSAP transform interno
+      gsap.to(axeRightRef.current, {
+        y: 25,
+        rotate: -15,
+        scaleX: -1.25,
+        scaleY: 1.25,
+        duration: 0.4,
+        ease: "elastic.out(1, 0.5)",
+        overwrite: "auto"
+      });
+
+      // Escudo absorve o impacto (Dá um leve "susto" para trás)
+      gsap.fromTo(shieldRef.current, 
+        { scale: 0.95 },
+        { scale: 1, duration: 0.5, ease: "back.out(2)" }
+      );
+    };
+
+    // 3. RESET DA ANIMAÇÃO (Quando o mouse sai do Card)
+    const handleMouseLeave = () => {
+      // Reseta o Personagem
+      gsap.to(devRef.current, { x: 0, y: -10, duration: 0.8, ease: "power2.out" });
+
+      // Reseta Machado Esquerdo para a posição de descanso
+      gsap.to(axeLeftRef.current, {
+        y: -10,
+        rotate: 0,
+        scale: 1.10,
+        duration: 0.6,
+        ease: "power2.out",
+        overwrite: "auto"
+      });
+
+      // Reseta Machado Direito para a posição de descanso
+      gsap.to(axeRightRef.current, {
+        y: -10,
+        rotate: 0,
+        scaleX: -1.10,
+        scaleY: 1.10,
+        duration: 0.6,
+        ease: "power2.out",
+        overwrite: "auto"
+      });
+    };
+
+    card.addEventListener("mousemove", handleMouseMove);
+    card.addEventListener("mouseenter", handleMouseEnter);
+    card.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      card.removeEventListener("mousemove", handleMouseMove);
+      card.removeEventListener("mouseenter", handleMouseEnter);
+      card.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
+  return (
+    <div className="relative h-50 w-50 md:w-1/2 mx-auto mt-10 select-none" ref={cardRef}>
+              
+      {/* Layer 1: Escudo Viking (Fundo) */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none" ref={shieldRef}>
+        <Image
+          className="w-full h-full object-contain -translate-y-10 -translate-x-2 original-shield"
+          src="/assets/shield-no-bg.png"
+          alt="Escudo Rúnico"
+          width={250}
+          height={250}
+        />
+      </div>
+
+      {/* Layer 2: Machados (Separados com Refs Individuais para o efeito de cruzamento) */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="relative w-full h-full flex items-center justify-center">
+          
+          {/* Machado da Direita */}
+          <Image
+            ref={axeRightRef}
+            className="absolute w-full h-full object-contain -top-10 scale-110 original-axe-r"
+            src="/assets/Axes-no-bg.png"
+            alt="Machado de Batalha Nórdico"
+            width={250}
+            height={250}
+          />
+          
+          {/* Machado da Esquerda (Invertido no scale base do CSS) */}
+          <Image
+            ref={axeLeftRef}
+            className="absolute w-full h-full object-contain -top-10  scale-110 scale-x-[-1] original-axe-l"
+            src="/assets/Axes-no-bg.png"
+            alt="Machado de Batalha Nórdico"
+            width={250}
+            height={250}
+          />
+          
+        </div>
+      </div>
+
+      {/* Layer 3: Dev (Frente) */}
+      <div className="absolute inset-0 flex items-center justify-center" ref={devRef}>
+        <Image
+          className="w-full h-full object-contain" 
+          src="/assets/dev-no-bg.png"
+          alt="Alexandre Garcia - Programando"
+          width={250}
+          height={250}
+        />
+      </div>
+
+    </div>
   );
 }
 </file>
@@ -483,75 +796,30 @@ export default config;
 }
 </file>
 
-<file path="src/app/_contants/gridVariants.ts">
-import { Variants } from 'framer-motion'; // 👈 Importe o tipo Variants
+<file path="src/app/components/ui/Badge.tsx">
+import React from 'react';
+import { IconType } from 'react-icons';
 
-// Aplique o tipo ': Variants' aqui
-const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.15,
-        },
-    },
-};
-
-// Aplique o tipo ': Variants' aqui também
-const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 12 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.4,
-            ease: "easeOut" // 👈 Agora o TypeScript aceita perfeitamente!
-        }
-    },
-};
-
-export { containerVariants, cardVariants }
-</file>
-
-<file path="src/app/_contants/projectsData.ts">
-// data/projectsData.ts
-export interface Project {
-  title: string;
-  tagline: string;
-  description: string;
-  technologies: string[];
-  githubLink?: string;
-  deployLink?: string;
-  isApiOnly: boolean;
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: 'amber' | 'emerald';
+  icon: IconType;
 }
 
-export const projectsData: Project[] = [
-  {
-    title: "🛡️ Gerenciador de Tarefas Avançado",
-    tagline: "API robusta e resiliente focada em performance",
-    description: "Desenvolvimento de uma API REST de alta performance com arquitetura limpa, implementando validações de dados rigorosas e seguras com Zod. A persistência foi estruturada utilizando TypeORM, garantindo segurança em operações complexas e uma cobertura sólida de testes unitários e de integração com Jest.",
-    technologies: ["Node.js", "NestJS", "TypeScript", "Zod", "TypeORM", "Jest"],
-    githubLink: "https://github.com/AleexGarcia/ANMAR25_DSUP_TASKLY",
-    isApiOnly: true
-  },
-  {
-    title: "☁️ Compass Events",
-    tagline: "Ecossistema Serverless escalável em produção",
-    description: "Arquitetura e deploy de um sistema completo de gerenciamento de eventos baseado em computação em nuvem. Utilizando uma abordagem 100% Serverless, a infraestrutura foi inteiramente codificada com AWS CDK. O fluxo lida com picos massivos de requisições através de AWS Lambda, DynamoDB para persistência NoSQL rápida, S3 para arquivos e autenticação JWT de ponta a ponta.",
-    technologies: ["AWS CDK", "Lambda", "DynamoDB", "Amazon S3", "JWT", "TypeScript"],
-    githubLink: "https://github.com/AleexGarcia/ANMAR25_D03_COMPASSEVENT",
-    isApiOnly: true
-  },
-  {
-    title: "🪓 O Dev Viking (Este Portfólio)",
-    tagline: "Single Page Application ultra veloz com Bento Grid",
-    description: "Construção de uma identidade de marca pessoal única e satírica. Este site serve como prova de conceito para otimização extrema de performance web e renderização. Desenvolvido com Next.js App Router e Tailwind CSS, alcançando notas próximas a 100% no Google Lighthouse através do uso de imagens WebP e estruturas modulares de alta conversão.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "UI/UX", "Lighthouse SEO"],
-    githubLink: "https://github.com/AleexGarcia/portfolio-pessoal",
-    deployLink: "https://aleexgarcia.netlify.app/",
-    isApiOnly: false
-  }
-];
+export function Badge({ children, variant = 'amber', icon: Icon }: BadgeProps) {
+  const styles = {
+    amber: 'text-amber-500 bg-amber-500/10 border-amber-500/10',
+    emerald: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
+  };
+
+  return (
+
+    <div className={`flex items-center w-fit gap-1.5 font-bold uppercase tracking-widest rounded-full border ${styles[variant]} px-3 py-1 mx-auto sm:mx-0`}>
+      <Icon className="text-xl shrink-0" aria-hidden="true" />
+      <span className='text-[11px] lg:text-sm'>{children}</span>
+    </div>
+  );
+}
 </file>
 
 <file path="src/app/components/ui/Card.tsx">
@@ -587,6 +855,89 @@ export function Card({ children, className = '' }: CardProps) {
       {children}
     </div>
   );
+}
+</file>
+
+<file path="src/app/hooks/useBentoAnimations.ts">
+import { useEffect, RefObject } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export function useBentoAnimations(containerRef: RefObject<HTMLDivElement | null>) {
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const cards = container.children;
+
+    // 1. Entrada com ScrollTrigger
+    const scrollTween = gsap.fromTo(
+      cards,
+      { opacity: 0, y: 40, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: 'power2.out',
+        stagger: 0.08,
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+      }
+    );
+
+    // 2. Otimização Arquitetural: Efeito Magnético de Performance com quickTo
+    const magneticElements = container.querySelectorAll('.magnetic-btn');
+    
+    // ✅ CORREÇÃO AQUI: Tipando o Map com assinaturas exatas de funções de evento do DOM
+    const cleanupMap = new Map<Element, { move: (e: MouseEvent) => void; leave: () => void }>();
+
+    magneticElements.forEach((el) => {
+      const htmlEl = el as HTMLElement;
+
+      // Cria funções otimizadas que atualizam a propriedade diretamente na GPU
+      const xTo = gsap.quickTo(htmlEl, 'x', { duration: 0.3, ease: 'power2.out' });
+      const yTo = gsap.quickTo(htmlEl, 'y', { duration: 0.3, ease: 'power2.out' });
+
+      const onMouseMove = (e: MouseEvent) => {
+        const rect = htmlEl.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        xTo(x * 0.3);
+        yTo(y * 0.3);
+      };
+
+      const onMouseLeave = () => {
+        // Efeito elástico ao soltar o elemento
+        gsap.to(htmlEl, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+      };
+
+      htmlEl.addEventListener('mousemove', onMouseMove);
+      htmlEl.addEventListener('mouseleave', onMouseLeave);
+
+      // ✅ CORREÇÃO AQUI: Salvando as referências corretas que batem com o tipo do Map
+      cleanupMap.set(htmlEl, { move: onMouseMove, leave: onMouseLeave });
+    });
+
+    // Desmontagem limpa de tudo o que foi gerado pelo hook
+    return () => {
+      if (scrollTween.scrollTrigger) {
+        scrollTween.scrollTrigger.kill();
+      }
+      
+      // ✅ CORREÇÃO AQUI: Removendo os listeners usando as chaves certas gravadas no Map
+      cleanupMap.forEach((listeners, el) => {
+        el.removeEventListener('mousemove', listeners.move as EventListener);
+        el.removeEventListener('mouseleave', listeners.leave);
+      });
+    };
+  }, [containerRef]);
 }
 </file>
 
@@ -801,66 +1152,14 @@ O projeto foi dividido em **5 fases estratégicas** para garantir qualidade de c
 Desenvolvido com base em café, hidromel e muito TypeScript por Alexandre Garcia.
 </file>
 
-<file path="src/app/components/ui/Counter.tsx">
-'use client'
-
-import { useEffect, useState } from "react";
-
-interface CounterProps {
-  target: number;      
-  suffix?: string;     
-  startFrom?: number;  
-}
-
-export default function Counter({ target, suffix = "", startFrom = 0 }: CounterProps) {
-  const [value, setValue] = useState(startFrom);
-
-  useEffect(() => {
-    if (value >= target) {
-      // Quando chega no alvo, espera 5 segundos e reinicia
-      const timeout = setTimeout(() => {
-        setValue(startFrom);
-      }, 5000);
-
-      return () => clearTimeout(timeout);
-    }
-
-    // Calcula a velocidade do intervalo baseado no tamanho do número 
-    // para números grandes não demorarem uma eternidade
-    const increment = Math.max(1, Math.floor(target / 100));
-    const speed = target > 1000 ? 10 : target > 99 ? 50 : 250;
-
-    const interval = setInterval(() => {
-      setValue((prev) => {
-        if (prev + increment >= target) {
-          clearInterval(interval);
-          return target;
-        }
-        return prev + increment;
-      });
-    }, speed);
-
-    return () => clearInterval(interval);
-  }, [value, target, startFrom]);
-
-  return (
-    <span className="font-mono text-amber-500">
-      {value.toLocaleString('pt-BR')}
-      {suffix}
-    </span>
-  );
-}
-</file>
-
 <file path="src/app/components/ui/ProjectCard.tsx">
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { Card } from './Card'; 
-import ProjectPlaceholder from './ProjectPlaceHolder';
-import { Project } from '../../_contants/projectsData';
+import { Card } from './Card';
+import { Project } from '../../_constants/projectsData';
+import TerminalMockup from './TerminalMockup';
 
-// Variantes de animação para a lista e comportamento de cascata (Stagger)
 
 
 const itemVariants: Variants = {
@@ -881,26 +1180,19 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.div variants={itemVariants} className="group w-full">
       <Card className="!flex-row gap-8 flex-wrap lg:flex-nowrap p-6 border border-amber-950/20 bg-[#16110E] transition-all duration-300 group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.05)]">
-        
-        {/* LADO ESQUERDO: Mockup do Terminal */}
-        <div className="lg:w-2/5 w-full bg-black/50 rounded-2xl border border-amber-950/60 p-5 flex flex-col justify-between min-h-[220px] relative overflow-hidden shadow-inner group-hover:border-amber-900/60 transition-colors">
-          <div className="flex items-center justify-between border-b border-amber-950/40 pb-3 mb-4">
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-red-600/40 group-hover:bg-red-600/60 transition-colors"></span>
-              <span className="w-3 h-3 rounded-full bg-amber-600/40 group-hover:bg-amber-600/60 transition-colors"></span>
-              <span className="w-3 h-3 rounded-full bg-emerald-600/40 group-hover:bg-emerald-600/60 transition-colors"></span>
-            </div>
-            <span className="text-[10px] font-mono text-amber-900/60">alexandre@viking-terminal:~</span>
-          </div>
+
+        <div className="w-2/3">
+          {/* Mockup do Terminal */}
+          {project.isApiOnly ? <TerminalMockup
+            command={project.terminalCommand}
+            outputLines={project.terminalOutput}
+          /> : 
+            <div className="w-full h-full min-h-[220px] bg-[#0c0907] rounded-lg border border-amber-950/50 shadow-2xl font-mono text-xs sm:text-sm text-zinc-400 overflow-hidden flex items-center justify-center select-none">
+              <span className="text-gray-500 text-sm">Este projeto não possui interface gráfica.</span>
+            </div> 
           
-          <div className="flex-1 flex items-center justify-center">
-            <ProjectPlaceholder project={project.isApiOnly} />
-          </div>
-          
-          <div className="mt-4 pt-2 border-t border-amber-950/40 flex justify-between items-center text-[10px] font-mono text-amber-900/40">
-            <span>ENVIRONMENT // PROD</span>
-            <span>v1.0.0</span>
-          </div>
+          }
+
         </div>
 
         {/* LADO DIREITO: Informações e Engenharia */}
@@ -924,8 +1216,8 @@ export default function ProjectCard({ project }: { project: Project }) {
             {/* Badge de Tecnologias */}
             <div className="flex flex-wrap gap-1.5">
               {project.technologies.map((tech, techIdx) => (
-                <span 
-                  key={techIdx} 
+                <span
+                  key={techIdx}
                   className="text-[11px] font-mono bg-black/40 text-gray-300 border border-amber-950/40 px-2.5 py-0.5 rounded-md hover:border-amber-500/20 transition-colors"
                 >
                   {tech}
@@ -936,20 +1228,20 @@ export default function ProjectCard({ project }: { project: Project }) {
             {/* Links de Ação */}
             <div className="flex gap-4 pt-3 border-t border-amber-950/40">
               {project.githubLink && (
-                <a 
-                  href={project.githubLink} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-white transition-colors"
                 >
                   <FaGithub className="text-sm" /> Código no GitHub
                 </a>
               )}
               {project.deployLink && (
-                <a 
-                  href={project.deployLink} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={project.deployLink}
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-amber-500 transition-colors"
                 >
                   <FaExternalLinkAlt className="text-xs" /> Acessar Deploy ↗
@@ -1006,12 +1298,72 @@ export function TrophyItem({ icon: IconOrSrc, title, subtitle, status, variant =
 }
 </file>
 
+<file path="src/app/components/ui/Counter.tsx">
+'use client';
+
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Registra o plugin caso ainda não tenha sido registrado globalmente
+gsap.registerPlugin(ScrollTrigger);
+
+interface CounterProps {
+  target: number;      
+  suffix?: string;     
+  startFrom?: number;  
+}
+
+export default function Counter({ target, suffix = "", startFrom = 0 }: CounterProps) {
+  const [value, setValue] = useState(startFrom);
+  const elementRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return;
+
+    // Criamos um objeto genérico para o GSAP animar a propriedade interna
+    const obj = { count: startFrom };
+
+    const animation = gsap.to(obj, {
+      count: target,
+      duration: 4, // Tempo da animação em segundos (suave e independente do tamanho do número)
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 90%", // Dispara quando o número está quase entrando na tela
+        toggleActions: "play none none none",
+        once: true, // Roda apenas uma vez ao scrollar
+      },
+      onUpdate: () => {
+        // Atualiza o estado com o número arredondado durante a animação
+        setValue(Math.floor(obj.count));
+      }
+    });
+
+    // Limpeza ao desmontar o componente
+    return () => {
+      animation.scrollTrigger?.kill();
+      animation.kill();
+    };
+  }, [target, startFrom]);
+
+  return (
+    <span ref={elementRef} className="font-mono text-amber-500">
+      {value.toLocaleString('pt-BR')}
+      {suffix}
+    </span>
+  );
+}
+</file>
+
 <file path="src/app/components/Footer.tsx">
 'use client'
 import React from 'react';
 import { FaWhatsapp, FaEnvelope, FaArrowUp } from 'react-icons/fa';
 import { Badge } from './ui/Badge'; // Reaproveitando sua tag rústica consistente
-import { email, phone } from '../_contants/contacts';
+import { email, phone } from '../_constants/contacts';
+import { GiCrossedAxes } from 'react-icons/gi';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -1029,7 +1381,7 @@ export default function Footer() {
 
           <div className="max-w-xl mx-auto space-y-4">
             <div className="flex justify-center">
-              <Badge variant="amber">O Chamado das Armas</Badge>
+              <Badge icon={GiCrossedAxes} variant="amber">O Chamado das Armas</Badge>
             </div>
             <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
               Pronto para convocar reforços?
@@ -1089,127 +1441,136 @@ export default function Footer() {
 }
 </file>
 
-<file path="src/app/layout.tsx">
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "AleexGarcia | Desenvolvedor Full-Stack",
-  description: "Portfólio profissional de AleexGarcia, Desenvolvedor Full-Stack especializado em React, Next.js, TypeScript e Node.js. Conheça meus projetos e soluções web.",
-  keywords: ["Desenvolvedor Full-Stack", "React", "Next.js", "TypeScript", "Node.js", "Web Development", "Portfólio"],
-  authors: [{ name: "AleexGarcia", url: "https://aleexgarcia.netlify.app/" }],
-  openGraph: {
-    title: "AleexGarcia | Desenvolvedor Full-Stack",
-    description: "Conheça os projetos e a trajetória de AleexGarcia, Desenvolvedor Full-Stack focado em criar aplicações web modernas e escaláveis.",
-    url: "https://aleexgarcia.netlify.app/",
-    siteName: "Portfólio - AleexGarcia",
-    images: [
-      {
-        url: "https://aleexgarcia.netlify.app/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Portfólio de AleexGarcia",
-      },
-    ],
-    locale: "pt_BR",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "AleexGarcia | Desenvolvedor Full-Stack",
-    description: "Portfólio profissional de AleexGarcia. Projetos web modernos com alta performance.",
-    images: ["https://aleexgarcia.netlify.app/og-image.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="pt-br" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
-}
-</file>
-
 <file path="src/app/components/Projects.tsx">
-'use client'
-import { motion, Variants } from "framer-motion";
-import { Badge } from "./ui/Badge";
-import { projectsData } from "../_contants/projectsData";
-import ProjectCard from "./ui/ProjectCard";
+'use client';
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Badge } from "./ui/Badge";
+import { projectsData } from "../_constants/projectsData";
+import ProjectCard from "./ui/ProjectCard";
+import { GiVikingShield } from "react-icons/gi";
+
+// Registra o plugin do GSAP
+gsap.registerPlugin(ScrollTrigger);
+
 export default function ProjectsSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const cardsContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const header = headerRef.current;
+    const container = cardsContainerRef.current;
+
+    if (!header || !container) return;
+
+    // 1. Animação do Cabeçalho (Badge, Título, Descrição)
+    gsap.fromTo(
+      header.children,
+      { opacity: 0, y: -30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: header,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      }
+    );
+
+    // 2. Animação dos Cards dos Projetos (Efeito 3D Rústico de Entrada)
+    const cards = container.children;
+    
+    gsap.fromTo(
+      cards,
+      { 
+        opacity: 0, 
+        y: 60, 
+        rotationX: -15, // Efeito inclinado em perspectiva
+        transformOrigin: "top center"
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotationX: 0,
+        duration: 0.8,
+        stagger: 0.2, // Cascata entre os cards
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: container,
+          start: "top 80%", // Dispara quando o topo do container atinge 80% da tela
+          toggleActions: "play none none none",
+          once: true,
+        },
+      }
+    );
+
+    // Limpeza do ScrollTrigger ao desmontar
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.trigger === header || trigger.trigger === container) {
+          trigger.kill();
+        }
+      });
+    };
+  }, []);
+
   return (
-    <section 
-      id="projects" 
-      className="scroll-mt-20 bg-[#110D0A] text-[#F3F4F6] py-20 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 overflow-hidden"
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="scroll-mt-20 bg-[#110D0A] text-[#F3F4F6] py-20 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 overflow-hidden [perspective:1200px]"
     >
       <div className="max-w-6xl w-full mx-auto space-y-12">
-        
-        {/* Cabeçalho da Seção com Animação de Entrada Interativa */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="space-y-3 text-center md:text-left"
-        >
-          <Badge variant="amber">Invasões Concluídas</Badge>
-          <h2 className="text-3xl mt-2 lg:mt-4 font-extrabold tracking-tight text-white">
+
+        <div ref={headerRef} className="space-y-3 text-center md:text-left">
+          <Badge icon={GiVikingShield} variant="amber">Invasões Concluídas</Badge>
+          <h2 className="text-3xl font-extrabold tracking-tight text-white">
             Projetos de Destaque
           </h2>
           <p className="text-gray-400 text-sm max-w-xl">
             Uma amostra real do meu arsenal de engenharia. Sem códigos genéricos: apenas soluções robustas que resolvem problemas reais.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Container dos Cards aplicando Stagger no Scroll */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="space-y-6"
-        >
-          {projectsData.map((project, idx) => (
-            <ProjectCard key={idx} project={project} />
+        <div ref={cardsContainerRef} className="space-y-6">
+          {projectsData.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
-        </motion.div>
+        </div>
 
       </div>
     </section>
+  );
+}
+</file>
+
+<file path="src/app/page.tsx">
+import BentoGrid from "./components/BentoGrid";
+import Projects from "./components/Projects";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+
+
+export default function Home() {
+  return (
+    <div className="font-sans grid grid-rows-[90px_1fr_auto] items-center justify-items-center min-h-screen">
+      <Header/>
+      <main className="flex flex-col row-start-2 w-full">
+        <BentoGrid/>
+        <Projects/>
+      </main>
+      <footer className="row-start-3 w-full">
+        <Footer/>
+      </footer>
+    </div>
   );
 }
 </file>
@@ -1226,6 +1587,7 @@ export default function ProjectsSection() {
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/og": "^0.11.1",
     "gsap": "^3.15.0",
     "motion": "^12.43.0",
     "next": "15.4.10",
@@ -1293,7 +1655,7 @@ export default function Header() {
   
           </div>
           <span className="text-sm font-black tracking-widest uppercase text-white font-mono group-hover:text-amber-500 transition-colors">
-            AleexGarcia
+            AleexGarcia.dev
           </span>
         </a>
 
@@ -1349,137 +1711,197 @@ export default function Header() {
 }
 </file>
 
-<file path="src/app/page.tsx">
-import BentoGrid from "./components/BentoGrid";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+<file path="src/app/layout.tsx">
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 
-export default function Home() {
+const baseUrl = process.env.CONTEXT === 'production'
+  ? (process.env.URL || 'https://aleexgarcia.dev.br')
+  : process.env.DEPLOY_PRIME_URL 
+    ? process.env.DEPLOY_PRIME_URL 
+    : 'http://localhost:3000';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
+  
+  title: {
+    default: "AleexGarcia | Desenvolvedor Full-Stack",
+    template: "%s | AleexGarcia" 
+  },
+  description: "Dev Full-Stack especialista em Next.js e NestJS. Código limpo, deploy implacável e soluções robustas. Conheça meus projetos!",
+  keywords: ["Desenvolvedor Full-Stack", "React", "Next.js", "TypeScript", "Node.js", "Web Development", "Portfólio"],
+  authors: [{ name: "AleexGarcia", url: baseUrl }],
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  // Open Graph (WhatsApp, Facebook, LinkedIn)
+  openGraph: {
+    title: "AleexGarcia | Desenvolvedor Full-Stack",
+    description: "Código limpo, deploy implacável. Conheça os projetos e a trajetória de um Desenvolvedor Full-Stack focado em aplicações modernas.",
+    url: "./", // Usa a metadataBase automaticamente
+    siteName: "Portfólio - AleexGarcia",
+    images: [
+      {
+        url: "/assets/og.webp", 
+        width: 1200,
+        height: 630,
+        alt: "Portfólio de AleexGarcia - Desenvolvedor Full-Stack",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+
+  // X / Twitter
+  twitter: {
+    card: "summary_large_image",
+    title: "AleexGarcia | Desenvolvedor Full-Stack",
+    description: "Ship it like a Viking! Projetos web modernos com alta performance e foco em resultados.",
+    images: ["/assets/og.webp"], 
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <div className="font-sans grid grid-rows-[90px_1fr_auto] items-center justify-items-center min-h-screen">
-      <Header/>
-      <main className="flex flex-col row-start-2 w-full">
-        <BentoGrid/>
-        <Projects/>
-      </main>
-      <footer className="row-start-3 w-full">
-        <Footer/>
-      </footer>
-    </div>
+    <html lang="pt-br" className="scroll-smooth">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
   );
 }
 </file>
 
 <file path="src/app/components/BentoGrid.tsx">
 'use client';
-import React from 'react';
-import Image from 'next/image';
-import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaAws, FaCrow } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiNestjs, SiDocker, SiJest, SiTailwindcss, SiPrisma, SiPostgresql, SiRedis, SiGithubactions, SiMongodb } from 'react-icons/si';
-import { containerVariants, cardVariants } from '../_contants/gridVariants';
-import { motion } from 'framer-motion';
 
-// Importações dos subcomponentes
+import React, { useRef } from 'react';
+import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaCrow } from 'react-icons/fa';
+
+import { useBentoAnimations } from '../hooks/useBentoAnimations';
 import { Card } from './ui/Card';
 import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
 import { SocialLink } from './ui/SocialLink';
 import { TrophyItem } from './ui/TrophyItem';
 import Counter from './ui/Counter';
-import { github, linkedin } from '../_contants/contacts';
+import { github, linkedin } from '../_constants/contacts';
+import HeroCardViking from './ui/HeroCardViking';
+import { TECH_ARSENAL } from '../_constants/techs';
+import { GiAnvil } from 'react-icons/gi';
 
 export default function BentoGrid() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  useBentoAnimations(containerRef);
+
   return (
     <div id='arsenal' className="min-h-screen scroll-mt-20 bg-[#110D0A] text-[#F3F4F6] flex items-center justify-center p-4 sm:p-6 md:p-8 font-sans">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-5 gap-4 auto-rows-[minmax(180px,_auto)]"
+      <div
+        ref={containerRef}
+        className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-5 gap-4 auto-rows-[minmax(180px,_auto)] [perspective:1000px]"
       >
-
         {/* CARD 1: HERO & AVATAR */}
-        <motion.div className='md:col-span-3' variants={cardVariants}>
-          <Card className="flex-col md:flex-row items-center flex-wrap h-full">
+        <div className='md:col-span-3'>
+          <Card className="flex-col md:flex-row items-center flex-wrap h-full transition-all duration-300">
             <div className='w-full text-center md:text-start'>
-              <Badge variant="amber">🛡️ Forjando APIs & Nuvem</Badge>
+          
+
+              <Badge icon={GiAnvil} variant="amber"> Forjando APIs & Nuvem</Badge>
             </div>
             <div className='md:w-1/2 text-center md:text-start'>
               <h1 className="text-3xl mt-2 lg:mt-4 sm:text-4xl font-black tracking-tight bg-gradient-to-r from-white via-amber-100 to-amber-500 bg-clip-text text-transparent">
                 Alexandre Garcia
               </h1>
               <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-md mt-2">
-                Construindo APIs robustas com NestJS, interfaces performáticas com Next.js e arquiteturas escaláveis e serverless in nuvem AWS.
+                Construindo APIs robustas com NestJS, interfaces performáticas com Next.js e arquiteturas escaláveis e serverless na nuvem AWS.
               </p>
             </div>
-            <div className="md:w-1/2 min-w-44 min-h-44 sm:w-52 sm:h-52 relative animate-float mx-auto md:mx-0 flex-shrink-0 brightness-95 group-hover:scale-105 transition-transform duration-500">
-              <Image
-                src="/assets/dev.png"
-                alt="Alexandre Garcia - O Dev Viking"
-                fill
-                className="object-contain filter drop-shadow-[0_0_15px_rgba(245,158,11,0.1)]"
-                priority
-              />
-            </div>
+  
+            <HeroCardViking />
+
             <div className="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
-              <Button href="#projects" variant="primary">Ver Arsenal</Button>
-              <Button className='flex gap-2 items-center' href="#contact" variant="secondary">Enviar um Corvo <FaCrow className='text-xl' /></Button>
+              <span className="magnetic-btn inline-block will-change-transform">
+                <Button href="#projects" variant="primary">Ver Conquistas</Button>
+              </span>
+              <span className="magnetic-btn inline-block will-change-transform">
+                <Button className='flex gap-2 items-center' href="#contact" variant="secondary">
+                  Enviar um Corvo <FaCrow className='text-xl' />
+                </Button>
+              </span>
             </div>
           </Card>
-        </motion.div>
+        </div>
 
         {/* CARD 2: CANAIS DE COMUNICAÇÃO */}
-        <motion.div className="md:col-span-2" variants={cardVariants}>
-          <Card className="gap-4 h-full">
+        <div className="md:col-span-2">
+          <Card className="gap-4 h-full justify-start transition-transform duration-500 ease-out hover:[transform:rotateX(3deg)_rotateY(-3deg)] hover:shadow-xl hover:shadow-amber-950/10">
             <div>
               <h3 className="text-lg font-bold text-gray-200">Canais de Comunicação</h3>
               <p className="text-xs text-gray-500 mt-1">Pontes seguras para novas invasões mercantis.</p>
             </div>
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-2.5 flex-grow justify-center">
               <SocialLink href={`https://github.com/${github}`} icon={FaGithub} label="GitHub" actionText="Acessar ↗" hoverColor="group-hover:text-white" />
               <SocialLink href={`https://www.linkedin.com/in/${linkedin}`} icon={FaLinkedin} label="LinkedIn" actionText="Conectar ↗" />
               <SocialLink href="/assets/Alexandre_Garcia_Curriculo.pdf" icon={FaFilePdf} label="Baixar Pergaminho (CV)" actionText="PDF ↴" hoverColor="group-hover:text-red-400" download />
             </div>
           </Card>
-        </motion.div>
+        </div>
 
-        {/* CARD 3: ARSENAL DE BATALHA / TECH STACK */}
-        <motion.div className="md:col-span-3" variants={cardVariants}>
-          <Card className="gap-6 h-full">
+        {/* CARD 3: ARSENAL DE BATALHA */}
+        <div className="md:col-span-3">
+          <Card className="gap-6 h-full transition-transform duration-500 ease-out hover:[transform:rotateX(2deg)]">
             <div>
               <h3 className="text-lg font-bold text-gray-200">Arsenal de Batalha</h3>
               <p className="text-xs text-gray-500 mt-1">Armas de engenharia afiadas para quebrar monolitos e decapitar bugs.</p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1">
-              {[
-                { name: 'TypeScript', icon: SiTypescript, color: 'hover:border-blue-500/40 hover:text-blue-400' },
-                { name: 'Next.js', icon: SiNextdotjs, color: 'hover:border-white/30 hover:text-white' },
-                { name: 'NestJS', icon: SiNestjs, color: 'hover:border-red-600/40 hover:text-red-500' },
-                { name: 'AWS', icon: FaAws, color: 'hover:border-amber-500/40 hover:text-amber-500' },
-                { name: 'Docker', icon: SiDocker, color: 'hover:border-sky-500/40 hover:text-sky-400' },
-                { name: 'Jest', icon: SiJest, color: 'hover:border-red-700/40 hover:text-red-500' },
-                { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'hover:border-cyan-500/40 hover:text-cyan-400' },
-                { name: 'Prisma ORM', icon: SiPrisma, color: 'hover:border-teal-500/40 hover:text-teal-400' },
-                { name: 'Postgre SQL', icon: SiPostgresql, color: 'hover:border-blue-600/40 hover:text-blue-500' },
-                { name: 'MongoDB', icon: SiMongodb, color: 'hover:border-blue-600/40 hover:text-blue-500' },
-                { name: 'Redis', icon: SiRedis, color: 'hover:border-red-500/40 hover:text-red-400' },
-                { name: 'CI/CD', icon: SiGithubactions, color: 'hover:border-white/30 hover:text-white' },
-              ].map((tech, idx) => (
-                <div key={idx} className={`flex items-center gap-3 p-3 bg-black/20 border border-amber-950/30 rounded-xl transition-all duration-300 text-gray-400 group ${tech.color}`}>
-                  <tech.icon className="text-xl sm:text-2xl transition-transform duration-300 group-hover:scale-105" />
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1" role="list" aria-label="Tecnologias utilizadas no arsenal">
+              {TECH_ARSENAL.map((tech, idx) => (
+                <div 
+                  key={idx} 
+                  role="listitem"
+                  aria-label={`Tecnologia: ${tech.name}`}
+                  className={`flex items-center gap-3 p-3 bg-black/20 border border-amber-950/30 rounded-xl transition-all duration-300 text-gray-400 group ${tech.color}`}
+                >
+                  <tech.icon className="text-xl sm:text-2xl transition-transform duration-300 group-hover:scale-105" aria-hidden="true" />
                   <span className="text-sm font-medium text-gray-300 text-ellipsis">{tech.name}</span>
                 </div>
               ))}
             </div>
           </Card>
-        </motion.div>
+        </div>
 
         {/* CARD 4: CREDENCIAIS & TROFÉUS */}
-        <motion.div className="md:col-span-2" variants={cardVariants}>
-          <Card className="gap-4 h-full">
+        <div className="md:col-span-2">
+          <Card className="gap-4 h-full transition-transform duration-500 ease-out hover:[transform:rotateX(3deg)_rotateY(3deg)]">
             <div>
               <h3 className="text-lg font-bold text-gray-200">Distinções & Honrarias</h3>
               <p className="text-xs text-gray-500 mt-1">Conquistas oficiais validadas pelo mercado e academia.</p>
@@ -1489,15 +1911,15 @@ export default function BentoGrid() {
               <TrophyItem icon={'/assets/aws-certified-cloud-practitioner.png'} title="AWS Certified" subtitle="Cloud Practitioner" status="★ Validado em Nuvem" variant="amber" />
             </div>
           </Card>
-        </motion.div>
+        </div>
 
         {/* CARD 5: MÉTRICAS SATÍRICAS */}
-        <motion.div className="md:col-span-2" variants={cardVariants}>
-          <Card className="text-center p-5 justify-between h-full">
+        <div className="md:col-span-2">
+          <Card className="text-center p-5 justify-between h-full transition-all duration-300 hover:border-amber-900/40">
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Métricas Nórdicas</span>
             <div className="py-2">
               <span className="text-4xl font-black text-amber-500 font-mono block group-hover:scale-110 transition-transform duration-300">
-                <Counter target={100} startFrom={50} suffix='%' />
+                <Counter target={100} startFrom={0} suffix='%' />
               </span>
               <span className="text-xs text-gray-400 font-medium mt-1 block">Barba Preenchida</span>
             </div>
@@ -1505,14 +1927,15 @@ export default function BentoGrid() {
               Erros 404 serão saqueados
             </div>
           </Card>
-        </motion.div>
+        </div>
 
-        <motion.div className="md:col-span-1" variants={cardVariants}>
-          <Card className="text-center p-5 justify-between h-full group">
+        {/* CARD 6 */}
+        <div className="md:col-span-1">
+          <Card className="text-center p-5 justify-between h-full group transition-all duration-300 hover:border-amber-900/40">
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Pilhagem de Erros</span>
             <div className="py-2">
               <span className="text-4xl font-black text-amber-500 font-mono block group-hover:scale-110 transition-transform duration-300">
-                <Counter target={4721} /> {/* Passe um alvo pro contador se necessário */}
+                <Counter target={4721} />
               </span>
               <span className="text-xs text-gray-400 font-medium mt-1 block">Bugs Decapitados</span>
             </div>
@@ -1520,10 +1943,11 @@ export default function BentoGrid() {
               Nenhum stack overflow sobreviveu
             </div>
           </Card>
-        </motion.div>
+        </div>
 
-        <motion.div className="md:col-span-1" variants={cardVariants}>
-          <Card className="text-center p-5 justify-between h-full group">
+        {/* CARD 7 */}
+        <div className="md:col-span-1">
+          <Card className="text-center p-5 justify-between h-full group transition-all duration-300 hover:border-amber-900/40">
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Banquete no Git</span>
             <div className="py-2">
               <span className="text-4xl font-black text-amber-500 font-mono block group-hover:scale-110 transition-transform duration-300">
@@ -1535,9 +1959,11 @@ export default function BentoGrid() {
               Deploys em sexta-feira exigem coragem
             </div>
           </Card>
-        </motion.div>
-        <motion.div className="" variants={cardVariants}>
-          <Card className="text-center p-5 justify-between h-full group">
+        </div>
+
+        {/* CARD 8 */}
+        <div className="md:col-span-1">
+          <Card className="text-center p-5 justify-between h-full group transition-all duration-300 hover:border-amber-900/40">
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Sacrifício aos Deuses</span>
             <div className="py-2">
               <span className="text-4xl font-black text-amber-500 font-mono block group-hover:scale-110 transition-transform duration-300">
@@ -1549,9 +1975,8 @@ export default function BentoGrid() {
               Guerreiros mortos em combate contra o CSS
             </div>
           </Card>
-        </motion.div>
-
-      </motion.div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -7,6 +7,9 @@ export interface Project {
   githubLink?: string;
   deployLink?: string;
   isApiOnly: boolean;
+  imageUrl?: string;
+  terminalOutput?: string[];
+  terminalCommand?: string;
 }
 
 export const projectsData: Project[] = [
@@ -16,15 +19,37 @@ export const projectsData: Project[] = [
     description: "Desenvolvimento de uma API REST de alta performance com arquitetura limpa, implementando validações de dados rigorosas e seguras com Zod. A persistência foi estruturada utilizando TypeORM, garantindo segurança em operações complexas e uma cobertura sólida de testes unitários e de integração com Jest.",
     technologies: ["Node.js", "NestJS", "TypeScript", "Zod", "TypeORM", "Jest"],
     githubLink: "https://github.com/AleexGarcia/ANMAR25_DSUP_TASKLY",
-    isApiOnly: true
+    isApiOnly: true,
+    terminalCommand: "curl -X GET http://localhost:3000/api/v1/tasks -H 'Authorization: Bearer jwt_token'",
+    terminalOutput: [
+      "HTTP/1.1 200 OK",
+      "Content-Type: application/json",
+      `
+      {
+    "page": 1,
+    "total": 0,
+    "tasks": []
+}
+      `
+    ]
   },
   {
     title: "☁️ Compass Events",
     tagline: "Ecossistema Serverless escalável em produção",
-    description: "Arquitetura e deploy de um sistema completo de gerenciamento de eventos baseado em computação em nuvem. Utilizando uma abordagem 100% Serverless, a infraestrutura foi inteiramente codificada com AWS CDK. O fluxo lida com picos massivos de requisições através de AWS Lambda, DynamoDB para persistência NoSQL rápida, S3 para arquivos e autenticação JWT de ponta a ponta.",
+    description: "Arquitetura e deploy de um sistema completo de gerenciamento de eventos baseado com computação em nuvem. Utilizando uma abordagem 100% Serverless, a infraestrutura foi inteiramente codificada com AWS CDK. O fluxo lida com picos massivos de requisições através de AWS Lambda, DynamoDB para persistência NoSQL rápida, S3 para arquivos e autenticação JWT de ponta a ponta.",
     technologies: ["AWS CDK", "Lambda", "DynamoDB", "Amazon S3", "JWT", "TypeScript"],
     githubLink: "https://github.com/AleexGarcia/ANMAR25_D03_COMPASSEVENT",
-    isApiOnly: true
+    isApiOnly: true,
+    terminalCommand: "curl -X POST https://api.compassevents.com/events -d '{\"name\":\"Code Summit 2026\"}'",
+    terminalOutput: [
+      "HTTP/1.1 201 Created",
+      "x-amzn-RequestId: 4aa5b8c9-1234-5678-abcd-ef0123456789",
+      ` {
+        "message": "Event successfully provisioned in DynamoDB via AWS Lambda.,",
+        "eventId": "evt_987654321,",
+        "status": "ACTIVE",
+      }`
+    ]
   },
   {
     title: "🪓 O Dev Viking (Este Portfólio)",
