@@ -123,7 +123,7 @@ export default function Footer() {
                 href={`https://wa.me/${phone}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-300 shadow-lg active:scale-[0.98] animate-glow-pulse"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl transition-all duration-300 shadow-lg active:scale-[0.98] animate-glow-pulse px-3 py-4 sm:px-6 "
               >
                 <FaWhatsapp className="text-lg" /> Iniciar Conversa no WhatsApp
               </a>
@@ -132,7 +132,7 @@ export default function Footer() {
             <div className="magnetic-cta w-full sm:w-auto will-change-transform">
               <a
                 href={`mailto:${email}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-black/40 hover:bg-black/70 text-gray-300 font-medium text-sm px-6 py-3.5 rounded-xl border border-amber-950/60 hover:border-amber-500/30 transition-all duration-200"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-black/40 hover:bg-black/70 text-gray-300 font-medium text-sm px-3 py-4  sm:px-6 rounded-xl border border-amber-950/60 hover:border-amber-500/30 transition-all duration-200"
               >
                 <FaEnvelope className="text-base text-gray-400" /> Enviar Mensagem por E-mail
               </a>

@@ -75,7 +75,7 @@ export default function TerminalMockup({
   return (
     <div 
       ref={terminalRef} 
-      className="w-full h-full min-h-[220px] bg-[#0c0907] rounded-lg border border-amber-950/50 shadow-2xl font-mono text-xs text-zinc-400 overflow-hidden flex flex-col select-none"
+      className="w-full h-full min-h-[250px] bg-[#0c0907] rounded-lg border border-amber-950/50 shadow-2xl font-mono text-xs text-zinc-400 overflow-hidden flex flex-col select-none"
     >
       {/* Barra superior do Terminal Mac/Linux */}
       <div className="bg-[#140f0c] px-4 py-3 flex items-center justify-between border-b border-amber-950/30">
