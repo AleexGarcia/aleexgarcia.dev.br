@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     <motion.div variants={itemVariants} className="group w-full">
       <Card className="!flex-row gap-8 flex-wrap lg:flex-nowrap p-6 border border-amber-950/20 bg-[#16110E] transition-all duration-300 group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.05)]">
 
-        <div className="w-2/3">
+        <div className="w-full lg:w-2/3">
           {/* Mockup do Terminal */}
           {project.isApiOnly ? <TerminalMockup
             command={project.terminalCommand}
