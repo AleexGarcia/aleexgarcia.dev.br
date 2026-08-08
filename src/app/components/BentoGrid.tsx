@@ -127,7 +127,7 @@ export default function BentoGrid() {
         </div>
 
         {/* CARD 6 */}
-        <div className="md:col-span-1">
+        <div className="md:col-span-3 lg:col-span-1">
           <Card className="text-center p-5 justify-between h-full group transition-all duration-300 hover:border-amber-900/40">
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Pilhagem de Erros</span>
             <div className="py-2">
@@ -143,7 +143,7 @@ export default function BentoGrid() {
         </div>
 
         {/* CARD 7 */}
-        <div className="md:col-span-1">
+        <div className="md:col-span-3 lg:col-span-1">
           <Card className="text-center p-5 justify-between h-full group transition-all duration-300 hover:border-amber-900/40">
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Banquete no Git</span>
             <div className="py-2">
@@ -159,7 +159,7 @@ export default function BentoGrid() {
         </div>
 
         {/* CARD 8 */}
-        <div className="md:col-span-1">
+        <div className="md:col-span-2 lg:col-span-1">
           <Card className="text-center p-5 justify-between h-full group transition-all duration-300 hover:border-amber-900/40">
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Sacrifício aos Deuses</span>
             <div className="py-2">
