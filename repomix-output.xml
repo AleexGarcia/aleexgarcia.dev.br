@@ -64,6 +64,7 @@ src/
     components/
       ui/
         Badge.tsx
+        BrowserMockup.tsx
         Button.tsx
         Card.tsx
         Counter.tsx
@@ -97,6 +98,26 @@ tsconfig.json
 
 <files>
 This section contains the contents of the repository's files.
+
+<file path="public/file.svg">
+<svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 13.5V5.41a1 1 0 0 0-.3-.7L9.8.29A1 1 0 0 0 9.08 0H1.5v13.5A2.5 2.5 0 0 0 4 16h8a2.5 2.5 0 0 0 2.5-2.5m-1.5 0v-7H8v-5H3v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1M9.5 5V2.12L12.38 5zM5.13 5h-.62v1.25h2.12V5zm-.62 3h7.12v1.25H4.5zm.62 3h-.62v1.25h7.12V11z" clip-rule="evenodd" fill="#666" fill-rule="evenodd"/></svg>
+</file>
+
+<file path="public/globe.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.27 14.1a6.5 6.5 0 0 0 3.67-3.45q-1.24.21-2.7.34-.31 1.83-.97 3.1M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.48-1.52a7 7 0 0 1-.96 0H7.5a4 4 0 0 1-.84-1.32q-.38-.89-.63-2.08a40 40 0 0 0 3.92 0q-.25 1.2-.63 2.08a4 4 0 0 1-.84 1.31zm2.94-4.76q1.66-.15 2.95-.43a7 7 0 0 0 0-2.58q-1.3-.27-2.95-.43a18 18 0 0 1 0 3.44m-1.27-3.54a17 17 0 0 1 0 3.64 39 39 0 0 1-4.3 0 17 17 0 0 1 0-3.64 39 39 0 0 1 4.3 0m1.1-1.17q1.45.13 2.69.34a6.5 6.5 0 0 0-3.67-3.44q.65 1.26.98 3.1M8.48 1.5l.01.02q.41.37.84 1.31.38.89.63 2.08a40 40 0 0 0-3.92 0q.25-1.2.63-2.08a4 4 0 0 1 .85-1.32 7 7 0 0 1 .96 0m-2.75.4a6.5 6.5 0 0 0-3.67 3.44 29 29 0 0 1 2.7-.34q.31-1.83.97-3.1M4.58 6.28q-1.66.16-2.95.43a7 7 0 0 0 0 2.58q1.3.27 2.95.43a18 18 0 0 1 0-3.44m.17 4.71q-1.45-.12-2.69-.34a6.5 6.5 0 0 0 3.67 3.44q-.65-1.27-.98-3.1" fill="#666"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
+</file>
+
+<file path="public/next.svg">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80"><path fill="#000" d="M262 0h68.5v12.7h-27.2v66.6h-13.6V12.7H262V0ZM149 0v12.7H94v20.4h44.3v12.6H94v21h55v12.6H80.5V0h68.7zm34.3 0h-17.8l63.8 79.4h17.9l-32-39.7 32-39.6h-17.9l-23 28.6-23-28.6zm18.3 56.7-9-11-27.1 33.7h17.8l18.3-22.7z"/><path fill="#000" d="M81 79.3 17 0H0v79.3h13.6V17l50.2 62.3H81Zm252.6-.4c-1 0-1.8-.4-2.5-1s-1.1-1.6-1.1-2.6.3-1.8 1-2.5 1.6-1 2.6-1 1.8.3 2.5 1a3.4 3.4 0 0 1 .6 4.3 3.7 3.7 0 0 1-3 1.8zm23.2-33.5h6v23.3c0 2.1-.4 4-1.3 5.5a9.1 9.1 0 0 1-3.8 3.5c-1.6.8-3.5 1.3-5.7 1.3-2 0-3.7-.4-5.3-1s-2.8-1.8-3.7-3.2c-.9-1.3-1.4-3-1.4-5h6c.1.8.3 1.6.7 2.2s1 1.2 1.6 1.5c.7.4 1.5.5 2.4.5 1 0 1.8-.2 2.4-.6a4 4 0 0 0 1.6-1.8c.3-.8.5-1.8.5-3V45.5zm30.9 9.1a4.4 4.4 0 0 0-2-3.3 7.5 7.5 0 0 0-4.3-1.1c-1.3 0-2.4.2-3.3.5-.9.4-1.6 1-2 1.6a3.5 3.5 0 0 0-.3 4c.3.5.7.9 1.3 1.2l1.8 1 2 .5 3.2.8c1.3.3 2.5.7 3.7 1.2a13 13 0 0 1 3.2 1.8 8.1 8.1 0 0 1 3 6.5c0 2-.5 3.7-1.5 5.1a10 10 0 0 1-4.4 3.5c-1.8.8-4.1 1.2-6.8 1.2-2.6 0-4.9-.4-6.8-1.2-2-.8-3.4-2-4.5-3.5a10 10 0 0 1-1.7-5.6h6a5 5 0 0 0 3.5 4.6c1 .4 2.2.6 3.4.6 1.3 0 2.5-.2 3.5-.6 1-.4 1.8-1 2.4-1.7a4 4 0 0 0 .8-2.4c0-.9-.2-1.6-.7-2.2a11 11 0 0 0-2.1-1.4l-3.2-1-3.8-1c-2.8-.7-5-1.7-6.6-3.2a7.2 7.2 0 0 1-2.4-5.7 8 8 0 0 1 1.7-5 10 10 0 0 1 4.3-3.5c2-.8 4-1.2 6.4-1.2 2.3 0 4.4.4 6.2 1.2 1.8.8 3.2 2 4.3 3.4 1 1.4 1.5 3 1.5 5h-5.8z"/></svg>
+</file>
+
+<file path="public/vercel.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
+</file>
+
+<file path="public/window.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
+</file>
 
 <file path="src/app/_constants/contacts.ts">
 const email = 'alexandre_augusto_garcia@hotmail.com';
@@ -224,150 +245,137 @@ export const TECH_ARSENAL = [
 ];
 </file>
 
-<file path="src/app/components/ui/TerminalMockup.tsx">
+<file path="src/app/components/ui/BrowserMockup.tsx">
 'use client';
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
 
-// Registra os plugins necessários
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
-interface TerminalMockupProps {
-  command?: string;
-  outputLines?: string[];
+interface BrowserMockupProps {
+  imageUrl?: string;
+  title: string;
 }
 
-export default function TerminalMockup({ 
-  command = "curl -X GET /api/v1/status", 
-  outputLines = [
-    '{"status": "online", "database": "connected"}',
-    '{"latency": "14ms", "uptime": "100%"}',
-    "Valhalla server connection established successfully."
-  ]
-}: TerminalMockupProps) {
-  const terminalRef = useRef<HTMLDivElement>(null);
-  const commandRef = useRef<HTMLSpanElement>(null);
-  const outputsRef = useRef<HTMLDivElement>(null);
+export default function BrowserMockup({ 
+  imageUrl, 
+  title 
+}: BrowserMockupProps) {
+  const browserRef = useRef<HTMLDivElement>(null);
+  const pageRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const triggerElement = terminalRef.current;
-    const commandText = commandRef.current;
-    const outputs = outputsRef.current;
+    const browser = browserRef.current;
+    const page = pageRef.current;
+    const cursor = cursorRef.current;
 
-    if (!triggerElement || !commandText || !outputs) return;
+    if (!browser || !page || !cursor) return;
 
-    // Timeline para orquestrar a digitação e depois a resposta do servidor
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: triggerElement,
-        start: "top 80%", // Dispara quando o terminal entra 80% na tela
+        trigger: browser,
+        start: "top 75%",
         toggleActions: "play none none none",
         once: true,
       }
     });
 
-    // 1. Efeito de Digitação do Comando
-    tl.to(commandText, {
-      duration: 2,
-      text: {
-        value: command,
-        delimiter: ""
-      },
-      ease: "none",
+    // Simulação do cursor
+    tl.fromTo(cursor, 
+      { x: 50, y: 150, opacity: 0 },
+      { x: 180, y: 80, opacity: 1, duration: 1, ease: "power2.out" }
+    )
+    .to(cursor, { scale: 0.8, duration: 0.1, yoyo: true, repeat: 1 })
+    
+    // Animação de scroll (só fará sentido se houver imagem longa, 
+    // mas o cálculo dinâmico garante que se for o HTML fixo ele não quebrará)
+    .to(page, {
+      y: () => -(page.scrollHeight - browser.offsetHeight),
+      duration: imageUrl ? 4.5 : 1, // Scroll rápido se for só a página estática
+      ease: "power1.inOut",
+      delay: 0.2
+    })
+    
+    .to(cursor, { x: 220, y: 140, duration: 0.8, ease: "power2.out" }, "-=0.5")
+    .to(cursor, { scale: 0.8, duration: 0.1, yoyo: true, repeat: 1 })
+    
+    .to(page, {
+      y: 0,
+      duration: imageUrl ? 2 : 0.5,
+      ease: "power2.out",
+      delay: 1
     });
-
-    // 2. Aparição em cascata (stagger) das linhas de resposta do terminal
-    tl.fromTo(
-      outputs.children,
-      { opacity: 0, y: 5 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.4,
-        stagger: 0.2,
-        ease: "power1.out",
-      },
-      "+=0.3" // Pequeno delay simulando o tempo de resposta da API
-    );
 
     return () => {
       if (tl.scrollTrigger) tl.scrollTrigger.kill();
       tl.kill();
     };
-  }, [command]);
+  }, [imageUrl]);
 
   return (
     <div 
-      ref={terminalRef} 
-      className="w-full h-full min-h-[220px] bg-[#0c0907] rounded-lg border border-amber-950/50 shadow-2xl font-mono text-xs text-zinc-400 overflow-hidden flex flex-col select-none"
+      ref={browserRef}
+      className="w-full h-full min-h-[220px] max-h-[260px] bg-[#0c0907] rounded-lg border border-amber-950/50 shadow-2xl overflow-hidden flex flex-col relative group/browser select-none"
     >
-      {/* Barra superior do Terminal Mac/Linux */}
-      <div className="bg-[#140f0c] px-4 py-3 flex items-center justify-between border-b border-amber-950/30">
-        <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-[#3a1d13] opacity-60" />
-          <div className="w-3 h-3 rounded-full bg-[#5c2e16] opacity-60" />
-          <div className="w-3 h-3 rounded-full bg-[#8c471a] opacity-60" />
+      {/* Barra superior do Navegador */}
+      <div className="bg-[#140f0c] px-4 py-2.5 flex items-center justify-between border-b border-amber-950/30 shrink-0 z-10">
+        <div className="flex space-x-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500/40" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500/40" />
         </div>
-        <div className="text-[10px] text-zinc-600 font-sans tracking-wider uppercase font-semibold">
-          bash 🖥️
+        <div className="px-3 py-0.5 bg-black/40 border border-amber-950/40 rounded-md text-[9px] text-zinc-500 font-mono w-40 truncate text-center tracking-tight">
+          {title.toLowerCase().replace(/[^a-z0-9]/g, "")}.vercel.app
         </div>
+        <div className="w-10" />
       </div>
 
-      {/* Área de Prompt */}
-      <div className="p-4 flex-1 space-y-2 overflow-y-auto custom-scrollbar">
-        {/* Linha do Comando */}
-        <div className="flex items-start flex-wrap gap-x-2">
-          <span className="text-amber-600 font-bold whitespace-nowrap">
-            alexandre@viking-terminal:~#
-          </span>
-          {/* O Span onde o TextPlugin vai injetar o texto */}
-          <span ref={commandRef} className="text-zinc-200 font-semibold tracking-wide"></span>
-          {/* Cursor piscante */}
-          <span className="animate-pulse font-bold text-amber-500 -ml-1">|</span>
+      {/* Janela de Renderização */}
+      <div className="flex-1 w-full overflow-hidden relative bg-[#130e0c]">
+        
+        {/* Cursor Virtual */}
+        <div 
+          ref={cursorRef}
+          className="absolute w-3 h-3 bg-amber-500 rounded-full border border-black shadow-[0_0_8px_rgba(245,158,11,0.6)] z-20 pointer-events-none opacity-0"
+        />
+
+        {/* Container Principal Animado */}
+        <div ref={pageRef} className="w-full absolute top-0 left-0 will-change-transform">
+          {imageUrl ? (
+            /* Se houver imagem, renderiza o print da landing page */
+            // eslint-disable-next-line @next/next/no-img-element
+            <img 
+              src={imageUrl} 
+              alt={`Mockup de ${title}`}
+              className="w-full h-auto object-top"
+            />
+          ) : (
+            /* FALLBACK: Página HTML Genérica estilizada com o tema do projeto */
+            <div className="w-full h-[215px] flex flex-col items-center justify-center p-6 text-center text-zinc-400 font-mono">
+              <div className="mb-2 text-amber-600 font-bold text-3xl tracking-wider">404</div>
+              <h3 className="text-zinc-200 text-xs font-semibold uppercase tracking-widest mb-1">
+                Visual Indisponível
+              </h3>
+              <p className="text-[10px] text-zinc-500 max-w-[280px] leading-relaxed">
+                A interface gráfica para <span className="text-amber-700/80">{title}</span> está passando por manutenção ou rodando estritamente em ambiente privado de homologação.
+              </p>
+              
+              <div className="mt-4 px-3 py-1 bg-amber-950/20 border border-amber-950/40 rounded text-[9px] text-amber-500/70 animate-pulse">
+                ⚡ Servidores ativos obtendo logs...
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Linhas de Output (Geradas dinamicamente após a digitação) */}
-        <div ref={outputsRef} className="space-y-1 mt-2 font-light">
-          {outputLines.map((line, idx) => (
-            <div 
-              key={idx} 
-              className={`text-[11px] leading-relaxed break-all ${
-                line.includes('successfully') || line.includes('online') 
-                  ? 'text-emerald-600/90 font-medium' 
-                  : 'text-zinc-500'
-              }`}
-            >
-              {line}
-            </div>
-          ))}
-        </div>
+        {/* Overlay de linhas rústicas */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(17,13,10,0)_95%,rgba(245,158,11,0.02)_95%)] bg-[size:100%_16px] pointer-events-none" />
       </div>
     </div>
   );
 }
-</file>
-
-<file path="public/file.svg">
-<svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 13.5V5.41a1 1 0 0 0-.3-.7L9.8.29A1 1 0 0 0 9.08 0H1.5v13.5A2.5 2.5 0 0 0 4 16h8a2.5 2.5 0 0 0 2.5-2.5m-1.5 0v-7H8v-5H3v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1M9.5 5V2.12L12.38 5zM5.13 5h-.62v1.25h2.12V5zm-.62 3h7.12v1.25H4.5zm.62 3h-.62v1.25h7.12V11z" clip-rule="evenodd" fill="#666" fill-rule="evenodd"/></svg>
-</file>
-
-<file path="public/globe.svg">
-<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.27 14.1a6.5 6.5 0 0 0 3.67-3.45q-1.24.21-2.7.34-.31 1.83-.97 3.1M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.48-1.52a7 7 0 0 1-.96 0H7.5a4 4 0 0 1-.84-1.32q-.38-.89-.63-2.08a40 40 0 0 0 3.92 0q-.25 1.2-.63 2.08a4 4 0 0 1-.84 1.31zm2.94-4.76q1.66-.15 2.95-.43a7 7 0 0 0 0-2.58q-1.3-.27-2.95-.43a18 18 0 0 1 0 3.44m-1.27-3.54a17 17 0 0 1 0 3.64 39 39 0 0 1-4.3 0 17 17 0 0 1 0-3.64 39 39 0 0 1 4.3 0m1.1-1.17q1.45.13 2.69.34a6.5 6.5 0 0 0-3.67-3.44q.65 1.26.98 3.1M8.48 1.5l.01.02q.41.37.84 1.31.38.89.63 2.08a40 40 0 0 0-3.92 0q.25-1.2.63-2.08a4 4 0 0 1 .85-1.32 7 7 0 0 1 .96 0m-2.75.4a6.5 6.5 0 0 0-3.67 3.44 29 29 0 0 1 2.7-.34q.31-1.83.97-3.1M4.58 6.28q-1.66.16-2.95.43a7 7 0 0 0 0 2.58q1.3.27 2.95.43a18 18 0 0 1 0-3.44m.17 4.71q-1.45-.12-2.69-.34a6.5 6.5 0 0 0 3.67 3.44q-.65-1.27-.98-3.1" fill="#666"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
-</file>
-
-<file path="public/next.svg">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80"><path fill="#000" d="M262 0h68.5v12.7h-27.2v66.6h-13.6V12.7H262V0ZM149 0v12.7H94v20.4h44.3v12.6H94v21h55v12.6H80.5V0h68.7zm34.3 0h-17.8l63.8 79.4h17.9l-32-39.7 32-39.6h-17.9l-23 28.6-23-28.6zm18.3 56.7-9-11-27.1 33.7h17.8l18.3-22.7z"/><path fill="#000" d="M81 79.3 17 0H0v79.3h13.6V17l50.2 62.3H81Zm252.6-.4c-1 0-1.8-.4-2.5-1s-1.1-1.6-1.1-2.6.3-1.8 1-2.5 1.6-1 2.6-1 1.8.3 2.5 1a3.4 3.4 0 0 1 .6 4.3 3.7 3.7 0 0 1-3 1.8zm23.2-33.5h6v23.3c0 2.1-.4 4-1.3 5.5a9.1 9.1 0 0 1-3.8 3.5c-1.6.8-3.5 1.3-5.7 1.3-2 0-3.7-.4-5.3-1s-2.8-1.8-3.7-3.2c-.9-1.3-1.4-3-1.4-5h6c.1.8.3 1.6.7 2.2s1 1.2 1.6 1.5c.7.4 1.5.5 2.4.5 1 0 1.8-.2 2.4-.6a4 4 0 0 0 1.6-1.8c.3-.8.5-1.8.5-3V45.5zm30.9 9.1a4.4 4.4 0 0 0-2-3.3 7.5 7.5 0 0 0-4.3-1.1c-1.3 0-2.4.2-3.3.5-.9.4-1.6 1-2 1.6a3.5 3.5 0 0 0-.3 4c.3.5.7.9 1.3 1.2l1.8 1 2 .5 3.2.8c1.3.3 2.5.7 3.7 1.2a13 13 0 0 1 3.2 1.8 8.1 8.1 0 0 1 3 6.5c0 2-.5 3.7-1.5 5.1a10 10 0 0 1-4.4 3.5c-1.8.8-4.1 1.2-6.8 1.2-2.6 0-4.9-.4-6.8-1.2-2-.8-3.4-2-4.5-3.5a10 10 0 0 1-1.7-5.6h6a5 5 0 0 0 3.5 4.6c1 .4 2.2.6 3.4.6 1.3 0 2.5-.2 3.5-.6 1-.4 1.8-1 2.4-1.7a4 4 0 0 0 .8-2.4c0-.9-.2-1.6-.7-2.2a11 11 0 0 0-2.1-1.4l-3.2-1-3.8-1c-2.8-.7-5-1.7-6.6-3.2a7.2 7.2 0 0 1-2.4-5.7 8 8 0 0 1 1.7-5 10 10 0 0 1 4.3-3.5c2-.8 4-1.2 6.4-1.2 2.3 0 4.4.4 6.2 1.2 1.8.8 3.2 2 4.3 3.4 1 1.4 1.5 3 1.5 5h-5.8z"/></svg>
-</file>
-
-<file path="public/vercel.svg">
-<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
-</file>
-
-<file path="public/window.svg">
-<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
 </file>
 
 <file path="src/app/components/ui/Button.tsx">
@@ -681,6 +689,132 @@ export function SocialLink({ href, icon: Icon, label, actionText, hoverColor = '
       </div>
       <span className="text-xs text-gray-600 group-hover:text-amber-500 transition-colors">{actionText}</span>
     </a>
+  );
+}
+</file>
+
+<file path="src/app/components/ui/TerminalMockup.tsx">
+'use client';
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
+
+// Registra os plugins necessários
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+interface TerminalMockupProps {
+  command?: string;
+  outputLines?: string[];
+}
+
+export default function TerminalMockup({ 
+  command = "curl -X GET /api/v1/status", 
+  outputLines = [
+    '{"status": "online", "database": "connected"}',
+    '{"latency": "14ms", "uptime": "100%"}',
+    "Valhalla server connection established successfully."
+  ]
+}: TerminalMockupProps) {
+  const terminalRef = useRef<HTMLDivElement>(null);
+  const commandRef = useRef<HTMLSpanElement>(null);
+  const outputsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const triggerElement = terminalRef.current;
+    const commandText = commandRef.current;
+    const outputs = outputsRef.current;
+
+    if (!triggerElement || !commandText || !outputs) return;
+
+    // Timeline para orquestrar a digitação e depois a resposta do servidor
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerElement,
+        start: "top 80%", // Dispara quando o terminal entra 80% na tela
+        toggleActions: "play none none none",
+        once: true,
+      }
+    });
+
+    // 1. Efeito de Digitação do Comando
+    tl.to(commandText, {
+      duration: 2,
+      text: {
+        value: command,
+        delimiter: ""
+      },
+      ease: "none",
+    });
+
+    // 2. Aparição em cascata (stagger) das linhas de resposta do terminal
+    tl.fromTo(
+      outputs.children,
+      { opacity: 0, y: 5 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        stagger: 0.2,
+        ease: "power1.out",
+      },
+      "+=0.3" // Pequeno delay simulando o tempo de resposta da API
+    );
+
+    return () => {
+      if (tl.scrollTrigger) tl.scrollTrigger.kill();
+      tl.kill();
+    };
+  }, [command]);
+
+  return (
+    <div 
+      ref={terminalRef} 
+      className="w-full h-full min-h-[220px] bg-[#0c0907] rounded-lg border border-amber-950/50 shadow-2xl font-mono text-xs text-zinc-400 overflow-hidden flex flex-col select-none"
+    >
+      {/* Barra superior do Terminal Mac/Linux */}
+      <div className="bg-[#140f0c] px-4 py-3 flex items-center justify-between border-b border-amber-950/30">
+        <div className="flex space-x-2">
+          <div className="w-3 h-3 rounded-full bg-[#3a1d13] opacity-60" />
+          <div className="w-3 h-3 rounded-full bg-[#5c2e16] opacity-60" />
+          <div className="w-3 h-3 rounded-full bg-[#8c471a] opacity-60" />
+        </div>
+        <div className="text-[10px] text-zinc-600 font-sans tracking-wider uppercase font-semibold">
+          bash 🖥️
+        </div>
+      </div>
+
+      {/* Área de Prompt */}
+      <div className="p-4 flex-1 space-y-2 overflow-y-auto custom-scrollbar">
+        {/* Linha do Comando */}
+        <div className="flex items-start flex-wrap gap-x-2">
+          <span className="text-amber-600 font-bold whitespace-nowrap">
+            alexandre@viking-terminal:~#
+          </span>
+          {/* O Span onde o TextPlugin vai injetar o texto */}
+          <span ref={commandRef} className="text-zinc-200 font-semibold tracking-wide"></span>
+          {/* Cursor piscante */}
+          <span className="animate-pulse font-bold text-amber-500 -ml-1">|</span>
+        </div>
+
+        {/* Linhas de Output (Geradas dinamicamente após a digitação) */}
+        <div ref={outputsRef} className="space-y-1 mt-2 font-light">
+          {outputLines.map((line, idx) => (
+            <div 
+              key={idx} 
+              className={`text-[11px] leading-relaxed break-all ${
+                line.includes('successfully') || line.includes('online') 
+                  ? 'text-emerald-600/90 font-medium' 
+                  : 'text-zinc-500'
+              }`}
+            >
+              {line}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 </file>
@@ -1152,111 +1286,6 @@ O projeto foi dividido em **5 fases estratégicas** para garantir qualidade de c
 Desenvolvido com base em café, hidromel e muito TypeScript por Alexandre Garcia.
 </file>
 
-<file path="src/app/components/ui/ProjectCard.tsx">
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { Card } from './Card';
-import { Project } from '../../_constants/projectsData';
-import TerminalMockup from './TerminalMockup';
-
-
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-    },
-  },
-};
-
-// Componente Interno Isolado para o Card do Projeto
-export default function ProjectCard({ project }: { project: Project }) {
-  return (
-    <motion.div variants={itemVariants} className="group w-full">
-      <Card className="!flex-row gap-8 flex-wrap lg:flex-nowrap p-6 border border-amber-950/20 bg-[#16110E] transition-all duration-300 group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.05)]">
-
-        <div className="w-2/3">
-          {/* Mockup do Terminal */}
-          {project.isApiOnly ? <TerminalMockup
-            command={project.terminalCommand}
-            outputLines={project.terminalOutput}
-          /> : 
-            <div className="w-full h-full min-h-[220px] bg-[#0c0907] rounded-lg border border-amber-950/50 shadow-2xl font-mono text-xs sm:text-sm text-zinc-400 overflow-hidden flex items-center justify-center select-none">
-              <span className="text-gray-500 text-sm">Este projeto não possui interface gráfica.</span>
-            </div> 
-          
-          }
-
-        </div>
-
-        {/* LADO DIREITO: Informações e Engenharia */}
-        <div className="lg:w-3/5 w-full flex flex-col justify-between space-y-6">
-          <div className="space-y-3">
-            <div>
-              <h3 className="text-xl font-bold text-white group-hover:text-amber-500 transition-colors duration-300">
-                {project.title}
-              </h3>
-              <p className="text-xs font-semibold text-amber-500/80 mt-1">
-                {project.tagline}
-              </p>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              {project.description}
-            </p>
-          </div>
-
-          {/* Tags e Ações */}
-          <div className="space-y-4">
-            {/* Badge de Tecnologias */}
-            <div className="flex flex-wrap gap-1.5">
-              {project.technologies.map((tech, techIdx) => (
-                <span
-                  key={techIdx}
-                  className="text-[11px] font-mono bg-black/40 text-gray-300 border border-amber-950/40 px-2.5 py-0.5 rounded-md hover:border-amber-500/20 transition-colors"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            {/* Links de Ação */}
-            <div className="flex gap-4 pt-3 border-t border-amber-950/40">
-              {project.githubLink && (
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-white transition-colors"
-                >
-                  <FaGithub className="text-sm" /> Código no GitHub
-                </a>
-              )}
-              {project.deployLink && (
-                <a
-                  href={project.deployLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-amber-500 transition-colors"
-                >
-                  <FaExternalLinkAlt className="text-xs" /> Acessar Deploy ↗
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-
-      </Card>
-    </motion.div>
-  );
-}
-</file>
-
 <file path="src/app/components/ui/TrophyItem.tsx">
 import React from 'react';
 import Image from 'next/image'
@@ -1357,59 +1386,253 @@ export default function Counter({ target, suffix = "", startFrom = 0 }: CounterP
 }
 </file>
 
+<file path="src/app/components/ui/ProjectCard.tsx">
+import React from 'react';
+import { motion, Variants } from 'framer-motion';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { Card } from './Card';
+import { Project } from '../../_constants/projectsData';
+import TerminalMockup from './TerminalMockup';
+import BrowserMockup from './BrowserMockup';
+
+
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+};
+
+// Componente Interno Isolado para o Card do Projeto
+export default function ProjectCard({ project }: { project: Project }) {
+  return (
+    <motion.div variants={itemVariants} className="group w-full">
+      <Card className="!flex-row gap-8 flex-wrap lg:flex-nowrap p-6 border border-amber-950/20 bg-[#16110E] transition-all duration-300 group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.05)]">
+
+        <div className="w-full lg:w-2/3">
+          {/* Mockup do Terminal */}
+          {project.isApiOnly ? <TerminalMockup
+            command={project.terminalCommand}
+            outputLines={project.terminalOutput}
+          /> : 
+            <BrowserMockup 
+      imageUrl={project.imageUrl} 
+      title={project.title}
+    />
+          
+          }
+
+        </div>
+
+        {/* LADO DIREITO: Informações e Engenharia */}
+        <div className="lg:w-3/5 w-full flex flex-col justify-between space-y-6">
+          <div className="space-y-3">
+            <div>
+              <h3 className="text-xl font-bold text-white group-hover:text-amber-500 transition-colors duration-300">
+                {project.title}
+              </h3>
+              <p className="text-xs font-semibold text-amber-500/80 mt-1">
+                {project.tagline}
+              </p>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              {project.description}
+            </p>
+          </div>
+
+          {/* Tags e Ações */}
+          <div className="space-y-4">
+            {/* Badge de Tecnologias */}
+            <div className="flex flex-wrap gap-1.5">
+              {project.technologies.map((tech, techIdx) => (
+                <span
+                  key={techIdx}
+                  className="text-[11px] font-mono bg-black/40 text-gray-300 border border-amber-950/40 px-2.5 py-0.5 rounded-md hover:border-amber-500/20 transition-colors"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {/* Links de Ação */}
+            <div className="flex gap-4 pt-3 border-t border-amber-950/40">
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-white transition-colors"
+                >
+                  <FaGithub className="text-sm" /> Código no GitHub
+                </a>
+              )}
+              {project.deployLink && (
+                <a
+                  href={project.deployLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-amber-500 transition-colors"
+                >
+                  <FaExternalLinkAlt className="text-xs" /> Acessar Deploy ↗
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+
+      </Card>
+    </motion.div>
+  );
+}
+</file>
+
 <file path="src/app/components/Footer.tsx">
 'use client'
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FaWhatsapp, FaEnvelope, FaArrowUp } from 'react-icons/fa';
-import { Badge } from './ui/Badge'; // Reaproveitando sua tag rústica consistente
+import { Badge } from './ui/Badge'; 
 import { email, phone } from '../_constants/contacts';
 import { GiCrossedAxes } from 'react-icons/gi';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
+  const footerRef = useRef<HTMLDivElement>(null);
+  const ctaBoxRef = useRef<HTMLDivElement>(null);
+  const textElementsRef = useRef<HTMLDivElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const ctaBox = ctaBoxRef.current;
+    const texts = textElementsRef.current;
+    const buttons = buttonsRef.current;
+  const footer = footerRef.current;
+
+    if (!ctaBox || !texts || !buttons || !footer) return;
+
+    // 1. Animação de Entrada com Revelação Rústica (Efeito Forja)
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: footer,
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+        once: true,
+      }
+    });
+
+    tl.fromTo(ctaBox, 
+      { opacity: 0, y: 50, scale: 0.98 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'power2.out' }
+    )
+    .fromTo(texts.children,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: 'power2.out' },
+      '-=0.3'
+    )
+    .fromTo(buttons.children,
+      { opacity: 0, scale: 0.9, y: 15 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.4, stagger: 0.12, ease: 'back.out(1.5)' },
+      '-=0.2'
+    );
+
+    // 2. Efeito Magnético Otimizado de Alta Performance (GPU) nos Botões Principais
+    const magneticButtons = footer.querySelectorAll('.magnetic-cta');
+    const cleanupMap = new Map<Element, { move: (e: MouseEvent) => void; leave: () => void }>();
+
+    magneticButtons.forEach((btn) => {
+      const htmlEl = btn as HTMLElement;
+      const xTo = gsap.quickTo(htmlEl, 'x', { duration: 0.3, ease: 'power2.out' });
+      const yTo = gsap.quickTo(htmlEl, 'y', { duration: 0.3, ease: 'power2.out' });
+
+      const onMouseMove = (e: MouseEvent) => {
+        const rect = htmlEl.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        xTo(x * 0.25); // Força do efeito magnético
+        yTo(y * 0.25);
+      };
+
+      const onMouseLeave = () => {
+        gsap.to(htmlEl, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+      };
+
+      htmlEl.addEventListener('mousemove', onMouseMove);
+      htmlEl.addEventListener('mouseleave', onMouseLeave);
+      cleanupMap.set(htmlEl, { move: onMouseMove, leave: onMouseLeave });
+    });
+
+    return () => {
+      if (tl.scrollTrigger) tl.scrollTrigger.kill();
+      tl.kill();
+      cleanupMap.forEach((listeners, el) => {
+        el.removeEventListener('mousemove', listeners.move as EventListener);
+        el.removeEventListener('mouseleave', listeners.leave);
+      });
+    };
+  }, []);
+
   return (
-    <footer id="contact" className="bg-[#110D0A] text-[#F3F4F6] pt-16 pb-8 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 w-full">
+    <footer 
+      id="contact" 
+      ref={footerRef}
+      className="bg-[#110D0A] text-[#F3F4F6] pt-16 pb-8 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 w-full overflow-hidden"
+    >
       <div className="max-w-6xl w-full mx-auto space-y-12">
 
-        {/* Bloco de Chamada para Ação (CTA) - Estilo Caixa de Forja */}
-        <div className="bg-black/30 rounded-3xl border border-amber-950/60 p-8 md:p-12 text-center space-y-6 relative overflow-hidden group hover:border-amber-500/20 transition-all duration-300 shadow-xl">
+        {/* Bloco de Chamada para Ação (CTA) */}
+        <div 
+          ref={ctaBoxRef}
+          className="bg-black/30 rounded-3xl border border-amber-950/60 p-8 md:p-12 text-center space-y-6 relative overflow-hidden group hover:border-amber-500/20 transition-colors duration-300 shadow-xl"
+        >
           {/* Linha de brilho superior com degradê de fogo */}
           <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-amber-500/0 via-amber-500/40 to-amber-500/0"></div>
 
-          <div className="max-w-xl mx-auto space-y-4">
-            <div className="flex justify-center">
+          <div ref={textElementsRef} className="max-w-xl mx-auto space-y-4">
+            <div className="flex justify-center will-change-transform">
               <Badge icon={GiCrossedAxes} variant="amber">O Chamado das Armas</Badge>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+            <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white will-change-transform">
               Pronto para convocar reforços?
             </h3>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed will-change-transform">
               Seja para saquear bugs complexos no back-end, erguer interfaces indestrutíveis ou planejar uma arquitetura escalável na nuvem, meu machado está à disposição do seu clã.
             </p>
           </div>
 
-          {/* Botões Grandes de Conversão */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
+          {/* Botões Grandes de Conversão com Efeito Magnético */}
+          <div ref={buttonsRef} className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
+            <div className="magnetic-cta w-full sm:w-auto will-change-transform">
+              <a
+                href={`https://wa.me/${phone}`}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-300 shadow-lg active:scale-[0.98] animate-glow-pulse"
+              >
+                <FaWhatsapp className="text-lg" /> Iniciar Conversa no WhatsApp
+              </a>
+            </div>
 
-            <a
-              href={`https://wa.me/${phone}`}
-              target="_blank"
-              rel="noreferrer"
-              className="w-full sm:w-auto flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-300 shadow-lg hover:scale-[1.04] active:scale-[0.98] animate-glow-pulse"
-            >
-              <FaWhatsapp className="text-lg" /> Iniciar Conversa no WhatsApp
-            </a>
-
-
-            <a
-              href={`mailto:${email}`} // Substitua pelo seu e-mail profissional
-              className="w-full sm:w-auto flex items-center justify-center gap-3 bg-black/40 hover:bg-black/70 text-gray-300 font-medium text-sm px-6 py-3.5 rounded-xl border border-amber-950/60 hover:border-amber-500/30 transition-all duration-200"
-            >
-              <FaEnvelope className="text-base text-gray-400" /> Enviar Mensagem por E-mail
-            </a>
+            <div className="magnetic-cta w-full sm:w-auto will-change-transform">
+              <a
+                href={`mailto:${email}`}
+                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-black/40 hover:bg-black/70 text-gray-300 font-medium text-sm px-6 py-3.5 rounded-xl border border-amber-950/60 hover:border-amber-500/30 transition-all duration-200"
+              >
+                <FaEnvelope className="text-base text-gray-400" /> Enviar Mensagem por E-mail
+              </a>
+            </div>
           </div>
         </div>
 
@@ -1422,132 +1645,19 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Botão de Voltar ao Topo - Estilo Rúnico */}
+          {/* Botão de Voltar ao Topo */}
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 px-3 py-1.5 bg-black/40 hover:bg-black/80 border border-amber-950/60 text-gray-400 hover:text-amber-500 rounded-lg transition-all text-[11px] font-medium font-mono group
-          
-            cursor-pointer
-            "
+            className="flex items-center gap-2 px-3 py-1.5 bg-black/40 hover:bg-black/80 border border-amber-950/60 text-gray-400 hover:text-amber-500 rounded-lg transition-all text-[11px] font-medium font-mono group cursor-pointer"
             aria-label="Voltar para o topo da página"
           >
-            VOLTAR AO TOPO <FaArrowUp className="transform group-hover:-translate-y-0.5 transition-transform" />
+            VOLTAR AO TOPO{' '}
+            <FaArrowUp className="transform group-hover:-translate-y-1 group-hover:scale-110 transition-all duration-300" />
           </button>
         </div>
 
       </div>
     </footer>
-  );
-}
-</file>
-
-<file path="src/app/components/Projects.tsx">
-'use client';
-
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Badge } from "./ui/Badge";
-import { projectsData } from "../_constants/projectsData";
-import ProjectCard from "./ui/ProjectCard";
-import { GiVikingShield } from "react-icons/gi";
-
-// Registra o plugin do GSAP
-gsap.registerPlugin(ScrollTrigger);
-
-export default function ProjectsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const header = headerRef.current;
-    const container = cardsContainerRef.current;
-
-    if (!header || !container) return;
-
-    // 1. Animação do Cabeçalho (Badge, Título, Descrição)
-    gsap.fromTo(
-      header.children,
-      { opacity: 0, y: -30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: header,
-          start: "top 85%",
-          toggleActions: "play none none none",
-          once: true,
-        },
-      }
-    );
-
-    // 2. Animação dos Cards dos Projetos (Efeito 3D Rústico de Entrada)
-    const cards = container.children;
-    
-    gsap.fromTo(
-      cards,
-      { 
-        opacity: 0, 
-        y: 60, 
-        rotationX: -15, // Efeito inclinado em perspectiva
-        transformOrigin: "top center"
-      },
-      {
-        opacity: 1,
-        y: 0,
-        rotationX: 0,
-        duration: 0.8,
-        stagger: 0.2, // Cascata entre os cards
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: container,
-          start: "top 80%", // Dispara quando o topo do container atinge 80% da tela
-          toggleActions: "play none none none",
-          once: true,
-        },
-      }
-    );
-
-    // Limpeza do ScrollTrigger ao desmontar
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.trigger === header || trigger.trigger === container) {
-          trigger.kill();
-        }
-      });
-    };
-  }, []);
-
-  return (
-    <section
-      id="projects"
-      ref={sectionRef}
-      className="scroll-mt-20 bg-[#110D0A] text-[#F3F4F6] py-20 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 overflow-hidden [perspective:1200px]"
-    >
-      <div className="max-w-6xl w-full mx-auto space-y-12">
-
-        <div ref={headerRef} className="space-y-3 text-center md:text-left">
-          <Badge icon={GiVikingShield} variant="amber">Invasões Concluídas</Badge>
-          <h2 className="text-3xl font-extrabold tracking-tight text-white">
-            Projetos de Destaque
-          </h2>
-          <p className="text-gray-400 text-sm max-w-xl">
-            Uma amostra real do meu arsenal de engenharia. Sem códigos genéricos: apenas soluções robustas que resolvem problemas reais.
-          </p>
-        </div>
-
-        <div ref={cardsContainerRef} className="space-y-6">
-          {projectsData.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
-
-      </div>
-    </section>
   );
 }
 </file>
@@ -1707,6 +1817,117 @@ export default function Header() {
         </div>
       </div>
     </header>
+  );
+}
+</file>
+
+<file path="src/app/components/Projects.tsx">
+'use client';
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Badge } from "./ui/Badge";
+import { projectsData } from "../_constants/projectsData";
+import ProjectCard from "./ui/ProjectCard";
+import { GiVikingShield } from "react-icons/gi";
+
+// Registra o plugin do GSAP
+gsap.registerPlugin(ScrollTrigger);
+
+export default function ProjectsSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const cardsContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const header = headerRef.current;
+    const container = cardsContainerRef.current;
+
+    if (!header || !container) return;
+
+    // 1. Animação do Cabeçalho (Badge, Título, Descrição)
+    gsap.fromTo(
+      header.children,
+      { opacity: 0, y: -30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: header,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      }
+    );
+
+    // 2. Animação dos Cards dos Projetos (Efeito 3D Rústico de Entrada)
+    const cards = container.children;
+    
+    gsap.fromTo(
+      cards,
+      { 
+        opacity: 0, 
+        y: 60, 
+        rotationX: -15, // Efeito inclinado em perspectiva
+        transformOrigin: "top center"
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotationX: 0,
+        duration: 0.8,
+        stagger: 0.2, // Cascata entre os cards
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: container,
+          start: "top 80%", // Dispara quando o topo do container atinge 80% da tela
+          toggleActions: "play none none none",
+          once: true,
+        },
+      }
+    );
+
+    // Limpeza do ScrollTrigger ao desmontar
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.trigger === header || trigger.trigger === container) {
+          trigger.kill();
+        }
+      });
+    };
+  }, []);
+
+  return (
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="scroll-mt-20 bg-[#110D0A] text-[#F3F4F6] py-20 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 overflow-hidden [perspective:1200px]"
+    >
+      <div className="max-w-6xl w-full mx-auto space-y-12">
+
+        <div ref={headerRef} className="space-y-3 text-center md:text-left">
+          <Badge icon={GiVikingShield} variant="amber">Invasões Concluídas</Badge>
+          <h2 className="text-3xl font-extrabold tracking-tight text-white">
+            Projetos de Destaque
+          </h2>
+          <p className="text-gray-400 text-sm max-w-xl">
+            Uma amostra real do meu arsenal de engenharia. Sem códigos genéricos: apenas soluções robustas que resolvem problemas reais.
+          </p>
+        </div>
+
+        <div ref={cardsContainerRef} className="space-y-6">
+          {projectsData.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+
+      </div>
+    </section>
   );
 }
 </file>
