@@ -10,9 +10,9 @@ import { Button } from './ui/Button';
 import { SocialLink } from './ui/SocialLink';
 import { TrophyItem } from './ui/TrophyItem';
 import Counter from './ui/Counter';
-import { github, linkedin } from '../_contants/contacts';
+import { github, linkedin } from '../_constants/contacts';
 import HeroCardViking from './ui/HeroCardViking';
-import { TECH_ARSENAL } from '../_contants/techs';
+import { TECH_ARSENAL } from '../_constants/techs';
 import { GiAnvil } from 'react-icons/gi';
 
 export default function BentoGrid() {

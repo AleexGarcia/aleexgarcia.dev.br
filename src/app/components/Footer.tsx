@@ -2,7 +2,7 @@
 import React from 'react';
 import { FaWhatsapp, FaEnvelope, FaArrowUp } from 'react-icons/fa';
 import { Badge } from './ui/Badge'; // Reaproveitando sua tag rústica consistente
-import { email, phone } from '../_contants/contacts';
+import { email, phone } from '../_constants/contacts';
 import { GiCrossedAxes } from 'react-icons/gi';
 
 export default function Footer() {
