@@ -693,132 +693,6 @@ export function SocialLink({ href, icon: Icon, label, actionText, hoverColor = '
 }
 </file>
 
-<file path="src/app/components/ui/TerminalMockup.tsx">
-'use client';
-
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
-
-// Registra os plugins necessários
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
-
-interface TerminalMockupProps {
-  command?: string;
-  outputLines?: string[];
-}
-
-export default function TerminalMockup({ 
-  command = "curl -X GET /api/v1/status", 
-  outputLines = [
-    '{"status": "online", "database": "connected"}',
-    '{"latency": "14ms", "uptime": "100%"}',
-    "Valhalla server connection established successfully."
-  ]
-}: TerminalMockupProps) {
-  const terminalRef = useRef<HTMLDivElement>(null);
-  const commandRef = useRef<HTMLSpanElement>(null);
-  const outputsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const triggerElement = terminalRef.current;
-    const commandText = commandRef.current;
-    const outputs = outputsRef.current;
-
-    if (!triggerElement || !commandText || !outputs) return;
-
-    // Timeline para orquestrar a digitação e depois a resposta do servidor
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerElement,
-        start: "top 80%", // Dispara quando o terminal entra 80% na tela
-        toggleActions: "play none none none",
-        once: true,
-      }
-    });
-
-    // 1. Efeito de Digitação do Comando
-    tl.to(commandText, {
-      duration: 2,
-      text: {
-        value: command,
-        delimiter: ""
-      },
-      ease: "none",
-    });
-
-    // 2. Aparição em cascata (stagger) das linhas de resposta do terminal
-    tl.fromTo(
-      outputs.children,
-      { opacity: 0, y: 5 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.4,
-        stagger: 0.2,
-        ease: "power1.out",
-      },
-      "+=0.3" // Pequeno delay simulando o tempo de resposta da API
-    );
-
-    return () => {
-      if (tl.scrollTrigger) tl.scrollTrigger.kill();
-      tl.kill();
-    };
-  }, [command]);
-
-  return (
-    <div 
-      ref={terminalRef} 
-      className="w-full h-full min-h-[220px] bg-[#0c0907] rounded-lg border border-amber-950/50 shadow-2xl font-mono text-xs text-zinc-400 overflow-hidden flex flex-col select-none"
-    >
-      {/* Barra superior do Terminal Mac/Linux */}
-      <div className="bg-[#140f0c] px-4 py-3 flex items-center justify-between border-b border-amber-950/30">
-        <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-[#3a1d13] opacity-60" />
-          <div className="w-3 h-3 rounded-full bg-[#5c2e16] opacity-60" />
-          <div className="w-3 h-3 rounded-full bg-[#8c471a] opacity-60" />
-        </div>
-        <div className="text-[10px] text-zinc-600 font-sans tracking-wider uppercase font-semibold">
-          bash 🖥️
-        </div>
-      </div>
-
-      {/* Área de Prompt */}
-      <div className="p-4 flex-1 space-y-2 overflow-y-auto custom-scrollbar">
-        {/* Linha do Comando */}
-        <div className="flex items-start flex-wrap gap-x-2">
-          <span className="text-amber-600 font-bold whitespace-nowrap">
-            alexandre@viking-terminal:~#
-          </span>
-          {/* O Span onde o TextPlugin vai injetar o texto */}
-          <span ref={commandRef} className="text-zinc-200 font-semibold tracking-wide"></span>
-          {/* Cursor piscante */}
-          <span className="animate-pulse font-bold text-amber-500 -ml-1">|</span>
-        </div>
-
-        {/* Linhas de Output (Geradas dinamicamente após a digitação) */}
-        <div ref={outputsRef} className="space-y-1 mt-2 font-light">
-          {outputLines.map((line, idx) => (
-            <div 
-              key={idx} 
-              className={`text-[11px] leading-relaxed break-all ${
-                line.includes('successfully') || line.includes('online') 
-                  ? 'text-emerald-600/90 font-medium' 
-                  : 'text-zinc-500'
-              }`}
-            >
-              {line}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-</file>
-
 <file path=".gitignore">
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
@@ -1075,81 +949,6 @@ export function useBentoAnimations(containerRef: RefObject<HTMLDivElement | null
 }
 </file>
 
-<file path="src/app/globals.css">
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@theme {
-  /* Registrando a animação customizada */
-  --animate-float: float 4s ease-in-out infinite;
-
-  /* Registrando os keyframes da flutuação */
-  @keyframes float {
-
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-6px);
-    }
-  }
-
-  --animate-border-spin: border-spin 4s linear infinite;
-
-  @keyframes border-spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes shadowPulse {
-
-    0%,
-    100% {
-      box-shadow: 0 5px 5px -3px rgba(16, 185, 129, 0.2), 0 4px 6px -4px rgba(16, 185, 129, 0.2);
-    }
-
-    50% {
-      box-shadow: 0 0 10px 5px rgba(16, 185, 129, 0.6);
-    }
-  }
-
-}
-.animate-glow-pulse {
-  animation: shadowPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-</file>
-
 <file path="src/app/not-found.tsx">
 'use client'
 
@@ -1286,6 +1085,139 @@ O projeto foi dividido em **5 fases estratégicas** para garantir qualidade de c
 Desenvolvido com base em café, hidromel e muito TypeScript por Alexandre Garcia.
 </file>
 
+<file path="src/app/components/ui/TerminalMockup.tsx">
+'use client';
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
+
+// Registra os plugins necessários
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+interface TerminalMockupProps {
+  command?: string;
+  outputLines?: string[];
+}
+
+export default function TerminalMockup({ 
+  command = "curl -X GET /api/v1/status", 
+  outputLines = [
+    '{"status": "online", "database": "connected"}',
+    '{"latency": "14ms", "uptime": "100%"}',
+    "Valhalla server connection established successfully."
+  ]
+}: TerminalMockupProps) {
+  const terminalRef = useRef<HTMLDivElement>(null);
+  const commandRef = useRef<HTMLSpanElement>(null);
+  const outputsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const triggerElement = terminalRef.current;
+    const commandText = commandRef.current;
+    const outputs = outputsRef.current;
+
+    if (!triggerElement || !commandText || !outputs) return;
+
+    // Timeline para orquestrar a digitação e depois a resposta do servidor
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerElement,
+        start: "top 80%", // Dispara quando o terminal entra 80% na tela
+        toggleActions: "play none none none",
+        once: true,
+      }
+    });
+
+    // 1. Efeito de Digitação do Comando
+    tl.to(commandText, {
+      duration: 2,
+      text: {
+        value: command,
+        delimiter: ""
+      },
+      ease: "none",
+    });
+
+    // 2. Aparição em cascata (stagger) das linhas de resposta do terminal
+    tl.fromTo(
+      outputs.children,
+      { opacity: 0, y: 5 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        stagger: 0.2,
+        ease: "power1.out",
+      },
+      "+=0.3" // Pequeno delay simulando o tempo de resposta da API
+    );
+
+    return () => {
+      if (tl.scrollTrigger) tl.scrollTrigger.kill();
+      tl.kill();
+    };
+  }, [command]);
+
+  return (
+    <div 
+      ref={terminalRef} 
+      className="w-full h-full min-h-[250px] bg-[#0c0907] rounded-lg border border-amber-950/50 shadow-2xl font-mono text-xs text-zinc-400 overflow-hidden flex flex-col select-none"
+    >
+      {/* Barra superior do Terminal Mac/Linux */}
+      <div className="bg-[#140f0c] px-4 py-3 flex items-center justify-between border-b border-amber-950/30">
+        <div className="flex space-x-2">
+          <div className="w-3 h-3 rounded-full bg-[#3a1d13] opacity-60" />
+          <div className="w-3 h-3 rounded-full bg-[#5c2e16] opacity-60" />
+          <div className="w-3 h-3 rounded-full bg-[#8c471a] opacity-60" />
+        </div>
+        <div className="text-[10px] text-zinc-600 font-sans tracking-wider uppercase font-semibold">
+          bash 🖥️
+        </div>
+      </div>
+
+      {/* Área de Prompt */}
+      <div className="p-4 flex-1 space-y-2 overflow-y-auto custom-scrollbar overflow-x-hidden">
+        {/* Linha do Comando - Corrigida para evitar quebra horizontal com comandos longos */}
+        <div className="flex flex-col sm:flex-row sm:items-start gap-x-2 w-full overflow-hidden">
+          <span className="text-amber-600 font-bold whitespace-nowrap shrink-0">
+            alexandre@viking-terminal:~#
+          </span>
+          
+          <div className="flex-1 min-w-0 break-all inline-flex items-center flex-wrap">
+            {/* O Span onde o TextPlugin vai injetar o texto */}
+            <span 
+              ref={commandRef} 
+              className="text-zinc-200 font-semibold tracking-wide break-all whitespace-pre-wrap"
+            ></span>
+            
+            {/* Cursor piscante corrigido */}
+            <span className="animate-pulse font-bold text-amber-500 ml-0.5 shrink-0">|</span>
+          </div>
+        </div>
+
+        {/* Linhas de Output (Geradas dinamicamente após a digitação) */}
+        <div ref={outputsRef} className="space-y-1 mt-2 font-light">
+          {outputLines.map((line, idx) => (
+            <div 
+              key={idx} 
+              className={`text-[11px] leading-relaxed break-all whitespace-pre-wrap ${
+                line.includes('successfully') || line.includes('online') 
+                  ? 'text-emerald-600/90 font-medium' 
+                  : 'text-zinc-500'
+              }`}
+            >
+              {line}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+</file>
+
 <file path="src/app/components/ui/TrophyItem.tsx">
 import React from 'react';
 import Image from 'next/image'
@@ -1383,6 +1315,82 @@ export default function Counter({ target, suffix = "", startFrom = 0 }: CounterP
       {suffix}
     </span>
   );
+}
+</file>
+
+<file path="src/app/globals.css">
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@theme {
+  /* Registrando a animação customizada */
+  --animate-float: float 4s ease-in-out infinite;
+
+  /* Registrando os keyframes da flutuação */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  --animate-border-spin: border-spin 4s linear infinite;
+
+  @keyframes border-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes shadowPulse {
+
+    0%,
+    100% {
+      box-shadow: 0 5px 5px -3px rgba(16, 185, 129, 0.2), 0 4px 6px -4px rgba(16, 185, 129, 0.2);
+    }
+
+    50% {
+      box-shadow: 0 0 10px 5px rgba(16, 185, 129, 0.6);
+    }
+  }
+
+}
+.animate-glow-pulse {
+  animation: shadowPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 </file>
 
@@ -1489,6 +1497,163 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       </Card>
     </motion.div>
+  );
+}
+</file>
+
+<file path="src/app/page.tsx">
+import BentoGrid from "./components/BentoGrid";
+import Projects from "./components/Projects";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+
+
+export default function Home() {
+  return (
+    <div className="font-sans grid grid-rows-[90px_1fr_auto] items-center justify-items-center min-h-screen">
+      <Header/>
+      <main className="flex flex-col row-start-2 w-full">
+        <BentoGrid/>
+        <Projects/>
+      </main>
+      <footer className="row-start-3 w-full">
+        <Footer/>
+      </footer>
+    </div>
+  );
+}
+</file>
+
+<file path="package.json">
+{
+  "name": "portfolio-pessoal",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "next": "15.4.10",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-icons": "^5.7.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
+</file>
+
+<file path="src/app/components/Header.tsx">
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { Button } from './ui/Button';
+import { NavLink } from './ui/NavLink';
+import { GiBatteredAxe, GiCrossedAxes } from 'react-icons/gi';
+
+
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const navLinks = [
+    { name: 'Arsenal', href: '#arsenal' },
+    { name: 'Conquistas', href: '#projects' },
+    { name: 'Convocar', href: '#contact' }
+  ];
+
+  return (
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-[#110D0A]/90 backdrop-blur-md border-b border-amber-950/40 py-4 shadow-lg shadow-black/40' 
+        : 'bg-transparent py-6'
+    }`}>
+      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
+        
+        {/* LOGO / IDENTIDADE NÓRDICA */}
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div className="p-2 bg-amber-500/10 rounded-xl border border-amber-500/20 text-amber-500 group-hover:bg-amber-500 group-hover:text-[#110D0A] transition-all duration-300">
+            <GiCrossedAxes className="text-lg" />
+  
+          </div>
+          <span className="text-sm font-black tracking-widest uppercase text-white font-mono group-hover:text-amber-500 transition-colors">
+            AleexGarcia.dev
+          </span>
+        </a>
+
+        {/* NAVEGAÇÃO DESKTOP (Estilo Madeira de Fundo) */}
+        <nav className="hidden md:flex items-center gap-1 bg-[#1A1410] border border-amber-950/60 p-1 rounded-xl backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.02)]">
+          {navLinks.map((link, idx) => (
+            <NavLink key={idx} href={link.href}>
+              {link.name}
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* BOTÃO DE CONTATO DESKTOP (Reaproveitando o componente Button) */}
+        <div className="hidden md:block">
+          <Button  href="#contact" variant="primary" className="group !py-2 !px-4 text-xs uppercase tracking-wider flex items-center gap-1.5">
+            Contratar Machado
+            <GiBatteredAxe className="text-xl transition-all duration-300 -rotate-45 group-hover:rotate-20 group-hover:translate-x-1 group-hover:scale-110" />
+          </Button>
+        </div>
+
+        {/* BOTÃO DO MENU MOBILE */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden p-2 bg-[#1A1410] border border-amber-950/60 text-amber-500 hover:text-amber-400 rounded-xl transition-all"
+          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+        >
+          {isOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
+        </button>
+
+      </div>
+
+      {/* MENU DROPDOWN MOBILE */}
+      <div className={`fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#110D0A] z-40 md:hidden flex flex-col justify-between p-6 border-t border-amber-950/40 transform transition-transform duration-300 ease-in-out ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}>
+        <nav className="flex flex-col gap-3">
+          {navLinks.map((link, idx) => (
+            <NavLink key={idx} href={link.href} onClick={toggleMenu} mobile>
+              {link.name}
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* BOTÃO INFERIOR NO MOBILE */}
+        <div className="pt-6 border-t border-amber-950/40">
+          <Button href="#contact" variant="primary" onClick={toggleMenu} className="w-full !py-4 text-sm uppercase tracking-wider">
+            Contratar Machado
+          </Button>
+        </div>
+      </div>
+    </header>
   );
 }
 </file>
@@ -1619,7 +1784,7 @@ export default function Footer() {
                 href={`https://wa.me/${phone}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-300 shadow-lg active:scale-[0.98] animate-glow-pulse"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl transition-all duration-300 shadow-lg active:scale-[0.98] animate-glow-pulse px-3 py-4 sm:px-6 "
               >
                 <FaWhatsapp className="text-lg" /> Iniciar Conversa no WhatsApp
               </a>
@@ -1628,7 +1793,7 @@ export default function Footer() {
             <div className="magnetic-cta w-full sm:w-auto will-change-transform">
               <a
                 href={`mailto:${email}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-black/40 hover:bg-black/70 text-gray-300 font-medium text-sm px-6 py-3.5 rounded-xl border border-amber-950/60 hover:border-amber-500/30 transition-all duration-200"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-black/40 hover:bg-black/70 text-gray-300 font-medium text-sm px-3 py-4  sm:px-6 rounded-xl border border-amber-950/60 hover:border-amber-500/30 transition-all duration-200"
               >
                 <FaEnvelope className="text-base text-gray-400" /> Enviar Mensagem por E-mail
               </a>
@@ -1658,165 +1823,6 @@ export default function Footer() {
 
       </div>
     </footer>
-  );
-}
-</file>
-
-<file path="src/app/page.tsx">
-import BentoGrid from "./components/BentoGrid";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-
-
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[90px_1fr_auto] items-center justify-items-center min-h-screen">
-      <Header/>
-      <main className="flex flex-col row-start-2 w-full">
-        <BentoGrid/>
-        <Projects/>
-      </main>
-      <footer className="row-start-3 w-full">
-        <Footer/>
-      </footer>
-    </div>
-  );
-}
-</file>
-
-<file path="package.json">
-{
-  "name": "portfolio-pessoal",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@vercel/og": "^0.11.1",
-    "gsap": "^3.15.0",
-    "motion": "^12.43.0",
-    "next": "15.4.10",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-icons": "^5.7.0"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.5",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
-}
-</file>
-
-<file path="src/app/components/Header.tsx">
-'use client';
-
-import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { Button } from './ui/Button';
-import { NavLink } from './ui/NavLink';
-import { GiBatteredAxe, GiCrossedAxes } from 'react-icons/gi';
-
-
-
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  const navLinks = [
-    { name: 'Arsenal', href: '#arsenal' },
-    { name: 'Conquistas', href: '#projects' },
-    { name: 'Convocar', href: '#contact' }
-  ];
-
-  return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-[#110D0A]/90 backdrop-blur-md border-b border-amber-950/40 py-4 shadow-lg shadow-black/40' 
-        : 'bg-transparent py-6'
-    }`}>
-      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
-        
-        {/* LOGO / IDENTIDADE NÓRDICA */}
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="p-2 bg-amber-500/10 rounded-xl border border-amber-500/20 text-amber-500 group-hover:bg-amber-500 group-hover:text-[#110D0A] transition-all duration-300">
-            <GiCrossedAxes className="text-lg" />
-  
-          </div>
-          <span className="text-sm font-black tracking-widest uppercase text-white font-mono group-hover:text-amber-500 transition-colors">
-            AleexGarcia.dev
-          </span>
-        </a>
-
-        {/* NAVEGAÇÃO DESKTOP (Estilo Madeira de Fundo) */}
-        <nav className="hidden md:flex items-center gap-1 bg-[#1A1410] border border-amber-950/60 p-1 rounded-xl backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.02)]">
-          {navLinks.map((link, idx) => (
-            <NavLink key={idx} href={link.href}>
-              {link.name}
-            </NavLink>
-          ))}
-        </nav>
-
-        {/* BOTÃO DE CONTATO DESKTOP (Reaproveitando o componente Button) */}
-        <div className="hidden md:block">
-          <Button  href="#contact" variant="primary" className="group !py-2 !px-4 text-xs uppercase tracking-wider flex items-center gap-1.5">
-            Contratar Machado
-            <GiBatteredAxe className="text-xl transition-all duration-300 -rotate-45 group-hover:rotate-20 group-hover:translate-x-1 group-hover:scale-110" />
-          </Button>
-        </div>
-
-        {/* BOTÃO DO MENU MOBILE */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden p-2 bg-[#1A1410] border border-amber-950/60 text-amber-500 hover:text-amber-400 rounded-xl transition-all"
-          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
-        >
-          {isOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
-        </button>
-
-      </div>
-
-      {/* MENU DROPDOWN MOBILE */}
-      <div className={`fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#110D0A] z-40 md:hidden flex flex-col justify-between p-6 border-t border-amber-950/40 transform transition-transform duration-300 ease-in-out ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
-        <nav className="flex flex-col gap-3">
-          {navLinks.map((link, idx) => (
-            <NavLink key={idx} href={link.href} onClick={toggleMenu} mobile>
-              {link.name}
-            </NavLink>
-          ))}
-        </nav>
-
-        {/* BOTÃO INFERIOR NO MOBILE */}
-        <div className="pt-6 border-t border-amber-950/40">
-          <Button href="#contact" variant="primary" onClick={toggleMenu} className="w-full !py-4 text-sm uppercase tracking-wider">
-            Contratar Machado
-          </Button>
-        </div>
-      </div>
-    </header>
   );
 }
 </file>
@@ -1873,7 +1879,7 @@ export default function ProjectsSection() {
       { 
         opacity: 0, 
         y: 60, 
-        rotationX: -15, // Efeito inclinado em perspectiva
+        rotationX: -15, 
         transformOrigin: "top center"
       },
       {
@@ -2151,7 +2157,7 @@ export default function BentoGrid() {
         </div>
 
         {/* CARD 6 */}
-        <div className="md:col-span-1">
+        <div className="md:col-span-3 lg:col-span-1">
           <Card className="text-center p-5 justify-between h-full group transition-all duration-300 hover:border-amber-900/40">
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Pilhagem de Erros</span>
             <div className="py-2">
@@ -2167,7 +2173,7 @@ export default function BentoGrid() {
         </div>
 
         {/* CARD 7 */}
-        <div className="md:col-span-1">
+        <div className="md:col-span-3 lg:col-span-1">
           <Card className="text-center p-5 justify-between h-full group transition-all duration-300 hover:border-amber-900/40">
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Banquete no Git</span>
             <div className="py-2">
@@ -2183,7 +2189,7 @@ export default function BentoGrid() {
         </div>
 
         {/* CARD 8 */}
-        <div className="md:col-span-1">
+        <div className="md:col-span-2 lg:col-span-1">
           <Card className="text-center p-5 justify-between h-full group transition-all duration-300 hover:border-amber-900/40">
             <span className="text-[11px] uppercase tracking-widest text-amber-700 font-bold">Sacrifício aos Deuses</span>
             <div className="py-2">
