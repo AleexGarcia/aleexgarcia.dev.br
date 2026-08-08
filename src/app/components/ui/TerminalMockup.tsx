@@ -90,16 +90,23 @@ export default function TerminalMockup({
       </div>
 
       {/* Área de Prompt */}
-      <div className="p-4 flex-1 space-y-2 overflow-y-auto custom-scrollbar">
-        {/* Linha do Comando */}
-        <div className="flex items-start flex-wrap gap-x-2">
-          <span className="text-amber-600 font-bold whitespace-nowrap">
+      <div className="p-4 flex-1 space-y-2 overflow-y-auto custom-scrollbar overflow-x-hidden">
+        {/* Linha do Comando - Corrigida para evitar quebra horizontal com comandos longos */}
+        <div className="flex flex-col sm:flex-row sm:items-start gap-x-2 w-full overflow-hidden">
+          <span className="text-amber-600 font-bold whitespace-nowrap shrink-0">
             alexandre@viking-terminal:~#
           </span>
-          {/* O Span onde o TextPlugin vai injetar o texto */}
-          <span ref={commandRef} className="text-zinc-200 font-semibold tracking-wide"></span>
-          {/* Cursor piscante */}
-          <span className="animate-pulse font-bold text-amber-500 -ml-1">|</span>
+          
+          <div className="flex-1 min-w-0 break-all inline-flex items-center flex-wrap">
+            {/* O Span onde o TextPlugin vai injetar o texto */}
+            <span 
+              ref={commandRef} 
+              className="text-zinc-200 font-semibold tracking-wide break-all whitespace-pre-wrap"
+            ></span>
+            
+            {/* Cursor piscante corrigido */}
+            <span className="animate-pulse font-bold text-amber-500 ml-0.5 shrink-0">|</span>
+          </div>
         </div>
 
         {/* Linhas de Output (Geradas dinamicamente após a digitação) */}
@@ -107,7 +114,7 @@ export default function TerminalMockup({
           {outputLines.map((line, idx) => (
             <div 
               key={idx} 
-              className={`text-[11px] leading-relaxed break-all ${
+              className={`text-[11px] leading-relaxed break-all whitespace-pre-wrap ${
                 line.includes('successfully') || line.includes('online') 
                   ? 'text-emerald-600/90 font-medium' 
                   : 'text-zinc-500'

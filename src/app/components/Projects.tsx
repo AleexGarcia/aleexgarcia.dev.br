@@ -49,7 +49,7 @@ export default function ProjectsSection() {
       { 
         opacity: 0, 
         y: 60, 
-        rotationX: -15, // Efeito inclinado em perspectiva
+        rotationX: -15, 
         transformOrigin: "top center"
       },
       {
