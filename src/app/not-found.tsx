@@ -1,10 +1,42 @@
-'use client'
+'use client';
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { gsap } from "gsap";
 import { GiDrakkar, GiSkullCrossedBones } from "react-icons/gi";
 
 export default function NotFound() {
+    const iconRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const icon = iconRef.current;
+        if (!icon) return;
+
+        // Cria a timeline com repetição infinita e efeito "yoyo" (mirror)
+        const tl = gsap.timeline({ 
+            repeat: -1, 
+            yoyo: true 
+        });
+
+        // Simula exatamente a animação de rotação e balanço do framer-motion
+        tl.to(icon, {
+            rotation: 10,
+            y: -5,
+            duration: 1,
+            ease: "sine.inOut"
+        }).to(icon, {
+            rotation: -10,
+            y: 5,
+            duration: 1,
+            ease: "sine.inOut"
+        });
+
+        // Limpeza para evitar vazamento de memória se o usuário sair da página rapidamente
+        return () => {
+            tl.kill();
+        };
+    }, []);
+
     return (
         <div className="min-h-screen bg-black text-gray-100 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
 
@@ -15,21 +47,13 @@ export default function NotFound() {
 
             <div className="max-w-xl z-10 flex flex-col items-center gap-6">
 
-                {/* Ícone de Alerta Viking */}
-                <motion.div
-                    animate={{
-                        rotate: [0, -10, 10, -10, 10, 0],
-                        y: [0, -5, 5, -5, 0]
-                    }}
-                    transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatType: "mirror"
-                    }}
+                {/* Ícone de Alerta Viking com GSAP */}
+                <div
+                    ref={iconRef}
                     className="text-amber-500 text-7xl drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]"
                 >
                     <GiSkullCrossedBones />
-                </motion.div>
+                </div>
 
                 {/* Título de Erro */}
                 <h1 className="text-7xl font-black font-mono tracking-tighter text-amber-500 select-none">
@@ -46,7 +70,7 @@ export default function NotFound() {
                     </p>
                 </div>
 
-                {/* Frase em Itálico (Mantendo o padrão dos seus cards) */}
+                {/* Frase em Itálico */}
                 <div className="border-y border-amber-950/60 py-3 my-2 text-xs text-amber-700 font-medium tracking-wider italic uppercase">
                     {"Nenhum link quebrado escapa ao meu machado"}
                 </div>
