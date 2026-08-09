@@ -13,7 +13,7 @@ import Counter from './ui/Counter';
 import { github, linkedin } from '../_constants/contacts';
 import HeroCardViking from './ui/HeroCardViking';
 import { TECH_ARSENAL } from '../_constants/techs';
-import { GiAnvil } from 'react-icons/gi';
+import { GiAnvil, GiBatteredAxe } from 'react-icons/gi';
 
 export default function BentoGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -51,9 +51,10 @@ export default function BentoGrid() {
               </span>
               <span className="magnetic-btn inline-block will-change-transform">
                 <Button className='flex gap-2 items-center' href="#contact" variant="secondary">
-                  Enviar um Corvo <FaCrow className='text-xl' />
+                  Contratar o Machado  <GiBatteredAxe className="text-xl" />
                 </Button>
               </span>
+
             </div>
           </Card>
         </div>
