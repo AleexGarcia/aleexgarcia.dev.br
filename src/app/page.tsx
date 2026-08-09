@@ -3,6 +3,7 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import About from "./components/About";
+import HowIBuild from "./components/HowIBuild";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <main className="flex flex-col row-start-2 w-full">
         <BentoGrid/>
         <About />
+        <HowIBuild/>
         <Projects/>
         
       </main>
