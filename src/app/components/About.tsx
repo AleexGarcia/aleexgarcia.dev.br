@@ -113,7 +113,7 @@ export default function AboutManifesto() {
 
   return (
     <section
-      id="about"
+      id="manifest"
       ref={sectionRef}
       aria-labelledby="about-title"
       className="relative overflow-hidden bg-[#110D0A] px-4 py-20 text-[#F3F4F6] sm:px-6 md:px-8 md:py-28"

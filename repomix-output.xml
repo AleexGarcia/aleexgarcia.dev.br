@@ -40,86 +40,48 @@ The content is organized as follows:
 </file_summary>
 
 <directory_structure>
-public/
-  assets/
-    Alexandre_Garcia_Curriculo.pdf
-    aws-certified-cloud-practitioner.png
-    Axes-no-bg.png
-    dev-no-bg.png
-    dev.png
-    og.webp
-    shield-no-bg.png
-  file.svg
-  globe.svg
-  next.svg
-  vercel.svg
-  window.svg
-src/
-  app/
-    _constants/
-      contacts.ts
-      gridVariants.ts
-      projectsData.ts
-      techs.ts
-    components/
-      ui/
-        Badge.tsx
-        BrowserMockup.tsx
-        Button.tsx
-        Card.tsx
-        Counter.tsx
-        HeroCardViking.tsx
-        NavLink.tsx
-        ProjectCard.tsx
-        ProjectPlaceHolder.tsx
-        ScrollReveal.tsx
-        SocialLink.tsx
-        TerminalMockup.tsx
-        TrophyItem.tsx
-      BentoGrid.tsx
-      Footer.tsx
-      Header.tsx
-      Projects.tsx
-    hooks/
-      useBentoAnimations.ts
-    favicon.ico
-    globals.css
-    layout.tsx
-    not-found.tsx
-    page.tsx
-.gitignore
-eslint.config.mjs
-next.config.ts
-package.json
-postcss.config.mjs
-README.md
-tsconfig.json
+_constants/
+  contacts.ts
+  projectsData.ts
+  steps.ts
+  techs.ts
+components/
+  ui/
+    AboutTitle.tsx
+    Badge.tsx
+    BrowserMockup.tsx
+    Button.tsx
+    Card.tsx
+    Counter.tsx
+    HeroCardViking.tsx
+    MobileStep.tsx
+    NavLink.tsx
+    PremiumMeshCanvas.tsx
+    ProjectCard.tsx
+    ProjectPlaceHolder.tsx
+    SocialLink.tsx
+    Step.tsx
+    TerminalMockup.tsx
+    TrophyItem.tsx
+  About.tsx
+  BentoGrid.tsx
+  Footer.tsx
+  Header.tsx
+  HowIBuild.tsx
+  Projects.tsx
+hooks/
+  useBentoAnimations.ts
+favicon.ico
+globals.css
+layout.tsx
+not-found.tsx
+page.tsx
 </directory_structure>
 
 <files>
 This section contains the contents of the repository's files.
 
-<file path="public/file.svg">
-<svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 13.5V5.41a1 1 0 0 0-.3-.7L9.8.29A1 1 0 0 0 9.08 0H1.5v13.5A2.5 2.5 0 0 0 4 16h8a2.5 2.5 0 0 0 2.5-2.5m-1.5 0v-7H8v-5H3v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1M9.5 5V2.12L12.38 5zM5.13 5h-.62v1.25h2.12V5zm-.62 3h7.12v1.25H4.5zm.62 3h-.62v1.25h7.12V11z" clip-rule="evenodd" fill="#666" fill-rule="evenodd"/></svg>
-</file>
-
-<file path="public/globe.svg">
-<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.27 14.1a6.5 6.5 0 0 0 3.67-3.45q-1.24.21-2.7.34-.31 1.83-.97 3.1M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.48-1.52a7 7 0 0 1-.96 0H7.5a4 4 0 0 1-.84-1.32q-.38-.89-.63-2.08a40 40 0 0 0 3.92 0q-.25 1.2-.63 2.08a4 4 0 0 1-.84 1.31zm2.94-4.76q1.66-.15 2.95-.43a7 7 0 0 0 0-2.58q-1.3-.27-2.95-.43a18 18 0 0 1 0 3.44m-1.27-3.54a17 17 0 0 1 0 3.64 39 39 0 0 1-4.3 0 17 17 0 0 1 0-3.64 39 39 0 0 1 4.3 0m1.1-1.17q1.45.13 2.69.34a6.5 6.5 0 0 0-3.67-3.44q.65 1.26.98 3.1M8.48 1.5l.01.02q.41.37.84 1.31.38.89.63 2.08a40 40 0 0 0-3.92 0q.25-1.2.63-2.08a4 4 0 0 1 .85-1.32 7 7 0 0 1 .96 0m-2.75.4a6.5 6.5 0 0 0-3.67 3.44 29 29 0 0 1 2.7-.34q.31-1.83.97-3.1M4.58 6.28q-1.66.16-2.95.43a7 7 0 0 0 0 2.58q1.3.27 2.95.43a18 18 0 0 1 0-3.44m.17 4.71q-1.45-.12-2.69-.34a6.5 6.5 0 0 0 3.67 3.44q-.65-1.27-.98-3.1" fill="#666"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
-</file>
-
-<file path="public/next.svg">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80"><path fill="#000" d="M262 0h68.5v12.7h-27.2v66.6h-13.6V12.7H262V0ZM149 0v12.7H94v20.4h44.3v12.6H94v21h55v12.6H80.5V0h68.7zm34.3 0h-17.8l63.8 79.4h17.9l-32-39.7 32-39.6h-17.9l-23 28.6-23-28.6zm18.3 56.7-9-11-27.1 33.7h17.8l18.3-22.7z"/><path fill="#000" d="M81 79.3 17 0H0v79.3h13.6V17l50.2 62.3H81Zm252.6-.4c-1 0-1.8-.4-2.5-1s-1.1-1.6-1.1-2.6.3-1.8 1-2.5 1.6-1 2.6-1 1.8.3 2.5 1a3.4 3.4 0 0 1 .6 4.3 3.7 3.7 0 0 1-3 1.8zm23.2-33.5h6v23.3c0 2.1-.4 4-1.3 5.5a9.1 9.1 0 0 1-3.8 3.5c-1.6.8-3.5 1.3-5.7 1.3-2 0-3.7-.4-5.3-1s-2.8-1.8-3.7-3.2c-.9-1.3-1.4-3-1.4-5h6c.1.8.3 1.6.7 2.2s1 1.2 1.6 1.5c.7.4 1.5.5 2.4.5 1 0 1.8-.2 2.4-.6a4 4 0 0 0 1.6-1.8c.3-.8.5-1.8.5-3V45.5zm30.9 9.1a4.4 4.4 0 0 0-2-3.3 7.5 7.5 0 0 0-4.3-1.1c-1.3 0-2.4.2-3.3.5-.9.4-1.6 1-2 1.6a3.5 3.5 0 0 0-.3 4c.3.5.7.9 1.3 1.2l1.8 1 2 .5 3.2.8c1.3.3 2.5.7 3.7 1.2a13 13 0 0 1 3.2 1.8 8.1 8.1 0 0 1 3 6.5c0 2-.5 3.7-1.5 5.1a10 10 0 0 1-4.4 3.5c-1.8.8-4.1 1.2-6.8 1.2-2.6 0-4.9-.4-6.8-1.2-2-.8-3.4-2-4.5-3.5a10 10 0 0 1-1.7-5.6h6a5 5 0 0 0 3.5 4.6c1 .4 2.2.6 3.4.6 1.3 0 2.5-.2 3.5-.6 1-.4 1.8-1 2.4-1.7a4 4 0 0 0 .8-2.4c0-.9-.2-1.6-.7-2.2a11 11 0 0 0-2.1-1.4l-3.2-1-3.8-1c-2.8-.7-5-1.7-6.6-3.2a7.2 7.2 0 0 1-2.4-5.7 8 8 0 0 1 1.7-5 10 10 0 0 1 4.3-3.5c2-.8 4-1.2 6.4-1.2 2.3 0 4.4.4 6.2 1.2 1.8.8 3.2 2 4.3 3.4 1 1.4 1.5 3 1.5 5h-5.8z"/></svg>
-</file>
-
-<file path="public/vercel.svg">
-<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
-</file>
-
-<file path="public/window.svg">
-<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
-</file>
-
-<file path="src/app/_constants/contacts.ts">
+<file path="_constants/contacts.ts">
 const email = 'alexandre_augusto_garcia@hotmail.com';
 const phone = '55064981709943';
 const linkedin = 'aleexgarcia';
@@ -129,37 +91,7 @@ const github = 'aleexgarcia';
 export { email, phone, linkedin, github }
 </file>
 
-<file path="src/app/_constants/gridVariants.ts">
-import { Variants } from 'framer-motion'; // 👈 Importe o tipo Variants
-
-// Aplique o tipo ': Variants' aqui
-const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.15,
-        },
-    },
-};
-
-// Aplique o tipo ': Variants' aqui também
-const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 12 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.4,
-            ease: "easeOut" // 👈 Agora o TypeScript aceita perfeitamente!
-        }
-    },
-};
-
-export { containerVariants, cardVariants }
-</file>
-
-<file path="src/app/_constants/projectsData.ts">
+<file path="_constants/projectsData.ts">
 // data/projectsData.ts
 export interface Project {
   title: string;
@@ -225,7 +157,54 @@ export const projectsData: Project[] = [
 ];
 </file>
 
-<file path="src/app/_constants/techs.ts">
+<file path="_constants/steps.ts">
+import { GiCompass, GiAnvil, GiHammerBreak, GiShield, GiTorch } from "react-icons/gi";
+
+export const STEPS = [
+  {
+    number: '01',
+    title: 'Entender',
+    description:
+      'Antes de escrever código, entendo o problema, as regras de negócio e quem vai usar a solução.',
+    icon: GiCompass,
+    keyword: 'Problema',
+  },
+  {
+    number: '02',
+    title: 'Projetar',
+    description:
+      'Defino arquitetura, responsabilidades, contratos e escolhas tecnológicas antes de aumentar a complexidade.',
+    icon: GiAnvil,
+    keyword: 'Arquitetura',
+  },
+  {
+    number: '03',
+    title: 'Construir',
+    description:
+      'Transformo decisões em código tipado, componentizado, testável e preparado para evoluir.',
+    icon: GiHammerBreak,
+    keyword: 'Código',
+  },
+  {
+    number: '04',
+    title: 'Validar',
+    description:
+      'Testo comportamento, segurança e performance para encontrar problemas antes que eles cheguem ao usuário.',
+    icon: GiShield,
+    keyword: 'Qualidade',
+  },
+  {
+    number: '05',
+    title: 'Entregar',
+    description:
+      'Levo a solução para produção com CI/CD, cloud e uma infraestrutura preparada para crescer.',
+    icon: GiTorch,
+    keyword: 'Produção',
+  },
+];
+</file>
+
+<file path="_constants/techs.ts">
 import { FaAws } from "react-icons/fa";
 import { SiTypescript, SiNextdotjs, SiNestjs, SiDocker, SiJest, SiTailwindcss, SiPrisma, SiPostgresql, SiMongodb, SiRedis, SiGithubactions } from "react-icons/si";
 
@@ -245,7 +224,124 @@ export const TECH_ARSENAL = [
 ];
 </file>
 
-<file path="src/app/components/ui/BrowserMockup.tsx">
+<file path="components/ui/AboutTitle.tsx">
+'use client';
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
+
+gsap.registerPlugin(TextPlugin);
+
+export default function AboutTitle() {
+  const wordsRef = useRef<HTMLSpanElement>(null);
+  const cursorRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const element = wordsRef.current;
+    const cursor = cursorRef.current;
+    if (!element || !cursor) return;
+
+    const words = [
+      "fazer funcionar.",
+      "entregar rápido.",
+      "resolver o problema.",
+      "colocar em produção.",
+      "fazer escalar.",
+      "escrever código.",
+    ];
+
+    // 1. Animação nativa do Cursor (Piscar estável sem Tailwind)
+    const cursorTween = gsap.to(cursor, {
+      opacity: 0,
+      ease: "power2.inOut",
+      repeat: -1,
+      yoyo: true,
+      duration: 0.5,
+    });
+
+    // 2. Linha do tempo do texto
+    const tl = gsap.timeline({ repeat: -1 });
+
+    words.forEach((word) => {
+      tl.to(element, {
+        duration: 1.2,
+        text: {
+          value: word,
+          delimiter: ""
+        },
+        ease: "none",
+      })
+        .to({}, { duration: 3 }) // Pausa para leitura
+        .to(element, {
+          duration: 0.6,
+          text: {
+            value: "",
+            delimiter: ""
+          },
+          ease: "none",
+        });
+    });
+
+    // Limpeza completa ao desmontar
+    return () => {
+      cursorTween.kill();
+      tl.kill();
+    };
+  }, []);
+
+  return (
+    <h2
+      id="about-title"
+      className="text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl leading-tight"
+    >
+      <span className="block md:inline">Não escrevo código apenas para</span>{' '}
+
+      <span className="relative inline-block whitespace-nowrap text-amber-500 font-black min-w-[280px] sm:min-w-[320px] md:min-w-[380px] h-[1.2em] align-bottom">
+        <span ref={wordsRef} className="inline-block">
+          fazer funcionar.
+        </span>
+
+        {/* Cursor controlado 100% pelo GSAP */}
+        <span
+          ref={cursorRef}
+          className="inline-block font-light text-amber-500 ml-1 select-none shrink-0"
+        >
+          |
+        </span>
+      </span>
+    </h2>
+  );
+}
+</file>
+
+<file path="components/ui/Badge.tsx">
+import React from 'react';
+import { IconType } from 'react-icons';
+
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: 'amber' | 'emerald';
+  icon: IconType;
+}
+
+export function Badge({ children, variant = 'amber', icon: Icon }: BadgeProps) {
+  const styles = {
+    amber: 'text-amber-500 bg-amber-500/10 border-amber-500/10',
+    emerald: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
+  };
+
+  return (
+
+    <div className={`flex items-center w-fit gap-1.5 font-bold uppercase tracking-widest rounded-full border ${styles[variant]} px-3 py-1 mx-auto sm:mx-0`}>
+      <Icon className="text-xl shrink-0" aria-hidden="true" />
+      <span className='text-[11px] lg:text-sm'>{children}</span>
+    </div>
+  );
+}
+</file>
+
+<file path="components/ui/BrowserMockup.tsx">
 'use client';
 
 import { useEffect, useRef } from "react";
@@ -378,7 +474,7 @@ export default function BrowserMockup({
 }
 </file>
 
-<file path="src/app/components/ui/Button.tsx">
+<file path="components/ui/Button.tsx">
 import React from 'react';
 
 interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -401,7 +497,102 @@ export function Button({ children, variant = 'primary', className = '', ...props
 }
 </file>
 
-<file path="src/app/components/ui/HeroCardViking.tsx">
+<file path="components/ui/Card.tsx">
+import React from 'react';
+
+
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export function Card({ children, className = '' }: CardProps) {
+  return (
+    <div className={`
+      bg-[#1A1410] 
+      bg-gradient-to-b from-[#221A15] to-[#1A1410]
+      rounded-3xl 
+      p-6 
+      border border-amber-950/60 
+      shadow-[inset_0_1px_2px_rgba(255,255,255,0.05),0_4px_20px_rgba(0,0,0,0.4)]
+      hover:border-amber-500/30 
+      hover:shadow-[0_0_20px_rgba(245,158,11,0.03)]
+      transition-all 
+      duration-300
+      flex 
+      flex-col 
+      justify-between
+      overflow-hidden
+      relative
+      group
+      ${className}
+    `}>
+      {children}
+    </div>
+  );
+}
+</file>
+
+<file path="components/ui/Counter.tsx">
+'use client';
+
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Registra o plugin caso ainda não tenha sido registrado globalmente
+gsap.registerPlugin(ScrollTrigger);
+
+interface CounterProps {
+  target: number;      
+  suffix?: string;     
+  startFrom?: number;  
+}
+
+export default function Counter({ target, suffix = "", startFrom = 0 }: CounterProps) {
+  const [value, setValue] = useState(startFrom);
+  const elementRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return;
+
+    // Criamos um objeto genérico para o GSAP animar a propriedade interna
+    const obj = { count: startFrom };
+
+    const animation = gsap.to(obj, {
+      count: target,
+      duration: 4, // Tempo da animação em segundos (suave e independente do tamanho do número)
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 90%", // Dispara quando o número está quase entrando na tela
+        toggleActions: "play none none none",
+        once: true, // Roda apenas uma vez ao scrollar
+      },
+      onUpdate: () => {
+        // Atualiza o estado com o número arredondado durante a animação
+        setValue(Math.floor(obj.count));
+      }
+    });
+
+    // Limpeza ao desmontar o componente
+    return () => {
+      animation.scrollTrigger?.kill();
+      animation.kill();
+    };
+  }, [target, startFrom]);
+
+  return (
+    <span ref={elementRef} className="font-mono text-amber-500">
+      {value.toLocaleString('pt-BR')}
+      {suffix}
+    </span>
+  );
+}
+</file>
+
+<file path="components/ui/HeroCardViking.tsx">
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -564,7 +755,139 @@ export default function HeroCardViking() {
 }
 </file>
 
-<file path="src/app/components/ui/NavLink.tsx">
+<file path="components/ui/MobileStep.tsx">
+import { STEPS } from "@/app/_constants/steps";
+
+type MobileStepProps = {
+  step: (typeof STEPS)[number];
+  index: number;
+  refCallback: (element: HTMLDivElement | null) => void;
+};
+
+export function MobileStep({
+  step,
+  index,
+  refCallback,
+}: MobileStepProps) {
+  const Icon = step.icon;
+
+  const isEven = index % 2 === 0;
+
+  return (
+    <article
+      ref={refCallback}
+      className={`
+        relative
+        pl-16
+        ${isEven ? 'sm:ml-0' : 'sm:ml-16'}
+      `}
+    >
+      {/* ==========================================================
+          NÓ MOBILE
+      ========================================================== */}
+
+      <div
+        data-process-node
+        className="
+          absolute
+          left-0
+          top-0
+          flex
+          h-10
+          w-10
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-amber-600
+          bg-[#15100C]
+          text-amber-400
+          shadow-[0_0_0_5px_rgba(21,16,12,0.95)]
+        "
+      >
+        <Icon className="text-base" />
+
+        <span
+          className="
+            absolute
+            -right-2
+            -top-2
+            flex
+            h-5
+            min-w-5
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-amber-800
+            bg-[#211710]
+            px-1
+            font-mono
+            text-[8px]
+            font-bold
+            text-amber-400
+          "
+        >
+          {step.number}
+        </span>
+      </div>
+
+      {/* ==========================================================
+          TEXTO
+      ========================================================== */}
+
+      <span
+        className="
+          font-mono
+          text-[9px]
+          uppercase
+          tracking-[0.25em]
+          text-amber-500
+        "
+      >
+        {step.keyword}
+      </span>
+
+      <h3
+        className="
+          mt-3
+          font-serif
+          text-2xl
+          font-bold
+          text-stone-100
+        "
+      >
+        {step.title}
+      </h3>
+
+      <p
+        className="
+          mt-3
+          max-w-md
+          text-sm
+          leading-7
+          text-stone-300
+        "
+      >
+        {step.description}
+      </p>
+
+      {/* Indicador */}
+
+      <div
+        className="
+          mt-5
+          h-px
+          w-12
+          bg-amber-800/70
+        "
+      />
+    </article>
+  );
+}
+</file>
+
+<file path="components/ui/NavLink.tsx">
 export interface NavLinkProps {
   href: string;
   children: React.ReactNode;
@@ -597,7 +920,302 @@ export function NavLink({ href, children, onClick, mobile = false }: NavLinkProp
 }
 </file>
 
-<file path="src/app/components/ui/ProjectPlaceHolder.tsx">
+<file path="components/ui/PremiumMeshCanvas.tsx">
+"use client";
+
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+// Registra o plugin oficial para Next.js/React
+gsap.registerPlugin(useGSAP);
+
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  radius: number;
+  alpha: number;
+}
+
+export const PremiumMeshCanvas: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  // Armazena as coordenadas do mouse com um proxy para o GSAP animar suavemente
+  const mouseRef = useRef({ x: 0, y: 0, targetX: 0, targetY: 0 });
+
+  useGSAP(
+    () => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      let animationFrameId: number;
+      const particles: Particle[] = [];
+      const particleCount = 40; // Quantidade ideal para não poluir
+      const connectionDistance = 120; // Distância máxima para ligar os pontos da malha
+
+      // 1. Redimensionamento adaptativo do Canvas
+      const resizeCanvas = () => {
+        if (canvas && containerRef.current) {
+          canvas.width = containerRef.current.clientWidth;
+          canvas.height = containerRef.current.clientHeight;
+        }
+      };
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      // 2. Inicialização das Partículas (Tons de dourado/âmbar bem escuro e discretos)
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.3, // Velocidade ultra lenta
+          vy: (Math.random() - 0.5) * 0.3,
+          radius: Math.random() * 1.5 + 1,
+          alpha: Math.random() * 0.3 + 0.1, // Opacidade baixa para elegância
+        });
+      }
+
+      // 3. Efeito Parallax Suave com GSAP QuickTo (Melhor performance que ler direto no mousemove)
+      const xTo = gsap.quickTo(mouseRef.current, "x", { duration: 0.8, ease: "power2.out" });
+      const yTo = gsap.quickTo(mouseRef.current, "y", { duration: 0.8, ease: "power2.out" });
+
+      const handleMouseMove = (e: MouseEvent) => {
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        // Normaliza a posição do mouse em relação ao container (-50 a 50 pixels de deslocamento máx)
+        const relX = ((e.clientX - rect.left) / rect.width - 0.5) * 60;
+        const relY = ((e.clientY - rect.top) / rect.height - 0.5) * 60;
+        
+        xTo(relX);
+        yTo(relY);
+      };
+
+      window.addEventListener("mousemove", handleMouseMove);
+
+      // 4. Loop de Renderização (Desenho da Malha)
+      const render = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Aplica o deslocamento do mouse (efeito parallax inverso de profundidade)
+        const offsetX = mouseRef.current.x;
+        const offsetY = mouseRef.current.y;
+
+        // Desenha as conexões (Mesh)
+        for (let i = 0; i < particles.length; i++) {
+          const p1 = particles[i];
+          
+          // Atualiza posições base
+          p1.x += p1.vx;
+          p1.y += p1.vy;
+
+          // Rebate nas bordas do canvas
+          if (p1.x < 0 || p1.x > canvas.width) p1.vx *= -1;
+          if (p1.y < 0 || p1.y > canvas.height) p1.vy *= -1;
+
+          // Posição final renderizada somando o parallax do mouse
+          const renderX = p1.x + offsetX;
+          const renderY = p1.y + offsetY;
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const renderX2 = p2.x + offsetX;
+            const renderY2 = p2.y + offsetY;
+
+            const dx = renderX - renderX2;
+            const dy = renderY - renderY2;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < connectionDistance) {
+              // A linha fica mais transparente quanto mais longe os pontos estiverem
+              const lineAlpha = (1 - dist / connectionDistance) * 0.08;
+              ctx.beginPath();
+              ctx.moveTo(renderX, renderY);
+              ctx.lineTo(renderX2, renderY2);
+              // Cor dourada/âmbar bem sutil (#D4AF37 convertido para RGBA)
+              ctx.strokeStyle = `rgba(212, 175, 55, ${lineAlpha})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+
+          // Desenha a partícula em si
+          ctx.beginPath();
+          ctx.arc(renderX, renderY, p1.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(230, 180, 80, ${p1.alpha})`;
+          ctx.fill();
+        }
+
+        animationFrameId = requestAnimationFrame(render);
+      };
+
+      render();
+
+      // Limpeza de memória ao desmontar o componente
+      return () => {
+        window.removeEventListener("resize", resizeCanvas);
+        window.removeEventListener("mousemove", handleMouseMove);
+        cancelAnimationFrame(animationFrameId);
+      };
+    },
+    { scope: containerRef }
+  );
+
+  return (
+    <div
+      ref={containerRef}
+      className="absolute right-0 top-0 hidden h-full w-[45%] lg:block pointer-events-none overflow-hidden select-none"
+      style={{ 
+        maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0))',
+        WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0))'
+      }}
+    >
+      <canvas
+        ref={canvasRef}
+        className="w-full h-full opacity-60"
+      />
+    </div>
+  );
+};
+</file>
+
+<file path="components/ui/ProjectCard.tsx">
+'use client';
+
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { Card } from './Card';
+import { Project } from '../../_constants/projectsData';
+import TerminalMockup from './TerminalMockup';
+import BrowserMockup from './BrowserMockup';
+
+// Registra o plugin de Scroll do GSAP
+gsap.registerPlugin(ScrollTrigger);
+
+export default function ProjectCard({ project }: { project: Project }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = cardRef.current;
+    if (!element) return;
+
+    // Substitui o itemVariants (hidden -> visible) do framer-motion
+    const anim = gsap.fromTo(
+      element,
+      { 
+        opacity: 0, 
+        y: 30 
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%", // Dispara quando o topo do card atinge 85% da tela
+          toggleActions: "play none none none",
+          once: true, // Executa a animação apenas uma vez ao scrollar
+        },
+      }
+    );
+
+    // Limpeza ao desmontar o componente para evitar vazamento de memória
+    return () => {
+      if (anim.scrollTrigger) anim.scrollTrigger.kill();
+      anim.kill();
+    };
+  }, []);
+
+  return (
+    <div ref={cardRef} className="group w-full opacity-0"> {/* opacity-0 previne o "flash" do conteúdo antes do JS carregar */}
+      <Card className="!flex-row gap-8 flex-wrap lg:flex-nowrap p-6 border border-amber-950/20 bg-[#16110E] transition-all duration-300 group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.05)]">
+
+        <div className="w-full lg:w-2/3">
+          {/* Mockup do Terminal */}
+          {project.isApiOnly ? (
+            <TerminalMockup
+              command={project.terminalCommand}
+              outputLines={project.terminalOutput}
+            />
+          ) : (
+            <BrowserMockup 
+              imageUrl={project.imageUrl} 
+              title={project.title}
+            />
+          )}
+        </div>
+
+        {/* LADO DIREITO: Informações e Engenharia */}
+        <div className="lg:w-3/5 w-full flex flex-col justify-between space-y-6">
+          <div className="space-y-3">
+            <div>
+              <h3 className="text-xl font-bold text-white group-hover:text-amber-500 transition-colors duration-300">
+                {project.title}
+              </h3>
+              <p className="text-xs font-semibold text-amber-500/80 mt-1">
+                {project.tagline}
+              </p>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              {project.description}
+            </p>
+          </div>
+
+          {/* Tags e Ações */}
+          <div className="space-y-4">
+            {/* Badge de Tecnologias */}
+            <div className="flex flex-wrap gap-1.5">
+              {project.technologies.map((tech, techIdx) => (
+                <span
+                  key={techIdx}
+                  className="text-[11px] font-mono bg-black/40 text-gray-300 border border-amber-950/40 px-2.5 py-0.5 rounded-md hover:border-amber-500/20 transition-colors"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {/* Links de Ação */}
+            <div className="flex gap-4 pt-3 border-t border-amber-950/40">
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-white transition-colors"
+                >
+                  <FaGithub className="text-sm" /> Código no GitHub
+                </a>
+              )}
+              {project.deployLink && (
+                <a
+                  href={project.deployLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-amber-500 transition-colors"
+                >
+                  <FaExternalLinkAlt className="text-xs" /> Acessar Deploy ↗
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+
+      </Card>
+    </div>
+  );
+}
+</file>
+
+<file path="components/ui/ProjectPlaceHolder.tsx">
 import React from "react";
 import { FaTerminal, FaHammer } from "react-icons/fa";
 
@@ -634,35 +1252,7 @@ export const ProjectPlaceholder: React.FC<ProjectPlaceholderProps> = ({ project 
 export default ProjectPlaceholder;
 </file>
 
-<file path="src/app/components/ui/ScrollReveal.tsx">
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
-
-interface ScrollRevealProps {
-  children: React.ReactNode;
-  delay?: number;
-}
-
-export function ScrollReveal({ children, delay = 0 }: ScrollRevealProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }} 
-      transition={{ 
-        duration: 0.6, 
-        ease: [0.16, 1, 0.3, 1],
-        delay: delay 
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-</file>
-
-<file path="src/app/components/ui/SocialLink.tsx">
+<file path="components/ui/SocialLink.tsx">
 import React from 'react';
 
 interface SocialLinkProps {
@@ -693,399 +1283,151 @@ export function SocialLink({ href, icon: Icon, label, actionText, hoverColor = '
 }
 </file>
 
-<file path=".gitignore">
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+<file path="components/ui/Step.tsx">
+import { STEPS } from "@/app/_constants/steps";
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-</file>
-
-<file path="eslint.config.mjs">
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
-
-export default eslintConfig;
-</file>
-
-<file path="next.config.ts">
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
-</file>
-
-<file path="postcss.config.mjs">
-const config = {
-  plugins: ["@tailwindcss/postcss"],
-};
-
-export default config;
-</file>
-
-<file path="tsconfig.json">
-{
-  "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
-}
-</file>
-
-<file path="src/app/components/ui/Badge.tsx">
-import React from 'react';
-import { IconType } from 'react-icons';
-
-interface BadgeProps {
-  children: React.ReactNode;
-  variant?: 'amber' | 'emerald';
-  icon: IconType;
-}
-
-export function Badge({ children, variant = 'amber', icon: Icon }: BadgeProps) {
-  const styles = {
-    amber: 'text-amber-500 bg-amber-500/10 border-amber-500/10',
-    emerald: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
-  };
-
-  return (
-
-    <div className={`flex items-center w-fit gap-1.5 font-bold uppercase tracking-widest rounded-full border ${styles[variant]} px-3 py-1 mx-auto sm:mx-0`}>
-      <Icon className="text-xl shrink-0" aria-hidden="true" />
-      <span className='text-[11px] lg:text-sm'>{children}</span>
-    </div>
-  );
-}
-</file>
-
-<file path="src/app/components/ui/Card.tsx">
-import React from 'react';
-
-
-interface CardProps {
-  children: React.ReactNode;
+export type StepProps = {
+  step: (typeof STEPS)[number];
+  index: number;
   className?: string;
-}
+  refCallback: (element: HTMLDivElement | null) => void;
+};
 
-export function Card({ children, className = '' }: CardProps) {
+export function Step({
+  step,
+  index,
+  className = '',
+  refCallback,
+}: StepProps) {
+  const Icon = step.icon;
+
   return (
-    <div className={`
-      bg-[#1A1410] 
-      bg-gradient-to-b from-[#221A15] to-[#1A1410]
-      rounded-3xl 
-      p-6 
-      border border-amber-950/60 
-      shadow-[inset_0_1px_2px_rgba(255,255,255,0.05),0_4px_20px_rgba(0,0,0,0.4)]
-      hover:border-amber-500/30 
-      hover:shadow-[0_0_20px_rgba(245,158,11,0.03)]
-      transition-all 
-      duration-300
-      flex 
-      flex-col 
-      justify-between
-      overflow-hidden
-      relative
-      group
-      ${className}
-    `}>
-      {children}
-    </div>
+    <article
+      ref={refCallback}
+      className={`
+        group
+        ${className}
+      `}
+    >
+      {/* ==========================================================
+          NÓ
+      ========================================================== */}
+
+      <div className="relative mb-7 flex items-center gap-4">
+        <div
+          data-process-node
+          className="
+            relative
+            flex
+            h-14
+            w-14
+            shrink-0
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-amber-600/80
+            bg-[#15100C]
+            text-amber-400
+            shadow-[0_0_0_6px_rgba(21,16,12,0.9),0_0_30px_rgba(245,158,11,0.08)]
+            transition-all
+            duration-500
+            group-hover:border-amber-400
+            group-hover:text-amber-300
+            group-hover:shadow-[0_0_0_6px_rgba(21,16,12,0.9),0_0_35px_rgba(245,158,11,0.18)]
+          "
+        >
+          <Icon className="text-xl" />
+
+          {/* Número */}
+
+          <span
+            className="
+              absolute
+              -right-2
+              -top-2
+              flex
+              h-6
+              min-w-6
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-amber-800
+              bg-[#211710]
+              px-1.5
+              font-mono
+              text-[9px]
+              font-bold
+              text-amber-400
+            "
+          >
+            {step.number}
+          </span>
+        </div>
+
+        <span
+          className="
+            font-mono
+            text-[9px]
+            uppercase
+            tracking-[0.25em]
+            text-amber-500/90
+          "
+        >
+          {step.keyword}
+        </span>
+      </div>
+
+      {/* ==========================================================
+          CONTEÚDO
+      ========================================================== */}
+
+      <h3
+        className="
+          font-serif
+          text-3xl
+          font-bold
+          text-stone-100
+          transition-colors
+          duration-300
+          group-hover:text-amber-400
+        "
+      >
+        {step.title}
+      </h3>
+
+      <p
+        className="
+          mt-4
+          text-sm
+          leading-7
+          text-stone-300
+        "
+      >
+        {step.description}
+      </p>
+
+      {/* Indicador */}
+
+      <div
+        className="
+          mt-6
+          h-px
+          w-12
+          bg-amber-800/70
+          transition-all
+          duration-500
+          group-hover:w-20
+          group-hover:bg-amber-500
+        "
+      />
+    </article>
   );
 }
 </file>
 
-<file path="src/app/hooks/useBentoAnimations.ts">
-import { useEffect, RefObject } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
-export function useBentoAnimations(containerRef: RefObject<HTMLDivElement | null>) {
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const cards = container.children;
-
-    // 1. Entrada com ScrollTrigger
-    const scrollTween = gsap.fromTo(
-      cards,
-      { opacity: 0, y: 40, scale: 0.95 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.6,
-        ease: 'power2.out',
-        stagger: 0.08,
-        scrollTrigger: {
-          trigger: container,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-          once: true,
-        },
-      }
-    );
-
-    // 2. Otimização Arquitetural: Efeito Magnético de Performance com quickTo
-    const magneticElements = container.querySelectorAll('.magnetic-btn');
-    
-    // ✅ CORREÇÃO AQUI: Tipando o Map com assinaturas exatas de funções de evento do DOM
-    const cleanupMap = new Map<Element, { move: (e: MouseEvent) => void; leave: () => void }>();
-
-    magneticElements.forEach((el) => {
-      const htmlEl = el as HTMLElement;
-
-      // Cria funções otimizadas que atualizam a propriedade diretamente na GPU
-      const xTo = gsap.quickTo(htmlEl, 'x', { duration: 0.3, ease: 'power2.out' });
-      const yTo = gsap.quickTo(htmlEl, 'y', { duration: 0.3, ease: 'power2.out' });
-
-      const onMouseMove = (e: MouseEvent) => {
-        const rect = htmlEl.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        xTo(x * 0.3);
-        yTo(y * 0.3);
-      };
-
-      const onMouseLeave = () => {
-        // Efeito elástico ao soltar o elemento
-        gsap.to(htmlEl, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
-      };
-
-      htmlEl.addEventListener('mousemove', onMouseMove);
-      htmlEl.addEventListener('mouseleave', onMouseLeave);
-
-      // ✅ CORREÇÃO AQUI: Salvando as referências corretas que batem com o tipo do Map
-      cleanupMap.set(htmlEl, { move: onMouseMove, leave: onMouseLeave });
-    });
-
-    // Desmontagem limpa de tudo o que foi gerado pelo hook
-    return () => {
-      if (scrollTween.scrollTrigger) {
-        scrollTween.scrollTrigger.kill();
-      }
-      
-      // ✅ CORREÇÃO AQUI: Removendo os listeners usando as chaves certas gravadas no Map
-      cleanupMap.forEach((listeners, el) => {
-        el.removeEventListener('mousemove', listeners.move as EventListener);
-        el.removeEventListener('mouseleave', listeners.leave);
-      });
-    };
-  }, [containerRef]);
-}
-</file>
-
-<file path="src/app/not-found.tsx">
-'use client'
-
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { GiDrakkar, GiSkullCrossedBones } from "react-icons/gi";
-
-export default function NotFound() {
-    return (
-        <div className="min-h-screen bg-black text-gray-100 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-
-            {/* Detalhe de Fundo: O Navio Perdido */}
-            <div className="absolute opacity-15 pointer-events-none transform -translate-y-12">
-                <GiDrakkar className="text-[400px] text-amber-700 animate-pulse" />
-            </div>
-
-            <div className="max-w-xl z-10 flex flex-col items-center gap-6">
-
-                {/* Ícone de Alerta Viking */}
-                <motion.div
-                    animate={{
-                        rotate: [0, -10, 10, -10, 10, 0],
-                        y: [0, -5, 5, -5, 0]
-                    }}
-                    transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatType: "mirror"
-                    }}
-                    className="text-amber-500 text-7xl drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]"
-                >
-                    <GiSkullCrossedBones />
-                </motion.div>
-
-                {/* Título de Erro */}
-                <h1 className="text-7xl font-black font-mono tracking-tighter text-amber-500 select-none">
-                    ERRO 404
-                </h1>
-
-                {/* Mensagem Satírica */}
-                <div className="space-y-3">
-                    <h2 className="text-2xl font-bold uppercase tracking-wide text-gray-200">
-                        Território Desconhecido!
-                    </h2>
-                    <p className="text-sm text-gray-400 max-w-md mx-auto leading-relaxed">
-                        Pelos cabelos de Odin, você navegou seu drakkar para fora do mapa! Esta página não existe, foi devorada pelo Kraken ou <span className="text-amber-600 font-semibold">saqueada pelo nosso time de desenvolvimento</span>.
-                    </p>
-                </div>
-
-                {/* Frase em Itálico (Mantendo o padrão dos seus cards) */}
-                <div className="border-y border-amber-950/60 py-3 my-2 text-xs text-amber-700 font-medium tracking-wider italic uppercase">
-                    {"Nenhum link quebrado escapa ao meu machado"}
-                </div>
-
-                <div className="mt-4">
-                    <Link
-                        href="/"
-                        className="group relative inline-flex items-center gap-3 bg-amber-600 hover:bg-amber-500 text-black font-black text-xs uppercase tracking-widest px-8 py-4 rounded-none transition-all duration-300 shadow-lg shadow-amber-950/40 border border-amber-700 hover:scale-[1.02] active:scale-[0.98]"
-                    >
-                        Retornar ao Vilarejo
-                    </Link>
-                </div>
-
-            </div>
-
-            {/* Rodapé cômico da página 404 */}
-            <span className="absolute bottom-6 text-[10px] text-gray-600 tracking-widest uppercase font-mono">
-                Coordenadas atuais: Niflheim // Valhalla está em outra rota
-            </span>
-        </div>
-    );
-}
-</file>
-
-<file path="README.md">
-# 🪓 O Dev Viking — Portfólio Full Stack
-
-> **Status do Projeto:** 🚀 Em Desenvolvimento / Planejamento
-
-Uma fusão autêntica, satírica e de alto impacto visual entre a estética nórdica tradicional (guerreiro de barba cheia) e a engenharia de software moderna. Este projeto não é apenas um portfólio, mas uma prova real de conceitos avançados de arquitetura front-end, integrações serverless e performance de alto nível.
-
----
-
-## 🛠️ Arsenal Tecnológico (Tech Stack)
-
-*   **Front-end:** Next.js (App Router), TypeScript, Tailwind CSS (ou Chakra UI).
-*   **Back-end (Serverless API):** Next.js API Routes (Vercel) ou AWS Lambda + API Gateway.
-*   **Design Pattern:** Bento Grid Layout (Grade modular de alta conversão).
-*   **Deploy & Hospedagem:** Vercel / AWS (Free Tier).
-
----
-
-## 🗺️ Roadmap de Desenvolvimento (Etapas a Fazer)
-
-O projeto foi dividido em **5 fases estratégicas** para garantir qualidade de código, design premium e custo zero de infraestrutura.
-
-### 📅 Fase 1: Preparação de Assets & Boilerplate
-- [ ] **Otimização do Avatar Viking:** Remover o fundo da ilustração oficial e convertê-la para o formato `.webp` de alta compressão (foco em performance no Lighthouse).
-- [ ] **Setup do Projeto:** Inicializar o projeto Next.js com TypeScript, Tailwind CSS e estruturar as pastas (`/components`, `/assets`, `/api`).
-- [ ] **Configuração do Tema:** Definir a paleta de cores *Tech Premium* no arquivo de configuração do Tailwind (`#0B0F19` para o fundo e `#161B26` para os cards).
-
-### 📐 Fase 2: Construção da Dobra Principal (Bento Grid)
-- [ ] **Grid Estrutural:** Codificar o container responsivo usando CSS Grid (1 coluna no mobile, 3 colunas no desktop).
-- [ ] **Hero Card:** Implementar o bloco de apresentação com o nome, cargo, frase de efeito e o posicionamento do avatar viking.
-- [ ] **Card Arsenal Técnico:** Adicionar os blocos das tecnologias com efeitos de *hover* e brilhos personalizados para cada logo (React, NestJS, AWS).
-- [ ] **Card do Troféu:** Renderizar o bloco de destaque contendo o selo oficial da certificação *AWS Certified Cloud Practitioner*.
-- [ ] **Card de Conectividade:** Embutir os botões de ação rápidos para GitHub, LinkedIn e download do currículo.
-
-### 📂 Fase 3: Seção de Projetos & Back-end
-- [ ] **Layout dos Cards de Projetos:** Criar um componente reutilizável para listar os projetos em ordem vertical, contendo mockups e tags coloridas.
-- [ ] **Catálogo de Projetos Destaque:** Inserir os dados reais dos principais projetos (Gerenciador de Tarefas Avançado e Compass Events).
-- [ ] **API Serverless Interna:** Configurar uma rota `/api/projects` ou microsserviço AWS Lambda para servir os dados dinamicamente, provando a integração Full Stack do site.
-
-### 🎨 Fase 4: Lapidação de UI/UX & Sátira
-- [ ] **Easter Eggs Temáticos:** Adicionar as métricas divertidas (ex: Contador de bugs decapitados, nível da barba).
-- [ ] **Página 404 Personalizada:** Criar a tela de erro satírica ("Valhalla encontrou um erro 404. Esta página foi saqueada").
-- [ ] **Otimização de Performance:** Garantir que todas as imagens possuam propriedades corretas de tamanho para evitar *Cumulative Layout Shift* (CLS).
-
-### 🚀 Fase 5: Deploy & Validação Final
-- [ ] **Testes de Responsividade:** Validar o comportamento do Bento Grid em múltiplos tamanhos de tela (Mobile, Tablet, Monitores ultrawide).
-- [ ] **Deploy de Produção:** Conectar o repositório à Vercel para automação de CI/CD.
-- [ ] **Auditoria Lighthouse:** Rodar a ferramenta do Google para garantir notas próximas a 100% em Performance, Acessibilidade e SEO.
-
----
-
-## 🧠 Como contribuir / Rodar localmente
-
-*(Em breve, comandos de `npm install` e `npm run dev` quando o repositório for populado).*
-
----
-
-## 📜 Licença
-
-Desenvolvido com base em café, hidromel e muito TypeScript por Alexandre Garcia.
-</file>
-
-<file path="src/app/components/ui/TerminalMockup.tsx">
+<file path="components/ui/TerminalMockup.tsx">
 'use client';
 
 import { useEffect, useRef } from "react";
@@ -1218,7 +1560,7 @@ export default function TerminalMockup({
 }
 </file>
 
-<file path="src/app/components/ui/TrophyItem.tsx">
+<file path="components/ui/TrophyItem.tsx">
 import React from 'react';
 import Image from 'next/image'
 
@@ -1259,775 +1601,369 @@ export function TrophyItem({ icon: IconOrSrc, title, subtitle, status, variant =
 }
 </file>
 
-<file path="src/app/components/ui/Counter.tsx">
+<file path="components/About.tsx">
 'use client';
 
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Registra o plugin caso ainda não tenha sido registrado globalmente
-gsap.registerPlugin(ScrollTrigger);
-
-interface CounterProps {
-  target: number;      
-  suffix?: string;     
-  startFrom?: number;  
-}
-
-export default function Counter({ target, suffix = "", startFrom = 0 }: CounterProps) {
-  const [value, setValue] = useState(startFrom);
-  const elementRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const element = elementRef.current;
-    if (!element) return;
-
-    // Criamos um objeto genérico para o GSAP animar a propriedade interna
-    const obj = { count: startFrom };
-
-    const animation = gsap.to(obj, {
-      count: target,
-      duration: 4, // Tempo da animação em segundos (suave e independente do tamanho do número)
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: element,
-        start: "top 90%", // Dispara quando o número está quase entrando na tela
-        toggleActions: "play none none none",
-        once: true, // Roda apenas uma vez ao scrollar
-      },
-      onUpdate: () => {
-        // Atualiza o estado com o número arredondado durante a animação
-        setValue(Math.floor(obj.count));
-      }
-    });
-
-    // Limpeza ao desmontar o componente
-    return () => {
-      animation.scrollTrigger?.kill();
-      animation.kill();
-    };
-  }, [target, startFrom]);
-
-  return (
-    <span ref={elementRef} className="font-mono text-amber-500">
-      {value.toLocaleString('pt-BR')}
-      {suffix}
-    </span>
-  );
-}
-</file>
-
-<file path="src/app/globals.css">
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@theme {
-  /* Registrando a animação customizada */
-  --animate-float: float 4s ease-in-out infinite;
-
-  /* Registrando os keyframes da flutuação */
-  @keyframes float {
-
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-6px);
-    }
-  }
-
-  --animate-border-spin: border-spin 4s linear infinite;
-
-  @keyframes border-spin {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes shadowPulse {
-
-    0%,
-    100% {
-      box-shadow: 0 5px 5px -3px rgba(16, 185, 129, 0.2), 0 4px 6px -4px rgba(16, 185, 129, 0.2);
-    }
-
-    50% {
-      box-shadow: 0 0 10px 5px rgba(16, 185, 129, 0.6);
-    }
-  }
-
-}
-.animate-glow-pulse {
-  animation: shadowPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-</file>
-
-<file path="src/app/components/ui/ProjectCard.tsx">
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { Card } from './Card';
-import { Project } from '../../_constants/projectsData';
-import TerminalMockup from './TerminalMockup';
-import BrowserMockup from './BrowserMockup';
-
-
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-    },
-  },
-};
-
-// Componente Interno Isolado para o Card do Projeto
-export default function ProjectCard({ project }: { project: Project }) {
-  return (
-    <motion.div variants={itemVariants} className="group w-full">
-      <Card className="!flex-row gap-8 flex-wrap lg:flex-nowrap p-6 border border-amber-950/20 bg-[#16110E] transition-all duration-300 group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.05)]">
-
-        <div className="w-full lg:w-2/3">
-          {/* Mockup do Terminal */}
-          {project.isApiOnly ? <TerminalMockup
-            command={project.terminalCommand}
-            outputLines={project.terminalOutput}
-          /> : 
-            <BrowserMockup 
-      imageUrl={project.imageUrl} 
-      title={project.title}
-    />
-          
-          }
-
-        </div>
-
-        {/* LADO DIREITO: Informações e Engenharia */}
-        <div className="lg:w-3/5 w-full flex flex-col justify-between space-y-6">
-          <div className="space-y-3">
-            <div>
-              <h3 className="text-xl font-bold text-white group-hover:text-amber-500 transition-colors duration-300">
-                {project.title}
-              </h3>
-              <p className="text-xs font-semibold text-amber-500/80 mt-1">
-                {project.tagline}
-              </p>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              {project.description}
-            </p>
-          </div>
-
-          {/* Tags e Ações */}
-          <div className="space-y-4">
-            {/* Badge de Tecnologias */}
-            <div className="flex flex-wrap gap-1.5">
-              {project.technologies.map((tech, techIdx) => (
-                <span
-                  key={techIdx}
-                  className="text-[11px] font-mono bg-black/40 text-gray-300 border border-amber-950/40 px-2.5 py-0.5 rounded-md hover:border-amber-500/20 transition-colors"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            {/* Links de Ação */}
-            <div className="flex gap-4 pt-3 border-t border-amber-950/40">
-              {project.githubLink && (
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-white transition-colors"
-                >
-                  <FaGithub className="text-sm" /> Código no GitHub
-                </a>
-              )}
-              {project.deployLink && (
-                <a
-                  href={project.deployLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-amber-500 transition-colors"
-                >
-                  <FaExternalLinkAlt className="text-xs" /> Acessar Deploy ↗
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-
-      </Card>
-    </motion.div>
-  );
-}
-</file>
-
-<file path="src/app/page.tsx">
-import BentoGrid from "./components/BentoGrid";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-
-
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[90px_1fr_auto] items-center justify-items-center min-h-screen">
-      <Header/>
-      <main className="flex flex-col row-start-2 w-full">
-        <BentoGrid/>
-        <Projects/>
-      </main>
-      <footer className="row-start-3 w-full">
-        <Footer/>
-      </footer>
-    </div>
-  );
-}
-</file>
-
-<file path="package.json">
-{
-  "name": "portfolio-pessoal",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "gsap": "^3.15.0",
-    "next": "15.4.10",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-icons": "^5.7.0"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.5",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
-}
-</file>
-
-<file path="src/app/components/Header.tsx">
-'use client';
-
-import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { Button } from './ui/Button';
-import { NavLink } from './ui/NavLink';
-import { GiBatteredAxe, GiCrossedAxes } from 'react-icons/gi';
-
-
-
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  const navLinks = [
-    { name: 'Arsenal', href: '#arsenal' },
-    { name: 'Conquistas', href: '#projects' },
-    { name: 'Convocar', href: '#contact' }
-  ];
-
-  return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-[#110D0A]/90 backdrop-blur-md border-b border-amber-950/40 py-4 shadow-lg shadow-black/40' 
-        : 'bg-transparent py-6'
-    }`}>
-      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
-        
-        {/* LOGO / IDENTIDADE NÓRDICA */}
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="p-2 bg-amber-500/10 rounded-xl border border-amber-500/20 text-amber-500 group-hover:bg-amber-500 group-hover:text-[#110D0A] transition-all duration-300">
-            <GiCrossedAxes className="text-lg" />
-  
-          </div>
-          <span className="text-sm font-black tracking-widest uppercase text-white font-mono group-hover:text-amber-500 transition-colors">
-            AleexGarcia.dev
-          </span>
-        </a>
-
-        {/* NAVEGAÇÃO DESKTOP (Estilo Madeira de Fundo) */}
-        <nav className="hidden md:flex items-center gap-1 bg-[#1A1410] border border-amber-950/60 p-1 rounded-xl backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.02)]">
-          {navLinks.map((link, idx) => (
-            <NavLink key={idx} href={link.href}>
-              {link.name}
-            </NavLink>
-          ))}
-        </nav>
-
-        {/* BOTÃO DE CONTATO DESKTOP (Reaproveitando o componente Button) */}
-        <div className="hidden md:block">
-          <Button  href="#contact" variant="primary" className="group !py-2 !px-4 text-xs uppercase tracking-wider flex items-center gap-1.5">
-            Contratar Machado
-            <GiBatteredAxe className="text-xl transition-all duration-300 -rotate-45 group-hover:rotate-20 group-hover:translate-x-1 group-hover:scale-110" />
-          </Button>
-        </div>
-
-        {/* BOTÃO DO MENU MOBILE */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden p-2 bg-[#1A1410] border border-amber-950/60 text-amber-500 hover:text-amber-400 rounded-xl transition-all"
-          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
-        >
-          {isOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
-        </button>
-
-      </div>
-
-      {/* MENU DROPDOWN MOBILE */}
-      <div className={`fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#110D0A] z-40 md:hidden flex flex-col justify-between p-6 border-t border-amber-950/40 transform transition-transform duration-300 ease-in-out ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
-        <nav className="flex flex-col gap-3">
-          {navLinks.map((link, idx) => (
-            <NavLink key={idx} href={link.href} onClick={toggleMenu} mobile>
-              {link.name}
-            </NavLink>
-          ))}
-        </nav>
-
-        {/* BOTÃO INFERIOR NO MOBILE */}
-        <div className="pt-6 border-t border-amber-950/40">
-          <Button href="#contact" variant="primary" onClick={toggleMenu} className="w-full !py-4 text-sm uppercase tracking-wider">
-            Contratar Machado
-          </Button>
-        </div>
-      </div>
-    </header>
-  );
-}
-</file>
-
-<file path="src/app/components/Footer.tsx">
-'use client'
-import React, { useEffect, useRef } from 'react';
-import { FaWhatsapp, FaEnvelope, FaArrowUp } from 'react-icons/fa';
-import { Badge } from './ui/Badge'; 
-import { email, phone } from '../_constants/contacts';
-import { GiCrossedAxes } from 'react-icons/gi';
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {
+  GiAnvil,
+  GiBattleAxe,
+  GiCompass,
+  GiCrossedAxes,
+  GiHelmet,
+  GiShield,
+} from 'react-icons/gi';
+import { PremiumMeshCanvas } from './ui/PremiumMeshCanvas';
+import AboutTitle from './ui/AboutTitle';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Footer() {
-  const footerRef = useRef<HTMLDivElement>(null);
-  const ctaBoxRef = useRef<HTMLDivElement>(null);
-  const textElementsRef = useRef<HTMLDivElement>(null);
-  const buttonsRef = useRef<HTMLDivElement>(null);
+const principles = [
+  {
+    icon: GiAnvil,
+    title: 'Arquitetura antes do código',
+    description:
+      'Antes de construir, penso em como as peças devem se encaixar. Uma boa arquitetura reduz complexidade e prepara o software para evoluir.',
+  },
+  {
+    icon: GiShield,
+    title: 'Robustez por padrão',
+    description:
+      'Tipagem, validação, testes e boas práticas fazem parte da fundação de uma aplicação confiável.',
+  },
+  {
+    icon: GiBattleAxe,
+    title: 'Simplicidade como arma',
+    description:
+      'Complexidade nem sempre significa maturidade. Prefiro soluções claras, objetivas e fáceis de manter.',
+  },
+];
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+const technologies = ['TypeScript', 'Next.js', 'NestJS', 'AWS'];
 
-  useEffect(() => {
-    const ctaBox = ctaBoxRef.current;
-    const texts = textElementsRef.current;
-    const buttons = buttonsRef.current;
-  const footer = footerRef.current;
-
-    if (!ctaBox || !texts || !buttons || !footer) return;
-
-    // 1. Animação de Entrada com Revelação Rústica (Efeito Forja)
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: footer,
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-        once: true,
-      }
-    });
-
-    tl.fromTo(ctaBox, 
-      { opacity: 0, y: 50, scale: 0.98 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'power2.out' }
-    )
-    .fromTo(texts.children,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: 'power2.out' },
-      '-=0.3'
-    )
-    .fromTo(buttons.children,
-      { opacity: 0, scale: 0.9, y: 15 },
-      { opacity: 1, scale: 1, y: 0, duration: 0.4, stagger: 0.12, ease: 'back.out(1.5)' },
-      '-=0.2'
-    );
-
-    // 2. Efeito Magnético Otimizado de Alta Performance (GPU) nos Botões Principais
-    const magneticButtons = footer.querySelectorAll('.magnetic-cta');
-    const cleanupMap = new Map<Element, { move: (e: MouseEvent) => void; leave: () => void }>();
-
-    magneticButtons.forEach((btn) => {
-      const htmlEl = btn as HTMLElement;
-      const xTo = gsap.quickTo(htmlEl, 'x', { duration: 0.3, ease: 'power2.out' });
-      const yTo = gsap.quickTo(htmlEl, 'y', { duration: 0.3, ease: 'power2.out' });
-
-      const onMouseMove = (e: MouseEvent) => {
-        const rect = htmlEl.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        xTo(x * 0.25); // Força do efeito magnético
-        yTo(y * 0.25);
-      };
-
-      const onMouseLeave = () => {
-        gsap.to(htmlEl, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
-      };
-
-      htmlEl.addEventListener('mousemove', onMouseMove);
-      htmlEl.addEventListener('mouseleave', onMouseLeave);
-      cleanupMap.set(htmlEl, { move: onMouseMove, leave: onMouseLeave });
-    });
-
-    return () => {
-      if (tl.scrollTrigger) tl.scrollTrigger.kill();
-      tl.kill();
-      cleanupMap.forEach((listeners, el) => {
-        el.removeEventListener('mousemove', listeners.move as EventListener);
-        el.removeEventListener('mouseleave', listeners.leave);
-      });
-    };
-  }, []);
-
-  return (
-    <footer 
-      id="contact" 
-      ref={footerRef}
-      className="bg-[#110D0A] text-[#F3F4F6] pt-16 pb-8 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 w-full overflow-hidden"
-    >
-      <div className="max-w-6xl w-full mx-auto space-y-12">
-
-        {/* Bloco de Chamada para Ação (CTA) */}
-        <div 
-          ref={ctaBoxRef}
-          className="bg-black/30 rounded-3xl border border-amber-950/60 p-8 md:p-12 text-center space-y-6 relative overflow-hidden group hover:border-amber-500/20 transition-colors duration-300 shadow-xl"
-        >
-          {/* Linha de brilho superior com degradê de fogo */}
-          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-amber-500/0 via-amber-500/40 to-amber-500/0"></div>
-
-          <div ref={textElementsRef} className="max-w-xl mx-auto space-y-4">
-            <div className="flex justify-center will-change-transform">
-              <Badge icon={GiCrossedAxes} variant="amber">O Chamado das Armas</Badge>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white will-change-transform">
-              Pronto para convocar reforços?
-            </h3>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed will-change-transform">
-              Seja para saquear bugs complexos no back-end, erguer interfaces indestrutíveis ou planejar uma arquitetura escalável na nuvem, meu machado está à disposição do seu clã.
-            </p>
-          </div>
-
-          {/* Botões Grandes de Conversão com Efeito Magnético */}
-          <div ref={buttonsRef} className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
-            <div className="magnetic-cta w-full sm:w-auto will-change-transform">
-              <a
-                href={`https://wa.me/${phone}`}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl transition-all duration-300 shadow-lg active:scale-[0.98] animate-glow-pulse px-3 py-4 sm:px-6 "
-              >
-                <FaWhatsapp className="text-lg" /> Iniciar Conversa no WhatsApp
-              </a>
-            </div>
-
-            <div className="magnetic-cta w-full sm:w-auto will-change-transform">
-              <a
-                href={`mailto:${email}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-black/40 hover:bg-black/70 text-gray-300 font-medium text-sm px-3 py-4  sm:px-6 rounded-xl border border-amber-950/60 hover:border-amber-500/30 transition-all duration-200"
-              >
-                <FaEnvelope className="text-base text-gray-400" /> Enviar Mensagem por E-mail
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Linha Final de Créditos e Navegação */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-amber-950/40 text-xs text-gray-500">
-          <div className="text-center sm:text-left space-y-1">
-            <p>© {new Date().getFullYear()} Alexandre Garcia. Todos os direitos reservados.</p>
-            <p className="font-mono text-[10px] text-gray-600">
-              Construído com Next.js, TypeScript e Tailwind CSS. Desenvolvido a base de hidromel e café.
-            </p>
-          </div>
-
-          {/* Botão de Voltar ao Topo */}
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 px-3 py-1.5 bg-black/40 hover:bg-black/80 border border-amber-950/60 text-gray-400 hover:text-amber-500 rounded-lg transition-all text-[11px] font-medium font-mono group cursor-pointer"
-            aria-label="Voltar para o topo da página"
-          >
-            VOLTAR AO TOPO{' '}
-            <FaArrowUp className="transform group-hover:-translate-y-1 group-hover:scale-110 transition-all duration-300" />
-          </button>
-        </div>
-
-      </div>
-    </footer>
-  );
-}
-</file>
-
-<file path="src/app/components/Projects.tsx">
-'use client';
-
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Badge } from "./ui/Badge";
-import { projectsData } from "../_constants/projectsData";
-import ProjectCard from "./ui/ProjectCard";
-import { GiVikingShield } from "react-icons/gi";
-
-// Registra o plugin do GSAP
-gsap.registerPlugin(ScrollTrigger);
-
-export default function ProjectsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
+export default function AboutManifesto() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const axeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const header = headerRef.current;
-    const container = cardsContainerRef.current;
+    const section = sectionRef.current;
+    const content = contentRef.current;
+    const image = imageRef.current;
+    const axe = axeRef.current;
 
-    if (!header || !container) return;
+    if (!section || !content || !image || !axe) return;
 
-    // 1. Animação do Cabeçalho (Badge, Título, Descrição)
-    gsap.fromTo(
-      header.children,
-      { opacity: 0, y: -30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: header,
-          start: "top 85%",
-          toggleActions: "play none none none",
-          once: true,
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        content.children,
+        {
+          opacity: 0,
+          y: 35,
         },
-      }
-    );
-
-    // 2. Animação dos Cards dos Projetos (Efeito 3D Rústico de Entrada)
-    const cards = container.children;
-    
-    gsap.fromTo(
-      cards,
-      { 
-        opacity: 0, 
-        y: 60, 
-        rotationX: -15, 
-        transformOrigin: "top center"
-      },
-      {
-        opacity: 1,
-        y: 0,
-        rotationX: 0,
-        duration: 0.8,
-        stagger: 0.2, // Cascata entre os cards
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: container,
-          start: "top 80%", // Dispara quando o topo do container atinge 80% da tela
-          toggleActions: "play none none none",
-          once: true,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 78%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
         },
-      }
-    );
+      );
 
-    // Limpeza do ScrollTrigger ao desmontar
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.trigger === header || trigger.trigger === container) {
-          trigger.kill();
-        }
+      gsap.fromTo(
+        image,
+        {
+          opacity: 0,
+          x: 45,
+          scale: 0.94,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 0.9,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 78%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        },
+      );
+
+      gsap.to(axe, {
+        y: -8,
+        rotate: 2,
+        duration: 2.8,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
       });
-    };
+    }, section);
+
+    return () => ctx.revert();
   }, []);
 
   return (
     <section
-      id="projects"
+      id="about"
       ref={sectionRef}
-      className="scroll-mt-20 bg-[#110D0A] text-[#F3F4F6] py-20 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 overflow-hidden [perspective:1200px]"
+      aria-labelledby="about-title"
+      className="relative overflow-hidden bg-[#110D0A] px-4 py-20 text-[#F3F4F6] sm:px-6 md:px-8 md:py-28"
     >
-      <div className="max-w-6xl w-full mx-auto space-y-12">
+      {/* Ambientação */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-30"
+      >
+        <div className="absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
 
-        <div ref={headerRef} className="space-y-3 text-center md:text-left">
-          <Badge icon={GiVikingShield} variant="amber">Invasões Concluídas</Badge>
-          <h2 className="text-3xl font-extrabold tracking-tight text-white">
-            Projetos de Destaque
-          </h2>
-          <p className="text-gray-400 text-sm max-w-xl">
-            Uma amostra real do meu arsenal de engenharia. Sem códigos genéricos: apenas soluções robustas que resolvem problemas reais.
+        <div className="absolute -left-32 top-1/3 h-64 w-64 rounded-full bg-amber-600/5 blur-3xl" />
+
+        <div className="absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-orange-700/5 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl">
+        {/* Header */}
+
+        <div className='relative'>
+          <div ref={contentRef} className="mb-12 max-w-3xl md:mb-16">
+            <div className="mb-5">
+              <div className="flex w-fit items-center gap-1.5 rounded-full border border-amber-500/10 bg-amber-500/10 px-3 py-1 font-bold uppercase tracking-widest text-amber-500">
+                <GiHelmet
+                  className="shrink-0 text-xl"
+                  aria-hidden="true"
+                />
+
+                <span className="text-[11px] lg:text-sm">
+                  O homem por trás do machado
+                </span>
+              </div>
+            </div>
+
+            <AboutTitle/>
+
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-gray-400 sm:text-base">
+              Construo software pensando no que acontece{' '}
+              <span className="font-medium text-gray-300">
+                depois do primeiro deploy.
+              </span>
+            </p>
+
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-500 sm:text-base">
+              Gosto de transformar problemas complexos em sistemas simples,
+              previsíveis e preparados para crescer. Arquitetura, performance,
+              testes e cloud fazem parte do processo — não são detalhes para
+              resolver depois.
+            </p>
+
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-500 sm:text-base">
+              Para mim, tecnologia é apenas a ferramenta. O verdadeiro trabalho
+              está em saber{' '}
+              <span className="text-gray-300">
+                o que construir, por que construir e como construir direito.
+              </span>
+            </p>
+            <PremiumMeshCanvas />
+          </div>
+        </div>
+
+
+        {/* Conteúdo */}
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-5">
+          {/* Manifesto */}
+          <div className="lg:col-span-3">
+            <div className="group relative h-full overflow-hidden rounded-3xl border border-amber-950/60 bg-gradient-to-b from-[#221A15] to-[#1A1410] p-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.05),0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-300 hover:border-amber-500/30 hover:shadow-[0_0_30px_rgba(245,158,11,0.04)] sm:p-8">
+              {/* Linha superior */}
+              <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+
+              <div className="mb-8 flex items-start justify-between gap-4">
+                <div>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-amber-700">
+                    manifesto.exe
+                  </span>
+
+                  <h3 className="mt-2 text-xl font-black text-white sm:text-2xl">
+                    Meu manifesto
+                  </h3>
+                </div>
+
+                <div className="rounded-xl border border-amber-500/10 bg-amber-500/5 p-3 text-amber-500 transition-transform duration-300 group-hover:rotate-6">
+                  <GiCrossedAxes
+                    className="text-2xl"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-7">
+                {principles.map((principle, index) => {
+                  const Icon = principle.icon;
+
+                  return (
+                    <div
+                      key={principle.title}
+                      className="group/principle flex gap-4"
+                    >
+                      {/* Número */}
+                      <div className="flex flex-col items-center">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-amber-500/10 bg-black/20 font-mono text-xs font-bold text-amber-500 transition-all duration-300 group-hover/principle:border-amber-500/30 group-hover/principle:bg-amber-500/10">
+                          0{index + 1}
+                        </div>
+
+                        {index !== principles.length - 1 && (
+                          <div className="mt-2 h-full w-px bg-gradient-to-b from-amber-950/70 to-transparent" />
+                        )}
+                      </div>
+
+                      {/* Conteúdo */}
+                      <div className="pb-1">
+                        <div className="flex items-center gap-2">
+                          <Icon
+                            className="text-lg text-amber-600 transition-transform duration-300 group-hover/principle:scale-110"
+                            aria-hidden="true"
+                          />
+
+                          <h4 className="font-bold text-gray-200">
+                            {principle.title}
+                          </h4>
+                        </div>
+
+                        <p className="mt-2 max-w-xl text-sm leading-6 text-gray-500">
+                          {principle.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Frase técnica */}
+              <div className="mt-9 border-t border-amber-950/50 pt-6">
+                <p className="font-mono text-xs leading-6 text-gray-500">
+                  <span className="text-amber-600">&gt;</span>{' '}
+                  Linhas de código forjadas para alta performance e escalabilidade.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Foto / Identidade */}
+          <div className="lg:col-span-2">
+            <div
+              ref={imageRef}
+              className="relative h-full min-h-[460px] overflow-hidden rounded-3xl border border-amber-950/60 bg-gradient-to-b from-[#221A15] to-[#1A1410] p-5 shadow-[inset_0_1px_2px_rgba(255,255,255,0.05),0_4px_20px_rgba(0,0,0,0.4)]"
+            >
+              {/* Runas decorativas */}
+              <div
+                aria-hidden="true"
+                className="absolute right-5 top-5 font-mono text-[9px] tracking-[0.35em] text-amber-900/70"
+              >
+                ᚨ ᛚ ᛖ ᚲ
+              </div>
+
+              <div className="flex h-full flex-col justify-between">
+                {/* Foto */}
+                <div
+                  ref={axeRef}
+                  className="relative flex flex-1 items-center justify-center overflow-hidden will-change-transform"
+                >
+                  {/* Glow */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute h-56 w-56 rounded-full bg-amber-500/5 blur-3xl"
+                  />
+
+                  <Image
+                    src="/assets/aleexgarcia.webp"
+                    alt="Alexandre Garcia, Full-Stack Developer"
+                    width={600}
+                    height={750}
+                    priority={false}
+                    className="relative z-10 max-h-[390px] object-cover object-top"
+                  />
+
+                  {/* Vinheta */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-[#1A1410] via-transparent to-transparent"
+                  />
+                </div>
+
+                {/* Identidade */}
+                <div className="relative z-30">
+                  <div className="mb-4 h-px w-full bg-gradient-to-r from-amber-950/0 via-amber-950/70 to-amber-950/0" />
+
+                  <div className="flex items-end justify-between gap-4">
+                    <div>
+                      <span className="block font-mono text-[9px] uppercase tracking-[0.25em] text-amber-700">
+                        identidade
+                      </span>
+
+                      <span className="mt-1 block text-lg font-black tracking-tight text-white">
+                        Alexandre Garcia
+                      </span>
+
+                      <span className="mt-1 block text-xs text-gray-500">
+                        Full-Stack Developer
+                      </span>
+                    </div>
+
+                    <GiCompass
+                      className="mb-1 text-3xl text-amber-700/60"
+                      aria-hidden="true"
+                    />
+                  </div>
+
+                  {/* Stack */}
+                  <div className="mt-5 flex flex-wrap gap-1.5">
+                    {technologies.map((technology) => (
+                      <span
+                        key={technology}
+                        className="rounded-md border border-amber-950/50 bg-black/20 px-2.5 py-1 font-mono text-[10px] text-gray-500 transition-colors duration-200 hover:border-amber-500/20 hover:text-amber-500"
+                      >
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Fechamento */}
+        <div className="mt-8 border-y border-amber-950/40 py-7 text-center">
+          <GiCrossedAxes
+            className="mx-auto mb-3 text-xl text-amber-700"
+            aria-hidden="true"
+          />
+
+          <p className="mx-auto max-w-3xl text-sm font-medium leading-7 text-gray-500 sm:text-base">
+            <span className="text-gray-300">
+              Código limpo. Arquitetura sólida.
+            </span>{' '}
+            Deploy sem medo.
           </p>
         </div>
-
-        <div ref={cardsContainerRef} className="space-y-6">
-          {projectsData.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
-
       </div>
     </section>
   );
 }
 </file>
 
-<file path="src/app/layout.tsx">
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-
-const baseUrl = process.env.CONTEXT === 'production'
-  ? (process.env.URL || 'https://aleexgarcia.dev.br')
-  : process.env.DEPLOY_PRIME_URL 
-    ? process.env.DEPLOY_PRIME_URL 
-    : 'http://localhost:3000';
-
-export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
-  
-  title: {
-    default: "AleexGarcia | Desenvolvedor Full-Stack",
-    template: "%s | AleexGarcia" 
-  },
-  description: "Dev Full-Stack especialista em Next.js e NestJS. Código limpo, deploy implacável e soluções robustas. Conheça meus projetos!",
-  keywords: ["Desenvolvedor Full-Stack", "React", "Next.js", "TypeScript", "Node.js", "Web Development", "Portfólio"],
-  authors: [{ name: "AleexGarcia", url: baseUrl }],
-  
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-
-  // Open Graph (WhatsApp, Facebook, LinkedIn)
-  openGraph: {
-    title: "AleexGarcia | Desenvolvedor Full-Stack",
-    description: "Código limpo, deploy implacável. Conheça os projetos e a trajetória de um Desenvolvedor Full-Stack focado em aplicações modernas.",
-    url: "./", // Usa a metadataBase automaticamente
-    siteName: "Portfólio - AleexGarcia",
-    images: [
-      {
-        url: "/assets/og.webp", 
-        width: 1200,
-        height: 630,
-        alt: "Portfólio de AleexGarcia - Desenvolvedor Full-Stack",
-      },
-    ],
-    locale: "pt_BR",
-    type: "website",
-  },
-
-  // X / Twitter
-  twitter: {
-    card: "summary_large_image",
-    title: "AleexGarcia | Desenvolvedor Full-Stack",
-    description: "Ship it like a Viking! Projetos web modernos com alta performance e foco em resultados.",
-    images: ["/assets/og.webp"], 
-  },
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="pt-br" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
-}
-</file>
-
-<file path="src/app/components/BentoGrid.tsx">
+<file path="components/BentoGrid.tsx">
 'use client';
 
 import React, { useRef } from 'react';
@@ -2204,6 +2140,1396 @@ export default function BentoGrid() {
           </Card>
         </div>
       </div>
+    </div>
+  );
+}
+</file>
+
+<file path="components/Footer.tsx">
+'use client'
+import React, { useEffect, useRef } from 'react';
+import { FaWhatsapp, FaEnvelope, FaArrowUp } from 'react-icons/fa';
+import { Badge } from './ui/Badge'; 
+import { email, phone } from '../_constants/contacts';
+import { GiCrossedAxes } from 'react-icons/gi';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Footer() {
+  const footerRef = useRef<HTMLDivElement>(null);
+  const ctaBoxRef = useRef<HTMLDivElement>(null);
+  const textElementsRef = useRef<HTMLDivElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    const ctaBox = ctaBoxRef.current;
+    const texts = textElementsRef.current;
+    const buttons = buttonsRef.current;
+  const footer = footerRef.current;
+
+    if (!ctaBox || !texts || !buttons || !footer) return;
+
+    // 1. Animação de Entrada com Revelação Rústica (Efeito Forja)
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: footer,
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+        once: true,
+      }
+    });
+
+    tl.fromTo(ctaBox, 
+      { opacity: 0, y: 50, scale: 0.98 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'power2.out' }
+    )
+    .fromTo(texts.children,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: 'power2.out' },
+      '-=0.3'
+    )
+    .fromTo(buttons.children,
+      { opacity: 0, scale: 0.9, y: 15 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.4, stagger: 0.12, ease: 'back.out(1.5)' },
+      '-=0.2'
+    );
+
+    // 2. Efeito Magnético Otimizado de Alta Performance (GPU) nos Botões Principais
+    const magneticButtons = footer.querySelectorAll('.magnetic-cta');
+    const cleanupMap = new Map<Element, { move: (e: MouseEvent) => void; leave: () => void }>();
+
+    magneticButtons.forEach((btn) => {
+      const htmlEl = btn as HTMLElement;
+      const xTo = gsap.quickTo(htmlEl, 'x', { duration: 0.3, ease: 'power2.out' });
+      const yTo = gsap.quickTo(htmlEl, 'y', { duration: 0.3, ease: 'power2.out' });
+
+      const onMouseMove = (e: MouseEvent) => {
+        const rect = htmlEl.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        xTo(x * 0.25); // Força do efeito magnético
+        yTo(y * 0.25);
+      };
+
+      const onMouseLeave = () => {
+        gsap.to(htmlEl, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+      };
+
+      htmlEl.addEventListener('mousemove', onMouseMove);
+      htmlEl.addEventListener('mouseleave', onMouseLeave);
+      cleanupMap.set(htmlEl, { move: onMouseMove, leave: onMouseLeave });
+    });
+
+    return () => {
+      if (tl.scrollTrigger) tl.scrollTrigger.kill();
+      tl.kill();
+      cleanupMap.forEach((listeners, el) => {
+        el.removeEventListener('mousemove', listeners.move as EventListener);
+        el.removeEventListener('mouseleave', listeners.leave);
+      });
+    };
+  }, []);
+
+  return (
+    <footer 
+      id="contact" 
+      ref={footerRef}
+      className="bg-[#110D0A] text-[#F3F4F6] pt-16 pb-8 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 w-full overflow-hidden"
+    >
+      <div className="max-w-6xl w-full mx-auto space-y-12">
+
+        {/* Bloco de Chamada para Ação (CTA) */}
+        <div 
+          ref={ctaBoxRef}
+          className="bg-black/30 rounded-3xl border border-amber-950/60 p-8 md:p-12 text-center space-y-6 relative overflow-hidden group hover:border-amber-500/20 transition-colors duration-300 shadow-xl"
+        >
+          {/* Linha de brilho superior com degradê de fogo */}
+          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-amber-500/0 via-amber-500/40 to-amber-500/0"></div>
+
+          <div ref={textElementsRef} className="max-w-xl mx-auto space-y-4">
+            <div className="flex justify-center will-change-transform">
+              <Badge icon={GiCrossedAxes} variant="amber">O Chamado das Armas</Badge>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white will-change-transform">
+              Pronto para convocar reforços?
+            </h3>
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed will-change-transform">
+              Seja para saquear bugs complexos no back-end, erguer interfaces indestrutíveis ou planejar uma arquitetura escalável na nuvem, meu machado está à disposição do seu clã.
+            </p>
+          </div>
+
+          {/* Botões Grandes de Conversão com Efeito Magnético */}
+          <div ref={buttonsRef} className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
+            <div className="magnetic-cta w-full sm:w-auto will-change-transform">
+              <a
+                href={`https://wa.me/${phone}`}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl transition-all duration-300 shadow-lg active:scale-[0.98] animate-glow-pulse px-3 py-4 sm:px-6 "
+              >
+                <FaWhatsapp className="text-lg" /> Iniciar Conversa no WhatsApp
+              </a>
+            </div>
+
+            <div className="magnetic-cta w-full sm:w-auto will-change-transform">
+              <a
+                href={`mailto:${email}`}
+                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-black/40 hover:bg-black/70 text-gray-300 font-medium text-sm px-3 py-4  sm:px-6 rounded-xl border border-amber-950/60 hover:border-amber-500/30 transition-all duration-200"
+              >
+                <FaEnvelope className="text-base text-gray-400" /> Enviar Mensagem por E-mail
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Linha Final de Créditos e Navegação */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-amber-950/40 text-xs text-gray-500">
+          <div className="text-center sm:text-left space-y-1">
+            <p>© {new Date().getFullYear()} Alexandre Garcia. Todos os direitos reservados.</p>
+            <p className="font-mono text-[10px] text-gray-600">
+              Construído com Next.js, TypeScript e Tailwind CSS. Desenvolvido a base de hidromel e café.
+            </p>
+          </div>
+
+          {/* Botão de Voltar ao Topo */}
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-2 px-3 py-1.5 bg-black/40 hover:bg-black/80 border border-amber-950/60 text-gray-400 hover:text-amber-500 rounded-lg transition-all text-[11px] font-medium font-mono group cursor-pointer"
+            aria-label="Voltar para o topo da página"
+          >
+            VOLTAR AO TOPO{' '}
+            <FaArrowUp className="transform group-hover:-translate-y-1 group-hover:scale-110 transition-all duration-300" />
+          </button>
+        </div>
+
+      </div>
+    </footer>
+  );
+}
+</file>
+
+<file path="components/Header.tsx">
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { Button } from './ui/Button';
+import { NavLink } from './ui/NavLink';
+import { GiBatteredAxe, GiCrossedAxes } from 'react-icons/gi';
+
+
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const navLinks = [
+    { name: 'Arsenal', href: '#arsenal' },
+    { name: 'Conquistas', href: '#projects' },
+    { name: 'Convocar', href: '#contact' }
+  ];
+
+  return (
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-[#110D0A]/90 backdrop-blur-md border-b border-amber-950/40 py-4 shadow-lg shadow-black/40' 
+        : 'bg-transparent py-6'
+    }`}>
+      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
+        
+        {/* LOGO / IDENTIDADE NÓRDICA */}
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div className="p-2 bg-amber-500/10 rounded-xl border border-amber-500/20 text-amber-500 group-hover:bg-amber-500 group-hover:text-[#110D0A] transition-all duration-300">
+            <GiCrossedAxes className="text-lg" />
+  
+          </div>
+          <span className="text-sm font-black tracking-widest uppercase text-white font-mono group-hover:text-amber-500 transition-colors">
+            AleexGarcia.dev
+          </span>
+        </a>
+
+        {/* NAVEGAÇÃO DESKTOP (Estilo Madeira de Fundo) */}
+        <nav className="hidden md:flex items-center gap-1 bg-[#1A1410] border border-amber-950/60 p-1 rounded-xl backdrop-blur-sm shadow-[inset_0_1px_2px_rgba(255,255,255,0.02)]">
+          {navLinks.map((link, idx) => (
+            <NavLink key={idx} href={link.href}>
+              {link.name}
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* BOTÃO DE CONTATO DESKTOP (Reaproveitando o componente Button) */}
+        <div className="hidden md:block">
+          <Button  href="#contact" variant="primary" className="group !py-2 !px-4 text-xs uppercase tracking-wider flex items-center gap-1.5">
+            Contratar Machado
+            <GiBatteredAxe className="text-xl transition-all duration-300 -rotate-45 group-hover:rotate-20 group-hover:translate-x-1 group-hover:scale-110" />
+          </Button>
+        </div>
+
+        {/* BOTÃO DO MENU MOBILE */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden p-2 bg-[#1A1410] border border-amber-950/60 text-amber-500 hover:text-amber-400 rounded-xl transition-all"
+          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+        >
+          {isOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
+        </button>
+
+      </div>
+
+      {/* MENU DROPDOWN MOBILE */}
+      <div className={`fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#110D0A] z-40 md:hidden flex flex-col justify-between p-6 border-t border-amber-950/40 transform transition-transform duration-300 ease-in-out ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}>
+        <nav className="flex flex-col gap-3">
+          {navLinks.map((link, idx) => (
+            <NavLink key={idx} href={link.href} onClick={toggleMenu} mobile>
+              {link.name}
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* BOTÃO INFERIOR NO MOBILE */}
+        <div className="pt-6 border-t border-amber-950/40">
+          <Button href="#contact" variant="primary" onClick={toggleMenu} className="w-full !py-4 text-sm uppercase tracking-wider">
+            Contratar Machado
+          </Button>
+        </div>
+      </div>
+    </header>
+  );
+}
+</file>
+
+<file path="components/HowIBuild.tsx">
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { STEPS } from '../_constants/steps';
+import { Step } from './ui/Step';
+import { MobileStep } from './ui/MobileStep';
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+export default function HowIBuild() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const introRef = useRef<HTMLDivElement>(null);
+
+  // Desktop
+  const desktopPathRef = useRef<SVGPathElement>(null);
+
+  // Mobile
+  const mobilePathRef = useRef<SVGLineElement>(null);
+
+  // Etapas
+  const stepsRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const intro = introRef.current;
+    const desktopPath = desktopPathRef.current;
+    const mobilePath = mobilePathRef.current;
+
+    if (!section || !intro || !desktopPath || !mobilePath) {
+      return;
+    }
+
+    const ctx = gsap.context(() => {
+      const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)',
+      ).matches;
+
+      const desktopPathLength = desktopPath.getTotalLength();
+      const mobilePathLength = mobilePath.getTotalLength();
+
+
+
+      gsap.set(desktopPath, {
+        strokeDasharray: desktopPathLength,
+        strokeDashoffset: desktopPathLength,
+      });
+
+      gsap.set(mobilePath, {
+        strokeDasharray: mobilePathLength,
+        strokeDashoffset: mobilePathLength,
+      });
+
+
+      if (prefersReducedMotion) {
+        gsap.set(desktopPath, {
+          strokeDashoffset: 0,
+        });
+
+        gsap.set(mobilePath, {
+          strokeDashoffset: 0,
+        });
+
+        gsap.set(intro.children, {
+          opacity: 1,
+          y: 0,
+        });
+
+        gsap.set(stepsRef.current, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        });
+
+        return;
+      }
+
+
+      gsap.fromTo(
+        intro.children,
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: intro,
+            start: 'top 82%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        },
+      );
+
+      gsap.to(desktopPath, {
+        strokeDashoffset: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 65%',
+          end: 'bottom 70%',
+          scrub: 1.2,
+        },
+      });
+
+
+
+      gsap.to(mobilePath, {
+        strokeDashoffset: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 65%',
+          end: 'bottom 72%',
+          scrub: 1,
+        },
+      });
+
+
+      stepsRef.current.forEach((step) => {
+        if (!step) return;
+
+        gsap.fromTo(
+          step,
+          {
+            opacity: 0,
+            y: 45,
+            scale: 0.96,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: step,
+              start: 'top 78%',
+              toggleActions: 'play none none none',
+              once: true,
+            },
+          },
+        );
+
+
+        const node = step.querySelector('[data-process-node]');
+
+        if (node) {
+          gsap.fromTo(
+            node,
+            {
+              scale: 0.7,
+              opacity: 0.4,
+            },
+            {
+              scale: 1,
+              opacity: 1,
+              duration: 0.7,
+              ease: 'back.out(1.8)',
+              scrollTrigger: {
+                trigger: step,
+                start: 'top 78%',
+                toggleActions: 'play none none none',
+                once: true,
+              },
+            },
+          );
+        }
+      });
+
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
+    }, section);
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
+  return (
+    <section
+      id="processo"
+      ref={sectionRef}
+      className="
+        relative
+        isolate
+        overflow-hidden
+        bg-[#15100C]
+        py-32
+
+      "
+    >
+
+
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          opacity-[0.035]
+        "
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 1px 1px, rgb(245 158 11) 1px, transparent 0)',
+          backgroundSize: '32px 32px',
+        }}
+      />
+
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-1/2
+          -z-10
+          h-[600px]
+          w-[600px]
+          -translate-x-1/2
+          -translate-y-1/2
+          rounded-full
+          bg-amber-600/[0.035]
+          blur-[140px]
+        "
+      />
+
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        {/* ========================================================
+            INTRO
+        ======================================================== */}
+
+        <div
+          ref={introRef}
+          className="
+            mx-auto
+            max-w-3xl
+            text-center
+          "
+        >
+          {/* Eyebrow */}
+
+          <div
+            className="
+              mb-6
+              inline-flex
+              items-center
+              gap-3
+              rounded-full
+              border
+              border-amber-900/70
+              bg-black/30
+              px-4
+              py-2
+            "
+          >
+            <span
+              className="
+                h-1.5
+                w-1.5
+                rounded-full
+                bg-amber-500
+                shadow-[0_0_10px_rgba(245,158,11,0.7)]
+              "
+            />
+
+            <span
+              className="
+                font-mono
+                text-[10px]
+                font-medium
+                uppercase
+                tracking-[0.22em]
+                text-amber-400
+              "
+            >
+              Método de construção
+            </span>
+          </div>
+
+          {/* Título */}
+
+          <h2
+            className="
+              font-serif
+              text-4xl
+              font-bold
+              tracking-tight
+              text-stone-100
+              sm:text-5xl
+              md:text-6xl
+              lg:text-7xl
+            "
+          >
+            Como eu{' '}
+            <span className="text-amber-500">
+              construo.
+            </span>
+          </h2>
+
+          {/* Descrição */}
+
+          <p
+            className="
+              mx-auto
+              mt-7
+              max-w-2xl
+              text-base
+              leading-8
+              text-stone-300
+              sm:text-lg
+            "
+          >
+            Código é ferramenta.
+            <br className="sm:hidden" /> Engenharia é saber onde,
+            quando e por que utilizá-la.
+          </p>
+        </div>
+
+        {/* ========================================================
+            DESKTOP
+        ======================================================== */}
+
+        <div
+          className="
+            relative
+            mx-auto
+            mt-28
+            hidden
+            min-h-[1050px]
+            max-w-6xl
+            lg:block
+          "
+        >
+          {/* ======================================================
+              TRILHA SVG
+          ====================================================== */}
+
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 1200 1050"
+            preserveAspectRatio="none"
+            className="
+              pointer-events-none
+              absolute
+              inset-0
+              h-full
+              w-full
+              overflow-visible
+            "
+          >
+            {/* Trilha de fundo */}
+
+            <path
+              d="
+                M 105 130
+                C 250 30, 390 65, 470 190
+                C 535 290, 650 270, 725 205
+                C 810 130, 990 180, 1055 300
+                C 1120 420, 955 455, 820 475
+                C 670 500, 650 620, 735 700
+                C 815 775, 650 900, 475 825
+                C 350 770, 265 850, 170 940
+              "
+              fill="none"
+              stroke="rgba(146, 64, 14, 0.45)"
+              strokeWidth="3"
+              strokeDasharray="7 12"
+            />
+
+            {/* Trilha animada */}
+
+            <path
+              ref={desktopPathRef}
+              d="
+                M 105 130
+                C 250 30, 390 65, 470 190
+                C 535 290, 650 270, 725 205
+                C 810 130, 990 180, 1055 300
+                C 1120 420, 955 455, 820 475
+                C 670 500, 650 620, 735 700
+                C 815 775, 650 900, 475 825
+                C 350 770, 265 850, 170 940
+              "
+              fill="none"
+              stroke="rgba(245, 158, 11, 0.85)"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+          </svg>
+
+          {/* ======================================================
+              ETAPA 01
+          ====================================================== */}
+
+          <Step
+            step={STEPS[0]}
+            index={0}
+            refCallback={(element) => {
+              if (element) {
+                stepsRef.current[0] = element;
+              }
+            }}
+            className="
+              absolute
+              left-[2%]
+              top-[7%]
+              w-[280px]
+            "
+          />
+
+          {/* ======================================================
+              ETAPA 02
+          ====================================================== */}
+
+          <Step
+            step={STEPS[1]}
+            index={1}
+            refCallback={(element) => {
+              if (element) {
+                stepsRef.current[1] = element;
+              }
+            }}
+            className="
+              absolute
+              left-[34%]
+              top-[14%]
+              w-[290px]
+            "
+          />
+
+          {/* ======================================================
+              ETAPA 03
+          ====================================================== */}
+
+          <Step
+            step={STEPS[2]}
+            index={2}
+            refCallback={(element) => {
+              if (element) {
+                stepsRef.current[2] = element;
+              }
+            }}
+            className="
+              absolute
+              right-[1%]
+              top-[27%]
+              w-[290px]
+            "
+          />
+
+          {/* ======================================================
+              ETAPA 04
+          ====================================================== */}
+
+          <Step
+            step={STEPS[3]}
+            index={3}
+            refCallback={(element) => {
+              if (element) {
+                stepsRef.current[3] = element;
+              }
+            }}
+            className="
+              absolute
+              left-[45%]
+              top-[51%]
+              w-[290px]
+            "
+          />
+
+          {/* ======================================================
+              ETAPA 05
+          ====================================================== */}
+
+          <Step
+            step={STEPS[4]}
+            index={4}
+            refCallback={(element) => {
+              if (element) {
+                stepsRef.current[4] = element;
+              }
+            }}
+            className="
+              absolute
+              bottom-[2%]
+              left-[8%]
+              w-[300px]
+            "
+          />
+        </div>
+
+        {/* ========================================================
+            MOBILE / TABLET
+        ======================================================== */}
+
+        <div
+          className="
+            relative
+            mt-20
+            lg:hidden
+          "
+        >
+          <div className="relative">
+            {/* ====================================================
+                SVG VERTICAL MOBILE
+            ==================================================== */}
+
+            <svg
+              aria-hidden="true"
+              className="
+                pointer-events-none
+                absolute
+                left-[19px]
+                top-0
+                h-full
+                w-[2px]
+                overflow-visible
+              "
+              viewBox="0 0 2 1000"
+              preserveAspectRatio="none"
+            >
+              {/* Linha fantasma */}
+
+              <line
+                x1="1"
+                y1="0"
+                x2="1"
+                y2="1000"
+                stroke="rgba(146, 64, 14, 0.4)"
+                strokeWidth="2"
+                strokeDasharray="5 8"
+              />
+
+              {/* Linha animada */}
+
+              <line
+                ref={mobilePathRef}
+                x1="1"
+                y1="0"
+                x2="1"
+                y2="1000"
+                stroke="rgba(245, 158, 11, 0.85)"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+
+            {/* ==================================================
+                ETAPAS MOBILE
+            ================================================== */}
+
+            <div
+              className="
+                space-y-24
+                sm:space-y-28
+              "
+            >
+              {STEPS.map((step, index) => (
+                <MobileStep
+                  key={step.number}
+                  step={step}
+                  index={index}
+                  refCallback={(element) => {
+                    if (element) {
+                      stepsRef.current[index] = element;
+                    }
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ========================================================
+            FRASE FINAL
+        ======================================================== */}
+
+        <div
+          className="
+            mt-24
+            flex
+            items-center
+            justify-center
+            gap-4
+            sm:mt-32
+          "
+        >
+          <span
+            className="
+              h-px
+              w-12
+              bg-amber-900/70
+              sm:w-24
+            "
+          />
+
+          <span
+            className="
+              font-mono
+              text-[10px]
+              uppercase
+              tracking-[0.3em]
+              text-stone-500
+            "
+          >
+            Do problema ao software
+          </span>
+
+          <span
+            className="
+              h-px
+              w-12
+              bg-amber-900/70
+              sm:w-24
+            "
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="components/Projects.tsx">
+'use client';
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Badge } from "./ui/Badge";
+import { projectsData } from "../_constants/projectsData";
+import ProjectCard from "./ui/ProjectCard";
+import { GiVikingShield } from "react-icons/gi";
+
+// Registra o plugin do GSAP
+gsap.registerPlugin(ScrollTrigger);
+
+export default function ProjectsSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const cardsContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const header = headerRef.current;
+    const container = cardsContainerRef.current;
+
+    if (!header || !container) return;
+
+    // 1. Animação do Cabeçalho (Badge, Título, Descrição)
+    gsap.fromTo(
+      header.children,
+      { opacity: 0, y: -30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: header,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      }
+    );
+
+    // 2. Animação dos Cards dos Projetos (Efeito 3D Rústico de Entrada)
+    const cards = container.children;
+    
+    gsap.fromTo(
+      cards,
+      { 
+        opacity: 0, 
+        y: 60, 
+        rotationX: -15, 
+        transformOrigin: "top center"
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotationX: 0,
+        duration: 0.8,
+        stagger: 0.2, // Cascata entre os cards
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: container,
+          start: "top 80%", // Dispara quando o topo do container atinge 80% da tela
+          toggleActions: "play none none none",
+          once: true,
+        },
+      }
+    );
+
+    // Limpeza do ScrollTrigger ao desmontar
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.trigger === header || trigger.trigger === container) {
+          trigger.kill();
+        }
+      });
+    };
+  }, []);
+
+  return (
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="scroll-mt-20 bg-[#110D0A] text-[#F3F4F6] py-20 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 overflow-hidden [perspective:1200px]"
+    >
+      <div className="max-w-6xl w-full mx-auto space-y-12">
+
+        <div ref={headerRef} className="space-y-3 text-center md:text-left">
+          <Badge icon={GiVikingShield} variant="amber">Invasões Concluídas</Badge>
+          <h2 className="text-3xl font-extrabold tracking-tight text-white">
+            Projetos de Destaque
+          </h2>
+          <p className="text-gray-400 text-sm max-w-xl">
+            Uma amostra real do meu arsenal de engenharia. Sem códigos genéricos: apenas soluções robustas que resolvem problemas reais.
+          </p>
+        </div>
+
+        <div ref={cardsContainerRef} className="space-y-6">
+          {projectsData.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="hooks/useBentoAnimations.ts">
+import { useEffect, RefObject } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export function useBentoAnimations(containerRef: RefObject<HTMLDivElement | null>) {
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const cards = container.children;
+
+    // 1. Entrada com ScrollTrigger
+    const scrollTween = gsap.fromTo(
+      cards,
+      { opacity: 0, y: 40, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: 'power2.out',
+        stagger: 0.08,
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+      }
+    );
+
+    // 2. Otimização Arquitetural: Efeito Magnético de Performance com quickTo
+    const magneticElements = container.querySelectorAll('.magnetic-btn');
+    
+    // ✅ CORREÇÃO AQUI: Tipando o Map com assinaturas exatas de funções de evento do DOM
+    const cleanupMap = new Map<Element, { move: (e: MouseEvent) => void; leave: () => void }>();
+
+    magneticElements.forEach((el) => {
+      const htmlEl = el as HTMLElement;
+
+      // Cria funções otimizadas que atualizam a propriedade diretamente na GPU
+      const xTo = gsap.quickTo(htmlEl, 'x', { duration: 0.3, ease: 'power2.out' });
+      const yTo = gsap.quickTo(htmlEl, 'y', { duration: 0.3, ease: 'power2.out' });
+
+      const onMouseMove = (e: MouseEvent) => {
+        const rect = htmlEl.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        xTo(x * 0.3);
+        yTo(y * 0.3);
+      };
+
+      const onMouseLeave = () => {
+        // Efeito elástico ao soltar o elemento
+        gsap.to(htmlEl, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+      };
+
+      htmlEl.addEventListener('mousemove', onMouseMove);
+      htmlEl.addEventListener('mouseleave', onMouseLeave);
+
+      // ✅ CORREÇÃO AQUI: Salvando as referências corretas que batem com o tipo do Map
+      cleanupMap.set(htmlEl, { move: onMouseMove, leave: onMouseLeave });
+    });
+
+    // Desmontagem limpa de tudo o que foi gerado pelo hook
+    return () => {
+      if (scrollTween.scrollTrigger) {
+        scrollTween.scrollTrigger.kill();
+      }
+      
+      // ✅ CORREÇÃO AQUI: Removendo os listeners usando as chaves certas gravadas no Map
+      cleanupMap.forEach((listeners, el) => {
+        el.removeEventListener('mousemove', listeners.move as EventListener);
+        el.removeEventListener('mouseleave', listeners.leave);
+      });
+    };
+  }, [containerRef]);
+}
+</file>
+
+<file path="globals.css">
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@theme {
+  /* Registrando a animação customizada */
+  --animate-float: float 4s ease-in-out infinite;
+
+  /* Registrando os keyframes da flutuação */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  --animate-border-spin: border-spin 4s linear infinite;
+
+  @keyframes border-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes shadowPulse {
+
+    0%,
+    100% {
+      box-shadow: 0 5px 5px -3px rgba(16, 185, 129, 0.2), 0 4px 6px -4px rgba(16, 185, 129, 0.2);
+    }
+
+    50% {
+      box-shadow: 0 0 10px 5px rgba(16, 185, 129, 0.6);
+    }
+  }
+
+}
+.animate-glow-pulse {
+  animation: shadowPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+</file>
+
+<file path="layout.tsx">
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+
+const baseUrl = process.env.CONTEXT === 'production'
+  ? (process.env.URL || 'https://aleexgarcia.dev.br')
+  : process.env.DEPLOY_PRIME_URL 
+    ? process.env.DEPLOY_PRIME_URL 
+    : 'http://localhost:3000';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
+  
+  title: {
+    default: "AleexGarcia | Desenvolvedor Full-Stack",
+    template: "%s | AleexGarcia" 
+  },
+  description: "Dev Full-Stack especialista em Next.js e NestJS. Código limpo, deploy implacável e soluções robustas. Conheça meus projetos!",
+  keywords: ["Desenvolvedor Full-Stack", "React", "Next.js", "TypeScript", "Node.js", "Web Development", "Portfólio"],
+  authors: [{ name: "AleexGarcia", url: baseUrl }],
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  // Open Graph (WhatsApp, Facebook, LinkedIn)
+  openGraph: {
+    title: "AleexGarcia | Desenvolvedor Full-Stack",
+    description: "Código limpo, deploy implacável. Conheça os projetos e a trajetória de um Desenvolvedor Full-Stack focado em aplicações modernas.",
+    url: "./", // Usa a metadataBase automaticamente
+    siteName: "Portfólio - AleexGarcia",
+    images: [
+      {
+        url: "/assets/og.webp", 
+        width: 1200,
+        height: 630,
+        alt: "Portfólio de AleexGarcia - Desenvolvedor Full-Stack",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+
+  // X / Twitter
+  twitter: {
+    card: "summary_large_image",
+    title: "AleexGarcia | Desenvolvedor Full-Stack",
+    description: "Ship it like a Viking! Projetos web modernos com alta performance e foco em resultados.",
+    images: ["/assets/og.webp"], 
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="pt-br" className="scroll-smooth">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
+</file>
+
+<file path="not-found.tsx">
+'use client';
+
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { gsap } from "gsap";
+import { GiDrakkar, GiSkullCrossedBones } from "react-icons/gi";
+
+export default function NotFound() {
+    const iconRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const icon = iconRef.current;
+        if (!icon) return;
+
+        // Cria a timeline com repetição infinita e efeito "yoyo" (mirror)
+        const tl = gsap.timeline({ 
+            repeat: -1, 
+            yoyo: true 
+        });
+
+        // Simula exatamente a animação de rotação e balanço do framer-motion
+        tl.to(icon, {
+            rotation: 10,
+            y: -5,
+            duration: 1,
+            ease: "sine.inOut"
+        }).to(icon, {
+            rotation: -10,
+            y: 5,
+            duration: 1,
+            ease: "sine.inOut"
+        });
+
+        // Limpeza para evitar vazamento de memória se o usuário sair da página rapidamente
+        return () => {
+            tl.kill();
+        };
+    }, []);
+
+    return (
+        <div className="min-h-screen bg-black text-gray-100 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+
+            {/* Detalhe de Fundo: O Navio Perdido */}
+            <div className="absolute opacity-15 pointer-events-none transform -translate-y-12">
+                <GiDrakkar className="text-[400px] text-amber-700 animate-pulse" />
+            </div>
+
+            <div className="max-w-xl z-10 flex flex-col items-center gap-6">
+
+                {/* Ícone de Alerta Viking com GSAP */}
+                <div
+                    ref={iconRef}
+                    className="text-amber-500 text-7xl drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]"
+                >
+                    <GiSkullCrossedBones />
+                </div>
+
+                {/* Título de Erro */}
+                <h1 className="text-7xl font-black font-mono tracking-tighter text-amber-500 select-none">
+                    ERRO 404
+                </h1>
+
+                {/* Mensagem Satírica */}
+                <div className="space-y-3">
+                    <h2 className="text-2xl font-bold uppercase tracking-wide text-gray-200">
+                        Território Desconhecido!
+                    </h2>
+                    <p className="text-sm text-gray-400 max-w-md mx-auto leading-relaxed">
+                        Pelos cabelos de Odin, você navegou seu drakkar para fora do mapa! Esta página não existe, foi devorada pelo Kraken ou <span className="text-amber-600 font-semibold">saqueada pelo nosso time de desenvolvimento</span>.
+                    </p>
+                </div>
+
+                {/* Frase em Itálico */}
+                <div className="border-y border-amber-950/60 py-3 my-2 text-xs text-amber-700 font-medium tracking-wider italic uppercase">
+                    {"Nenhum link quebrado escapa ao meu machado"}
+                </div>
+
+                <div className="mt-4">
+                    <Link
+                        href="/"
+                        className="group relative inline-flex items-center gap-3 bg-amber-600 hover:bg-amber-500 text-black font-black text-xs uppercase tracking-widest px-8 py-4 rounded-none transition-all duration-300 shadow-lg shadow-amber-950/40 border border-amber-700 hover:scale-[1.02] active:scale-[0.98]"
+                    >
+                        Retornar ao Vilarejo
+                    </Link>
+                </div>
+
+            </div>
+
+            {/* Rodapé cômico da página 404 */}
+            <span className="absolute bottom-6 text-[10px] text-gray-600 tracking-widest uppercase font-mono">
+                Coordenadas atuais: Niflheim // Valhalla está em outra rota
+            </span>
+        </div>
+    );
+}
+</file>
+
+<file path="page.tsx">
+import BentoGrid from "./components/BentoGrid";
+import Projects from "./components/Projects";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import About from "./components/About";
+import HowIBuild from "./components/HowIBuild";
+
+
+export default function Home() {
+  return (
+    <div className="font-sans grid grid-rows-[90px_1fr_auto] items-center justify-items-center min-h-screen">
+      <Header/>
+      <main className="flex flex-col row-start-2 w-full">
+        <BentoGrid/>
+        <About />
+        <HowIBuild/>
+        <Projects/>
+        
+      </main>
+      <footer className="row-start-3 w-full">
+        <Footer/>
+      </footer>
     </div>
   );
 }

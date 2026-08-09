@@ -188,7 +188,7 @@ export default function HowIBuild() {
 
   return (
     <section
-      id="processo"
+      id="process"
       ref={sectionRef}
       className="
         relative
