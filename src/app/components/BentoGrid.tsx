@@ -21,7 +21,7 @@ export default function BentoGrid() {
   useBentoAnimations(containerRef);
 
   return (
-    <div id='arsenal' className="min-h-screen scroll-mt-20 bg-[#110D0A] text-[#F3F4F6] flex items-center justify-center p-4 sm:p-6 md:p-8 font-sans">
+    <div id='resume' className="min-h-screen scroll-mt-20 bg-[#110D0A] text-[#F3F4F6] flex items-center justify-center p-4 sm:p-6 md:p-8 font-sans">
       <div
         ref={containerRef}
         className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-5 gap-4 auto-rows-[minmax(180px,_auto)] [perspective:1000px]"

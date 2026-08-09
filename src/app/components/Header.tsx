@@ -22,11 +22,12 @@ export default function Header() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const navLinks = [
-    { name: 'Arsenal', href: '#arsenal' },
-    { name: 'Conquistas', href: '#projects' },
-    { name: 'Convocar', href: '#contact' }
-  ];
+const navLinks = [
+  { name: 'Resumo', href: '#resume' },
+  { name: 'Manifesto', href: '#manifest' },
+  { name: 'A Forja', href: '#process' },
+  { name: 'Projetos', href: '#projects' },
+];
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
