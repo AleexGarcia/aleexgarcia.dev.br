@@ -114,6 +114,7 @@ export default function HeroCardViking() {
           alt="Escudo Rúnico"
           width={250}
           height={250}
+          priority
         />
       </div>
 
@@ -129,6 +130,7 @@ export default function HeroCardViking() {
             alt="Machado de Batalha Nórdico"
             width={250}
             height={250}
+            priority
           />
           
           {/* Machado da Esquerda (Invertido no scale base do CSS) */}
@@ -139,6 +141,7 @@ export default function HeroCardViking() {
             alt="Machado de Batalha Nórdico"
             width={250}
             height={250}
+            priority
           />
           
         </div>

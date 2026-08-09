@@ -60,7 +60,7 @@ const navLinks = [
         {/* BOTÃO DE CONTATO DESKTOP (Reaproveitando o componente Button) */}
         <div className="hidden md:block">
           <Button  href="#contact" variant="primary" className="group !py-2 !px-4 text-xs uppercase tracking-wider flex items-center gap-1.5">
-            Contratar Machado
+            Contratar o Machado
             <GiBatteredAxe className="text-xl transition-all duration-300 -rotate-45 group-hover:rotate-20 group-hover:translate-x-1 group-hover:scale-110" />
           </Button>
         </div>
@@ -91,7 +91,7 @@ const navLinks = [
         {/* BOTÃO INFERIOR NO MOBILE */}
         <div className="pt-6 border-t border-amber-950/40">
           <Button href="#contact" variant="primary" onClick={toggleMenu} className="w-full !py-4 text-sm uppercase tracking-wider">
-            Contratar Machado
+            Contratar o Machado
           </Button>
         </div>
       </div>
