@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   GiAnvil,
   GiBattleAxe,
+  GiCompass,
   GiCrossedAxes,
   GiHelmet,
   GiShield,
@@ -315,7 +316,7 @@ export default function AboutManifesto() {
                       </span>
                     </div>
 
-                    <GiAnvil
+                    <GiCompass
                       className="mb-1 text-3xl text-amber-700/60"
                       aria-hidden="true"
                     />
