@@ -1,45 +1,69 @@
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
+'use client';
+
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { Card } from './Card';
 import { Project } from '../../_constants/projectsData';
 import TerminalMockup from './TerminalMockup';
 import BrowserMockup from './BrowserMockup';
 
+// Registra o plugin de Scroll do GSAP
+gsap.registerPlugin(ScrollTrigger);
 
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-    },
-  },
-};
-
-// Componente Interno Isolado para o Card do Projeto
 export default function ProjectCard({ project }: { project: Project }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = cardRef.current;
+    if (!element) return;
+
+    // Substitui o itemVariants (hidden -> visible) do framer-motion
+    const anim = gsap.fromTo(
+      element,
+      { 
+        opacity: 0, 
+        y: 30 
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%", // Dispara quando o topo do card atinge 85% da tela
+          toggleActions: "play none none none",
+          once: true, // Executa a animação apenas uma vez ao scrollar
+        },
+      }
+    );
+
+    // Limpeza ao desmontar o componente para evitar vazamento de memória
+    return () => {
+      if (anim.scrollTrigger) anim.scrollTrigger.kill();
+      anim.kill();
+    };
+  }, []);
+
   return (
-    <motion.div variants={itemVariants} className="group w-full">
+    <div ref={cardRef} className="group w-full opacity-0"> {/* opacity-0 previne o "flash" do conteúdo antes do JS carregar */}
       <Card className="!flex-row gap-8 flex-wrap lg:flex-nowrap p-6 border border-amber-950/20 bg-[#16110E] transition-all duration-300 group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.05)]">
 
         <div className="w-full lg:w-2/3">
           {/* Mockup do Terminal */}
-          {project.isApiOnly ? <TerminalMockup
-            command={project.terminalCommand}
-            outputLines={project.terminalOutput}
-          /> : 
+          {project.isApiOnly ? (
+            <TerminalMockup
+              command={project.terminalCommand}
+              outputLines={project.terminalOutput}
+            />
+          ) : (
             <BrowserMockup 
-      imageUrl={project.imageUrl} 
-      title={project.title}
-    />
-          
-          }
-
+              imageUrl={project.imageUrl} 
+              title={project.title}
+            />
+          )}
         </div>
 
         {/* LADO DIREITO: Informações e Engenharia */}
@@ -99,7 +123,6 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
       </Card>
-    </motion.div>
+    </div>
   );
 }
-
