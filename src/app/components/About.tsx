@@ -12,6 +12,7 @@ import {
   GiShield,
 } from 'react-icons/gi';
 import { PremiumMeshCanvas } from './ui/PremiumMeshCanvas';
+import AboutTitle from './ui/AboutTitle';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -146,13 +147,7 @@ export default function AboutManifesto() {
               </div>
             </div>
 
-            <h2
-              id="about-title"
-              className="text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl"
-            >
-              Não escrevo código apenas para{' '}
-              <span className="text-amber-500">fazer funcionar.</span>
-            </h2>
+            <AboutTitle/>
 
             <p className="mt-5 max-w-2xl text-sm leading-7 text-gray-400 sm:text-base">
               Construo software pensando no que acontece{' '}
@@ -253,7 +248,7 @@ export default function AboutManifesto() {
               <div className="mt-9 border-t border-amber-950/50 pt-6">
                 <p className="font-mono text-xs leading-6 text-gray-500">
                   <span className="text-amber-600">&gt;</span>{' '}
-                  Código limpo. Arquitetura sólida. Deploy sem medo.
+                  Linhas de código forjadas para alta performance e escalabilidade.
                 </p>
               </div>
             </div>
@@ -291,7 +286,7 @@ export default function AboutManifesto() {
                     width={600}
                     height={750}
                     priority={false}
-                    className="relative z-10 max-h-[390px] object-cover object-top lg:object-center"
+                    className="relative z-10 max-h-[390px] object-cover object-top"
                   />
 
                   {/* Vinheta */}
