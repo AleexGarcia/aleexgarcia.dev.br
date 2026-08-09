@@ -104,7 +104,7 @@ export default function HeroCardViking() {
   }, []);
 
   return (
-    <div className="relative h-50 w-50 md:w-1/2 mx-auto mt-10 select-none" ref={cardRef}>
+    <div className="relative h-50 w-50 lg:h-60 lg:w-60 md:w-1/2 mx-auto mt-10 lg:mt-0 select-none" ref={cardRef}>
               
       {/* Layer 1: Escudo Viking (Fundo) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none" ref={shieldRef}>
