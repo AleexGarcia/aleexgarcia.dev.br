@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 
-const baseUrl = process.env.CONTEXT === 'production'
+export const baseUrl = process.env.CONTEXT === 'production'
   ? (process.env.URL || 'https://aleexgarcia.dev.br')
   : process.env.DEPLOY_PRIME_URL 
     ? process.env.DEPLOY_PRIME_URL 

@@ -14,6 +14,12 @@
   <a href="mailto:alexandre_augusto_garcia@hotmail.com">Email</a>
 </p>
 
+<details>
+<summary>📸 Click here to view the full page design (Fullscreen)</summary>
+    <br>
+    <img src="public/assets/screencapture-aleexgarcia-dev-br.png" alt="Mockup do Portfólio AleexGarcia" width="70%">
+  </details>
+</p>
 ---
 
 ## ⚔️ Engineering, Forged for the Web
