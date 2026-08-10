@@ -1,10 +1,9 @@
 import type { MetadataRoute } from 'next'
-import { baseUrl } from './layout'
  
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: baseUrl,
+      url: "https://aleexgarcia.dev.br",
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,

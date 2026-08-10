@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -97,12 +98,13 @@ export default function BrowserMockup({
         {/* Container Principal Animado */}
         <div ref={pageRef} className="w-full absolute top-0 left-0 will-change-transform">
           {imageUrl ? (
-            /* Se houver imagem, renderiza o print da landing page */
-            // eslint-disable-next-line @next/next/no-img-element
-            <img 
+            <Image 
               src={imageUrl} 
               alt={`Mockup de ${title}`}
               className="w-full h-auto object-top"
+              width={1440}
+              height={6016}
+              quality={85}
             />
           ) : (
             /* FALLBACK: Página HTML Genérica estilizada com o tema do projeto */
@@ -122,8 +124,6 @@ export default function BrowserMockup({
           )}
         </div>
 
-        {/* Overlay de linhas rústicas */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(17,13,10,0)_95%,rgba(245,158,11,0.02)_95%)] bg-[size:100%_16px] pointer-events-none" />
       </div>
     </div>
   );

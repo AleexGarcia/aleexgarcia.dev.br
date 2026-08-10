@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaCrow, FaBriefcase } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 
 import { useBentoAnimations } from '../hooks/useBentoAnimations';
 import { Card } from './ui/Card';
