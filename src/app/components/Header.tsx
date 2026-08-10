@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Button } from './ui/Button';
 import { NavLink } from './ui/NavLink';
-import { GiBatteredAxe, GiCrossedAxes } from 'react-icons/gi';
+import { GiBatteredAxe } from 'react-icons/gi';
 
 
 
