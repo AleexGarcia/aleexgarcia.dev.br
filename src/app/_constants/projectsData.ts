@@ -17,9 +17,9 @@ export const projectsData: Project[] = [
     title: "AleexGarcia - O Dev Viking",
     tagline: "Single Page Application ultra veloz com Bento Grid",
     description: "Construção de uma identidade de marca pessoal única e satírica. Este site serve como prova de conceito para otimização extrema de performance web e renderização. Desenvolvido com Next.js App Router e Tailwind CSS, alcançando notas próximas a 100% no Google Lighthouse através do uso de imagens WebP e estruturas modulares de alta conversão.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "UI/UX", "Lighthouse SEO"],
-    githubLink: "https://github.com/AleexGarcia/portfolio-pessoal",
-    deployLink: "https://aleexgarcia.netlify.app/",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "UI/UX", "Lighthouse SEO","GSAP"],
+    githubLink: "https://github.com/AleexGarcia/aleexgarcia.dev.br",
+    deployLink: "https://aleexgarcia.dev.br/",
     isApiOnly: false,
     imageUrl: "/assets/aleexgarcia-dev-br.webp"
   },
@@ -66,7 +66,7 @@ export const projectsData: Project[] = [
     tagline: "Arquitetura distribuída de alta performance via TCP",
     description: "Orquestração de microsserviços em NestJS (Monorepo) com comunicação interna via protocolo TCP de baixa latência e padrões `@MessagePattern`. O ecossistema gerencia fluxos assíncronos de autenticação desacoplada, pagamentos resilientes com Stripe API e notificações automáticas, utilizando MongoDB para persistência isolada e Docker para conteinerização.",
     technologies: ["NestJS", "TypeScript", "TCP Transport", "MongoDB", "Docker", "Stripe API"],
-    githubLink: "https://github.com/AleexGarcia/microservices-backend-nestjs",
+    githubLink: "https://github.com/AleexGarcia/nestjs-booking-microservices",
     isApiOnly: true,
     terminalCommand: "curl -X POST http://localhost:3000/reservations -H 'Authorization: Bearer jwt_token'",
     terminalOutput: [
