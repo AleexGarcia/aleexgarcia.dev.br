@@ -111,7 +111,7 @@ export default function Footer() {
             <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white will-change-transform">
               Pronto para convocar reforços?
             </h3>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed will-change-transform">
+            <p className="text-gray-200 text-sm sm:text-base leading-relaxed will-change-transform">
               Seja para saquear bugs complexos no back-end, erguer interfaces indestrutíveis ou planejar uma arquitetura escalável na nuvem, meu machado está à disposição do seu clã.
             </p>
           </div>
@@ -141,11 +141,11 @@ export default function Footer() {
         </div>
 
         {/* Linha Final de Créditos e Navegação */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-amber-950/40 text-xs text-gray-500">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-amber-950/40 text-xs text-gray-200">
           <div className="text-center sm:text-left space-y-1">
             <p>© {new Date().getFullYear()} Alexandre Garcia. Todos os direitos reservados.</p>
-            <p className="font-mono text-[10px] text-gray-600">
-              Construído com Next.js, TypeScript e Tailwind CSS. Desenvolvido a base de hidromel e café.
+            <p className="font-mono text-[10px] text-gray-300">
+              Construído com Next.js, TypeScript, Tailwind CSS e GSAP. Desenvolvido a base de hidromel e café.
             </p>
           </div>
 

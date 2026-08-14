@@ -11,7 +11,6 @@ export function useBentoAnimations(containerRef: RefObject<HTMLDivElement | null
 
     const cards = container.children;
 
-    // 1. Entrada com ScrollTrigger
     const scrollTween = gsap.fromTo(
       cards,
       { opacity: 0, y: 40, scale: 0.95 },
@@ -31,10 +30,8 @@ export function useBentoAnimations(containerRef: RefObject<HTMLDivElement | null
       }
     );
 
-    // 2. Otimização Arquitetural: Efeito Magnético de Performance com quickTo
     const magneticElements = container.querySelectorAll('.magnetic-btn');
     
-    // ✅ CORREÇÃO AQUI: Tipando o Map com assinaturas exatas de funções de evento do DOM
     const cleanupMap = new Map<Element, { move: (e: MouseEvent) => void; leave: () => void }>();
 
     magneticElements.forEach((el) => {
@@ -53,24 +50,20 @@ export function useBentoAnimations(containerRef: RefObject<HTMLDivElement | null
       };
 
       const onMouseLeave = () => {
-        // Efeito elástico ao soltar o elemento
         gsap.to(htmlEl, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
       };
 
       htmlEl.addEventListener('mousemove', onMouseMove);
       htmlEl.addEventListener('mouseleave', onMouseLeave);
 
-      // ✅ CORREÇÃO AQUI: Salvando as referências corretas que batem com o tipo do Map
       cleanupMap.set(htmlEl, { move: onMouseMove, leave: onMouseLeave });
     });
 
-    // Desmontagem limpa de tudo o que foi gerado pelo hook
     return () => {
       if (scrollTween.scrollTrigger) {
         scrollTween.scrollTrigger.kill();
       }
       
-      // ✅ CORREÇÃO AQUI: Removendo os listeners usando as chaves certas gravadas no Map
       cleanupMap.forEach((listeners, el) => {
         el.removeEventListener('mousemove', listeners.move as EventListener);
         el.removeEventListener('mouseleave', listeners.leave);

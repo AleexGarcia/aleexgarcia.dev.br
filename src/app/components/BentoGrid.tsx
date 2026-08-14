@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
-
+import {} from 'node:process';
 import { useBentoAnimations } from '../hooks/useBentoAnimations';
 import { Card } from './ui/Card';
 import { Badge } from './ui/Badge';
@@ -17,6 +17,7 @@ import { GiAnvil, GiBatteredAxe } from 'react-icons/gi';
 
 export default function BentoGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const curriculumURL = process.env.NEXT_PUBLIC_CV_URL || '#';
 
   useBentoAnimations(containerRef);
 
@@ -30,8 +31,6 @@ export default function BentoGrid() {
         <div className='lg:col-span-4 md:col-span-6'>
           <Card className="flex-col md:flex-row items-center flex-wrap h-full transition-all duration-300">
             <div className='w-full text-center md:text-start'>
-
-
               <Badge icon={GiAnvil} variant="amber"> Forjando APIs & Nuvem</Badge>
             </div>
             <div className='md:w-1/2 text-center md:text-start'>
@@ -86,7 +85,7 @@ export default function BentoGrid() {
             <div className="flex flex-col gap-2.5 flex-grow justify-center">
               <SocialLink href={`https://github.com/${github}`} icon={FaGithub} label="GitHub" actionText="Acessar ↗" hoverColor="group-hover:text-white" />
               <SocialLink href={`https://www.linkedin.com/in/${linkedin}`} icon={FaLinkedin} label="LinkedIn" actionText="Conectar ↗" />
-              <SocialLink href="/assets/alexandre_garcia_fullstack.pdf" icon={FaFilePdf} label="Baixar Pergaminho (CV)" actionText="PDF ↴" hoverColor="group-hover:text-red-400" download />
+              <SocialLink href={curriculumURL} icon={FaFilePdf} label="Baixar Pergaminho (CV)" actionText="PDF ↴" hoverColor="group-hover:text-red-400" download />
             </div>
           </Card>
         </div>
