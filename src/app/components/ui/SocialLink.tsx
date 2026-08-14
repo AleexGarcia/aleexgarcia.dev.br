@@ -6,16 +6,14 @@ interface SocialLinkProps {
   label: string;
   actionText: string;
   hoverColor?: string;
-  download?: boolean;
 }
 
-export function SocialLink({ href, icon: Icon, label, actionText, hoverColor = 'group-hover:text-amber-500', download }: SocialLinkProps) {
+export function SocialLink({ href, icon: Icon, label, actionText, hoverColor = 'group-hover:text-amber-500' }: SocialLinkProps) {
   return (
     <a 
       href={href} 
-      target={download ? undefined : "_blank"} 
-      rel={download ? undefined : "noreferrer"} 
-      download={download}
+      target={"_blank"} 
+      rel={"noreferrer"} 
       className="flex items-center justify-between p-3 bg-black/20 hover:bg-black/40 rounded-xl border border-amber-950/40 hover:border-amber-500/20 transition-all group"
     >
       <div className="flex items-center gap-3">
