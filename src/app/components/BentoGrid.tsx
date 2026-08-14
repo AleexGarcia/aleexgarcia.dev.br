@@ -2,7 +2,6 @@
 
 import React, { useRef } from 'react';
 import { FaGithub, FaLinkedin, FaFilePdf, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
-import {} from 'node:process';
 import { useBentoAnimations } from '../hooks/useBentoAnimations';
 import { Card } from './ui/Card';
 import { Badge } from './ui/Badge';
