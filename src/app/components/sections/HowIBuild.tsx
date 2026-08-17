@@ -3,9 +3,11 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { STEPS } from '../_constants/steps';
-import { Step } from './ui/Step';
-import { MobileStep } from './ui/MobileStep';
+import { STEPS } from '../../_constants/steps';
+import { Step } from './HowIBuild/Step';
+import { MobileStep } from './HowIBuild/MobileStep';
+import { Badge } from '../ui/Badge';
+import { GiAnvil } from 'react-icons/gi';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -235,9 +237,6 @@ export default function HowIBuild() {
       />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        {/* ========================================================
-            INTRO
-        ======================================================== */}
 
         <div
           ref={introRef}
@@ -245,49 +244,17 @@ export default function HowIBuild() {
             mx-auto
             max-w-3xl
             text-center
+            flex
+            flex-col
+            gap-6
+            items-center
           "
         >
-          {/* Eyebrow */}
 
-          <div
-            className="
-              mb-6
-              inline-flex
-              items-center
-              gap-3
-              rounded-full
-              border
-              border-amber-900/70
-              bg-black/30
-              px-4
-              py-2
-            "
-          >
-            <span
-              className="
-                h-1.5
-                w-1.5
-                rounded-full
-                bg-amber-500
-                shadow-[0_0_10px_rgba(245,158,11,0.7)]
-              "
-            />
 
-            <span
-              className="
-                font-mono
-                text-[10px]
-                font-medium
-                uppercase
-                tracking-[0.22em]
-                text-amber-400
-              "
-            >
-              Método de construção
-            </span>
-          </div>
-
-          {/* Título */}
+          <Badge  icon={GiAnvil}>
+            Método de Forja
+          </Badge>
 
           <h2
             className="

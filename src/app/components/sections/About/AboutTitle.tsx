@@ -66,13 +66,12 @@ export default function AboutTitle() {
   return (
     <h2
       id="about-title"
-      className="text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl leading-tight"
+      className="mt-5 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-white  leading-tight"
     >
       <span className="block md:inline">Não escrevo código apenas para</span>{' '}
 
       <span className="relative inline-block whitespace-nowrap text-amber-500 font-black min-w-[280px] sm:min-w-[320px] md:min-w-[380px] h-[1.2em] align-bottom">
         <span ref={wordsRef} className="inline-block">
-          fazer funcionar.
         </span>
 
         {/* Cursor controlado 100% pelo GSAP */}

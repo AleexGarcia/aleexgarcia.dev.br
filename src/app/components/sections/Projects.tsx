@@ -3,15 +3,15 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Badge } from "./ui/Badge";
-import { projectsData } from "../_constants/projectsData";
-import ProjectCard from "./ui/ProjectCard";
-import { GiVikingShield } from "react-icons/gi";
+import { Badge } from "../ui/Badge";
+import { projectsData } from "../../_constants/projectsData";
 
-// Registra o plugin do GSAP
+import { GiVikingShield } from "react-icons/gi";
+import ProjectCard from "./Projects/ProjectCard";
+
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ProjectsSection() {
+export default function Projects() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsContainerRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,6 @@ export default function ProjectsSection() {
 
     if (!header || !container) return;
 
-    // 1. Animação do Cabeçalho (Badge, Título, Descrição)
     gsap.fromTo(
       header.children,
       { opacity: 0, y: -30 },

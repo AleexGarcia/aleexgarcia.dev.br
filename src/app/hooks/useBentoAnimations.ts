@@ -45,8 +45,8 @@ export function useBentoAnimations(containerRef: RefObject<HTMLDivElement | null
         const rect = htmlEl.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        xTo(x * 0.3);
-        yTo(y * 0.3);
+        xTo(x * 0.10);
+        yTo(y * 0.10);
       };
 
       const onMouseLeave = () => {

@@ -15,9 +15,9 @@ export function Badge({ children, variant = 'amber', icon: Icon }: BadgeProps) {
 
   return (
 
-    <div className={`flex items-center w-fit gap-1.5 font-bold uppercase tracking-widest rounded-full border ${styles[variant]} px-3 py-1 mx-auto sm:mx-0`}>
+    <div className={`flex items-center w-fit gap-1.5 uppercase tracking-widest rounded-full border ${styles[variant]} px-3 py-1 mx-auto sm:mx-0`}>
       <Icon className="text-xl shrink-0" aria-hidden="true" />
-      <span className='text-[11px] lg:text-sm'>{children}</span>
+      <span className='font-[--font-cinzel] font-extrabold text-[11px] lg:text-sm'>{children}</span>
     </div>
   );
 }

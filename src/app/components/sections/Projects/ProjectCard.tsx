@@ -4,10 +4,10 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { Card } from './Card';
-import { Project } from '../../_constants/projectsData';
+
 import TerminalMockup from './TerminalMockup';
 import BrowserMockup from './BrowserMockup';
+import { Project } from '@/app/_constants/projectsData';
 
 // Registra o plugin de Scroll do GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -22,9 +22,9 @@ export default function ProjectCard({ project }: { project: Project }) {
     // Substitui o itemVariants (hidden -> visible) do framer-motion
     const anim = gsap.fromTo(
       element,
-      { 
-        opacity: 0, 
-        y: 30 
+      {
+        opacity: 0,
+        y: 30
       },
       {
         opacity: 1,
@@ -49,7 +49,17 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div ref={cardRef} className="group w-full opacity-0"> {/* opacity-0 previne o "flash" do conteúdo antes do JS carregar */}
-      <Card className="!flex-row gap-8 flex-wrap lg:flex-nowrap p-6 border border-amber-950/20 bg-[#16110E] transition-all duration-300 group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.05)]">
+      <div className="
+      bg-gradient-to-b from-[#221A15] to-[#1A1410]
+      rounded-3xl 
+      shadow-[inset_0_1px_2px_rgba(255,255,255,0.05),0_4px_20px_rgba(0,0,0,0.4)]
+      hover:border-amber-500/30 
+      hover:shadow-[0_0_20px_rgba(245,158,11,0.03)]
+      flex 
+      justify-between
+      overflow-hidden
+      relative
+      group gap-8 flex-wrap lg:flex-nowrap p-6 border border-amber-950/20 bg-[#16110E] transition-all duration-300 group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.05)]">
 
         <div className="w-full lg:w-2/3">
           {/* Mockup do Terminal */}
@@ -59,8 +69,8 @@ export default function ProjectCard({ project }: { project: Project }) {
               outputLines={project.terminalOutput}
             />
           ) : (
-            <BrowserMockup 
-              imageUrl={project.imageUrl} 
+            <BrowserMockup
+              imageUrl={project.imageUrl}
               title={project.title}
             />
           )}
@@ -77,7 +87,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                 {project.tagline}
               </p>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-300 text-sm leading-relaxed">
               {project.description}
             </p>
           </div>
@@ -103,7 +113,8 @@ export default function ProjectCard({ project }: { project: Project }) {
                   href={project.githubLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-white transition-colors"
+                  aria-label={`Link do repositório do projeto ${project.title}`}
+                  className="flex items-center gap-2 text-xs font-medium text-gray-300 hover:text-white transition-colors"
                 >
                   <FaGithub className="text-sm" /> Código no GitHub
                 </a>
@@ -113,7 +124,8 @@ export default function ProjectCard({ project }: { project: Project }) {
                   href={project.deployLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-amber-500 transition-colors"
+                  aria-label={`Link do deploy do projeto ${project.title}`}
+                  className="flex items-center gap-2 text-xs font-medium text-gray-300 hover:text-amber-500 transition-colors"
                 >
                   <FaExternalLinkAlt className="text-xs" /> Acessar Deploy ↗
                 </a>
@@ -122,7 +134,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           </div>
         </div>
 
-      </Card>
+      </div>
     </div>
   );
 }

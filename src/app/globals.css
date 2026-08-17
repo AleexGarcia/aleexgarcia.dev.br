@@ -11,6 +11,17 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-cinzel);
+  font-weight: 900;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +36,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
 
 @theme {
   /* Registrando a animação customizada */
@@ -59,15 +73,16 @@ body {
 
     0%,
     100% {
-      box-shadow: 0 5px 5px -3px rgba(16, 185, 129, 0.2), 0 4px 6px -4px rgba(16, 185, 129, 0.2);
+      box-shadow: 0 2.5px 2.5px -1.5px rgba(16, 185, 129, 0.2), 0 2px 3px -2px rgba(16, 185, 129, 0.2);
     }
 
     50% {
-      box-shadow: 0 0 10px 5px rgba(16, 185, 129, 0.6);
+      box-shadow: 0 0 5px 2.5px rgba(16, 185, 129, 0.6);
     }
   }
 
 }
+
 .animate-glow-pulse {
-  animation: shadowPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: shadowPulse 2s cubic-bezier(0.2, 0, 0.6, 1) infinite;
 }

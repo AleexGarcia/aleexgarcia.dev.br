@@ -9,7 +9,6 @@ export type StepProps = {
 
 export function Step({
   step,
-  index,
   className = '',
   refCallback,
 }: StepProps) {

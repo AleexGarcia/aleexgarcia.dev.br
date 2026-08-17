@@ -1,11 +1,12 @@
 'use client'
 import React, { useEffect, useRef } from 'react';
 import { FaWhatsapp, FaEnvelope, FaArrowUp } from 'react-icons/fa';
-import { Badge } from './ui/Badge'; 
+import { Badge } from './ui/Badge';
 import { email, phone } from '../_constants/contacts';
 import { GiCrossedAxes } from 'react-icons/gi';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Button } from './ui/Button';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +24,7 @@ export default function Footer() {
     const ctaBox = ctaBoxRef.current;
     const texts = textElementsRef.current;
     const buttons = buttonsRef.current;
-  const footer = footerRef.current;
+    const footer = footerRef.current;
 
     if (!ctaBox || !texts || !buttons || !footer) return;
 
@@ -37,67 +38,38 @@ export default function Footer() {
       }
     });
 
-    tl.fromTo(ctaBox, 
+    tl.fromTo(ctaBox,
       { opacity: 0, y: 50, scale: 0.98 },
       { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'power2.out' }
     )
-    .fromTo(texts.children,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: 'power2.out' },
-      '-=0.3'
-    )
-    .fromTo(buttons.children,
-      { opacity: 0, scale: 0.9, y: 15 },
-      { opacity: 1, scale: 1, y: 0, duration: 0.4, stagger: 0.12, ease: 'back.out(1.5)' },
-      '-=0.2'
-    );
+      .fromTo(texts.children,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: 'power2.out' },
+        '-=0.3'
+      )
+      .fromTo(buttons.children,
+        { opacity: 0, scale: 0.9, y: 15 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.4, stagger: 0.12, ease: 'back.out(1.5)' },
+        '-=0.2'
+      );
 
-    // 2. Efeito Magnético Otimizado de Alta Performance (GPU) nos Botões Principais
-    const magneticButtons = footer.querySelectorAll('.magnetic-cta');
-    const cleanupMap = new Map<Element, { move: (e: MouseEvent) => void; leave: () => void }>();
-
-    magneticButtons.forEach((btn) => {
-      const htmlEl = btn as HTMLElement;
-      const xTo = gsap.quickTo(htmlEl, 'x', { duration: 0.3, ease: 'power2.out' });
-      const yTo = gsap.quickTo(htmlEl, 'y', { duration: 0.3, ease: 'power2.out' });
-
-      const onMouseMove = (e: MouseEvent) => {
-        const rect = htmlEl.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        xTo(x * 0.25); // Força do efeito magnético
-        yTo(y * 0.25);
-      };
-
-      const onMouseLeave = () => {
-        gsap.to(htmlEl, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
-      };
-
-      htmlEl.addEventListener('mousemove', onMouseMove);
-      htmlEl.addEventListener('mouseleave', onMouseLeave);
-      cleanupMap.set(htmlEl, { move: onMouseMove, leave: onMouseLeave });
-    });
-
+    // Limpeza limpa e direta das instâncias do GSAP
     return () => {
       if (tl.scrollTrigger) tl.scrollTrigger.kill();
       tl.kill();
-      cleanupMap.forEach((listeners, el) => {
-        el.removeEventListener('mousemove', listeners.move as EventListener);
-        el.removeEventListener('mouseleave', listeners.leave);
-      });
     };
   }, []);
 
   return (
-    <footer 
-      id="contact" 
+    <footer
+      id="contact"
       ref={footerRef}
       className="bg-[#110D0A] text-[#F3F4F6] pt-16 pb-8 px-4 sm:p-6 md:p-8 font-sans border-t border-amber-950/40 w-full overflow-hidden"
     >
       <div className="max-w-6xl w-full mx-auto space-y-12">
 
         {/* Bloco de Chamada para Ação (CTA) */}
-        <div 
+        <div
           ref={ctaBoxRef}
           className="bg-black/30 rounded-3xl border border-amber-950/60 p-8 md:p-12 text-center space-y-6 relative overflow-hidden group hover:border-amber-500/20 transition-colors duration-300 shadow-xl"
         >
@@ -116,27 +88,34 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Botões Grandes de Conversão com Efeito Magnético */}
-          <div ref={buttonsRef} className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
-            <div className="magnetic-cta w-full sm:w-auto will-change-transform">
-              <a
-                href={`https://wa.me/${phone}`}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl transition-all duration-300 shadow-lg active:scale-[0.98] animate-glow-pulse px-3 py-4 sm:px-6 "
-              >
-                <FaWhatsapp className="text-lg" /> Iniciar Conversa no WhatsApp
-              </a>
-            </div>
 
-            <div className="magnetic-cta w-full sm:w-auto will-change-transform">
-              <a
-                href={`mailto:${email}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-black/40 hover:bg-black/70 text-gray-300 font-medium text-sm px-3 py-4  sm:px-6 rounded-xl border border-amber-950/60 hover:border-amber-500/30 transition-all duration-200"
-              >
-                <FaEnvelope className="text-base text-gray-400" /> Enviar Mensagem por E-mail
-              </a>
-            </div>
+          <div ref={buttonsRef} className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
+            <Button
+              variant='custom'
+              className="
+            bg-emerald-600 
+            hover:bg-emerald-500 
+            text-white
+             animate-glow-pulse
+             text-xs
+            "
+              href={`https://wa.me/${phone}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaWhatsapp className='text-lg md:text-xl text-white' />
+              Iniciar Conversa no WhatsApp
+            </Button>
+
+            <Button
+              className="text-xs"
+              variant='secondary'
+              href={`mailto:${email}`}
+            >
+              <FaEnvelope className='text-lg md:text-xl text-white'/>
+              Enviar Mensagem por E-mail
+            </Button>
+
           </div>
         </div>
 

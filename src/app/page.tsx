@@ -1,9 +1,9 @@
-import BentoGrid from "./components/BentoGrid";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
-import About from "./components/About";
-import HowIBuild from "./components/HowIBuild";
+import BentoGrid from "./components/sections/BentoGrid";
+import About from "./components/sections/About";
+import HowIBuild from "./components/sections/HowIBuild";
+import Projects from "./components/sections/Projects";
+import Footer from "./components/Footer";
 
 
 export default function Home() {

@@ -1,12 +1,14 @@
 import React from 'react';
 
 
-interface CardProps {
+interface BentoCardProps {
   children: React.ReactNode;
+  title?: string;
+  subtitle?: string;
   className?: string;
 }
 
-export function Card({ children, className = '' }: CardProps) {
+export function BentoCard({ children, className = '', subtitle, title }: BentoCardProps) {
   return (
     <div className={`
       bg-[#1A1410] 
@@ -27,6 +29,12 @@ export function Card({ children, className = '' }: CardProps) {
       group
       ${className}
     `}>
+      {title && subtitle && (
+        <div>
+          <h2 className="text-lg font-bold text-gray-200">{title}</h2>
+          <p className="text-xs text-gray-400 mt-1">{subtitle}</p>
+        </div>
+      )}
       {children}
     </div>
   );

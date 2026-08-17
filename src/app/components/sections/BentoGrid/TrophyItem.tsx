@@ -1,8 +1,7 @@
 import React from 'react';
 import Image from 'next/image'
 
-interface TrophyItemProps {
-  // Mantém a flexibilidade para componentes de ícones ou uma string com a URL da imagem
+export interface TrophyItemProps {
   icon: React.ComponentType<{ className?: string }> | string;
   title: string;
   subtitle: string;
@@ -16,7 +15,6 @@ export function TrophyItem({ icon: IconOrSrc, title, subtitle, status, variant =
     amber: { bg: 'bg-amber-500/10 border-amber-500/20 text-amber-500', text: 'text-amber-500/80' }
   };
 
-  // Verifica se o que foi passado é uma string (caminho/URL da imagem)
   const isImage = typeof IconOrSrc === 'string';
 
   return (
@@ -29,8 +27,8 @@ export function TrophyItem({ icon: IconOrSrc, title, subtitle, status, variant =
         </div>
       )}
       <div>
-        <h4 className="text-sm font-semibold text-gray-200 leading-tight">{title}</h4>
-        <p className="text-[11px] text-gray-500 mt-0.5">{subtitle}</p>
+        <span className="text-sm font-[--font-cinzel] font-semibold text-gray-200 leading-tight">{title}</span>
+        <p className="text-[11px] text-gray-400 mt-0.5">{subtitle}</p>
         <p className={`text-[10px] font-mono mt-1 ${styles[variant].text}`}>{status}</p>
       </div>
     </div>

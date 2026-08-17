@@ -22,25 +22,23 @@ export default function Header() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-const navLinks = [
-  { name: 'Resumo', href: '#resume' },
-  { name: 'Manifesto', href: '#manifest' },
-  { name: 'A Forja', href: '#process' },
-  { name: 'Projetos', href: '#projects' },
-];
+  const navLinks = [
+    { name: 'Resumo', href: '#resume' },
+    { name: 'Manifesto', href: '#manifest' },
+    { name: 'A Forja', href: '#process' },
+    { name: 'Projetos', href: '#projects' },
+  ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-[#110D0A]/90 backdrop-blur-md border-b border-amber-950/40 py-4 shadow-lg shadow-black/40' 
+    <header className={`px-4 sm:px-6 md:px-8 fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-[#110D0A]/90 backdrop-blur-md border-b border-amber-950/40 py-4 shadow-lg shadow-black/40'
         : 'bg-transparent py-6'
-    }`}>
-      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
-        
+      }`}>
+      <div className="max-w-6xl w-full mx-auto flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5">
-          <span className="text-sm font-black tracking-widest uppercase text-white font-mono group-hover:text-amber-500 transition-colors">
-            AleexGarcia.dev
-          </span>
+          <h1 className="text-sm font-black uppercase text-white  group-hover:text-amber-500 transition-colors">
+            AleexGarcia.Dev
+          </h1>
         </a>
 
         {/* NAVEGAÇÃO DESKTOP (Estilo Madeira de Fundo) */}
@@ -54,7 +52,9 @@ const navLinks = [
 
         {/* BOTÃO DE CONTATO DESKTOP (Reaproveitando o componente Button) */}
         <div className="hidden md:block">
-          <Button  href="#contact" variant="primary" className="group !py-2 !px-4 text-xs uppercase tracking-wider flex items-center gap-1.5">
+          <Button 
+          href="#contact" variant="primary" className="group !py-2 !px-4 text-xs uppercase tracking-wider flex items-center gap-1.5 hover:scale-102"
+          >
             Contratar o Machado
             <GiBatteredAxe className="text-xl transition-all duration-300 -rotate-45 group-hover:rotate-20 group-hover:translate-x-1 group-hover:scale-110" />
           </Button>
@@ -72,9 +72,8 @@ const navLinks = [
       </div>
 
       {/* MENU DROPDOWN MOBILE */}
-      <div className={`fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#110D0A] z-40 lg:hidden flex flex-col justify-between p-6 border-t border-amber-950/40 transform transition-transform duration-300 ease-in-out ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
+      <div className={`fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#110D0A] z-40 lg:hidden flex flex-col justify-between p-6 border-t border-amber-950/40 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
         <nav className="flex flex-col gap-3">
           {navLinks.map((link, idx) => (
             <NavLink key={idx} href={link.href} onClick={toggleMenu} mobile>

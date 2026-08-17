@@ -23,7 +23,7 @@ export function NavLink({ href, children, onClick, mobile = false }: NavLinkProp
   return (
     <a
       href={href}
-      className="text-xs font-semibold uppercase tracking-wider text-gray-400 hover:text-white px-4 py-2 rounded-lg hover:bg-amber-950/30 transition-all duration-200"
+      className="font-[--font-cinzel] text-sm font-bold uppercase tracking-wider text-gray-200 hover:text-white px-4 py-2 rounded-lg hover:bg-amber-950/30 transition-all duration-200"
     >
       {children}
     </a>
